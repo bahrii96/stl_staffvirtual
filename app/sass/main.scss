@@ -26,7 +26,6 @@ body {
   color: $lightRange100;
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
-  min-width: 320px;
 }
 
 .container {
@@ -54,39 +53,21 @@ body {
     }
   }
 }
+.container_inner-small {
+  margin: 0 auto;
+  max-width: clamp(960px, rem(960px), 960px);
+  padding: clamp(40px, rem(48px), 48px) clamp(90px, rem(96px), 96px) clamp(90px, rem(96px), 96px) clamp(60px, rem(64px), 64px);
+  background-color: $white;
 
+  @include mq-inv-tablet {
+    padding: clamp(30px, rem(36px), 36px);
+  }
+  @include mq-inv-medium {
+    padding: clamp(10px, rem(15px), 15px);
+  }
+}
 main {
   position: relative;
-  max-width: 2500px;
-  margin: 0 auto;
-}
-
-.container_inner-small {
-  margin: 0 auto;
-  max-width: clamp(960px, rem(960px), 960px);
-  padding: clamp(40px, rem(48px), 48px) clamp(90px, rem(96px), 96px) clamp(90px, rem(96px), 96px) clamp(60px, rem(64px), 64px);
-  background-color: $white;
-
-  @include mq-inv-tablet {
-    padding: clamp(30px, rem(36px), 36px);
-  }
-  @include mq-inv-medium {
-    padding: clamp(10px, rem(15px), 15px);
-  }
-}
-
-.container_inner-small {
-  margin: 0 auto;
-  max-width: clamp(960px, rem(960px), 960px);
-  padding: clamp(40px, rem(48px), 48px) clamp(90px, rem(96px), 96px) clamp(90px, rem(96px), 96px) clamp(60px, rem(64px), 64px);
-  background-color: $white;
-
-  @include mq-inv-tablet {
-    padding: clamp(30px, rem(36px), 36px);
-  }
-  @include mq-inv-medium {
-    padding: clamp(10px, rem(15px), 15px);
-  }
 }
 
 //header & common
@@ -95,47 +76,48 @@ main {
 @import "parts/layout";
 
 //pages
-//@import "pages/page.scss";
-//@import "pages/post.scss";
+@import "pages/page.scss";
+@import "pages/post.scss";
 
 //footer
 @import "parts/footer";
 
 //blocks {only if needed}
-//@import "blocks/home-hero.scss";
-//
-//@import "blocks/process.scss";
-//@import "blocks/blog-grid.scss";
-//@import "blocks/stats.scss";
-//@import "blocks/meet-candidates.scss";
-//@import "blocks/meet.scss";
-//@import "blocks/testimonials.scss";
-//@import "blocks/our-guide.scss";
-//@import "blocks/message.scss";
-//@import "blocks/stories.scss";
-//@import "blocks/flag-video.scss";
-//@import "blocks/logo-section.scss";
-//@import "blocks/cta-person.scss";
-//@import "blocks/cta-video.scss";
-//@import "blocks/stafftypes_grid.scss";
-//@import "blocks/howitworks.scss";
-//@import "blocks/benefits.scss";
-//@import "blocks/faq.scss";
-//@import "blocks/white-papers.scss";
-//// ==new-section-page
-//@import "blocks/clients.scss";
-//@import "blocks/step-process.scss";
-//@import "blocks/contact-hero.scss";
-//@import "blocks/img-box.scss";
-//@import "blocks/talent-group.scss";
-//@import "blocks/section-form";
-//@import "blocks/collection";
-//@import "blocks/title-separate";
-//@import "pages/glossary";
-//@import "blocks/hero-minus";
-//@import "blocks/blog-slider";
-//@import "blocks/hero-illustration";
-//@import "blocks/testimonials-star";
-//@import "blocks/video-box";
-// @import "pages/blog-inner";
-@import "pages/page_text";
+@import "blocks/home-hero.scss";
+
+@import "blocks/process.scss";
+@import "blocks/blog-grid.scss";
+@import "blocks/stats.scss";
+@import "blocks/meet-candidates.scss";
+@import "blocks/meet.scss";
+@import "blocks/testimonials.scss";
+@import "blocks/our-guide.scss";
+@import "blocks/message.scss";
+@import "blocks/stories.scss";
+@import "blocks/flag-video.scss";
+@import "blocks/logo-section.scss";
+@import "blocks/cta-person.scss";
+@import "blocks/cta-video.scss";
+@import "blocks/stafftypes_grid.scss";
+@import "blocks/howitworks.scss";
+@import "blocks/benefits.scss";
+@import "blocks/faq.scss";
+@import "blocks/white-papers.scss";
+// ==new-section-page
+@import "blocks/clients.scss";
+@import "blocks/step-process.scss";
+@import "blocks/hero-wave.scss";
+@import "blocks/img-box.scss";
+@import "blocks/talent-group.scss";
+@import "blocks/section-form";
+@import "blocks/collection";
+@import "blocks/title-separate";
+@import "pages/glossary";
+@import "blocks/hero-minus";
+@import "blocks/blog-slider";
+@import "blocks/hero-illustration";
+@import "blocks/testimonials-star";
+@import "blocks/video-box";
+@import "pages/404";
+@import "pages/blog-inner";
+@import "blocks/competitive-advantage.scss";

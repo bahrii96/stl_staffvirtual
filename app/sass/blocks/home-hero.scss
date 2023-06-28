@@ -40,10 +40,8 @@
   &__image {
     max-width: 100%;
     margin: auto;
-    //height: rem(380px);
-    //height: clamp(280px, rem(380px), 380px);
-    width: 64%;
-    display: flex;
+    height: rem(380px);
+    height: clamp(280px, rem(380px), 380px);
 
     img {
       height: 100%;
@@ -87,7 +85,6 @@
         line-height: 1.1;
         letter-spacing: -0.02em;
         color: $SoftRange100;
-        margin: 0;
         margin-bottom: rem(16px);
         margin-bottom: clamp(10px, rem(16px), 16px);
       }
@@ -99,7 +96,6 @@
         line-height: 1.2;
         letter-spacing: -0.04em;
         color: $lightRange100;
-        margin: 0;
         margin-bottom: rem(16px);
         margin-bottom: clamp(10px, rem(16px), 16px);
       }
@@ -111,7 +107,6 @@
         line-height: 1.2;
         letter-spacing: -0.02em;
         color: $lightRange80;
-        margin: 0;
         margin-bottom: rem(8px);
         margin-bottom: clamp(5px, rem(8px), 8px);
         &:last-child {
@@ -136,8 +131,7 @@
       margin-bottom: rem(30px);
     }
     &__image {
-      width: 80%;
-      //height: rem(315px);
+      height: rem(315px);
     }
     &__blocks {
       padding: rem(24px) 0;
@@ -200,7 +194,7 @@
       }
     }
     &__image {
-      //height: rem(144px);
+      height: rem(144px);
     }
     &__blocks {
       padding: 0;

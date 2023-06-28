@@ -1,6 +1,6 @@
 @use "../inc" as *;
 
-.faq {
+.fag {
   padding: clamp(64px, rem(96px), 96px) 0;
   position: relative;
   overflow: hidden;
@@ -90,8 +90,8 @@
   &__accordion-item.open .accordion-toggle {
     background-color: #dadada;
   }
-  &__accordion-item.open .faq__accordion-content-box {
-    //display: block;
+  &__accordion-item.open .fag__accordion-content-box {
+    display: block;
   }
 
   @include mq-inv-tablet {

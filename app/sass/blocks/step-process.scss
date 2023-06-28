@@ -194,11 +194,11 @@
     }
 
     &__item {
-      padding: clamp(16px, rem(20px), 20px);
+      padding: clamp(16px, rem(20px), 20px) 0;
       gap: clamp(10px, rem(15px), 15px);
 
       &::after {
-        left: clamp(30px, rem(32px), 32px);
+        left: clamp(14px, rem(16px), 16px);
         width: 1px;
       }
     }

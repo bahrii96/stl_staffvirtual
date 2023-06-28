@@ -4,6 +4,9 @@
   position: relative;
   overflow: hidden;
   padding: rem(96px) 0;
+  background-image: url(../img/bg-star.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
 
   &__title {
     max-width: rem(640px);
@@ -56,10 +59,8 @@
       left: 0;
       background-color: $main100;
       border-radius: rem(4px);
-      display: flex;
       img {
-        object-fit: cover;
-        width: 100%;
+        object-fit: contain;
       }
     }
 
@@ -67,10 +68,9 @@
       position: absolute;
       top: rem(25px);
       left: rem(15px);
-      max-width: clamp(60px, rem(80px), 60px);
+      max-width: clamp(60px, rem(80px), 80px);
       img {
         max-width: 100%;
-        height: auto;
       }
     }
 
@@ -110,10 +110,6 @@
       transform: translate(-50%, -50%);
       img {
         transition: transform 0.3s ease;
-        width: 100%;
-        margin: auto;
-        display: block;
-        transition: transform 0.3s ease;
       }
       &:hover {
         img {
@@ -138,9 +134,6 @@
     .play-button {
       max-width: rem(54px);
       width: 100%;
-      img {
-        width: 60%;
-      }
     }
     .testimonial {
       &__desc {
@@ -165,9 +158,6 @@
   }
 
   @include mq-inv-medium {
-    .play-button {
-      max-width: rem(40px);
-    }
     .testimonial {
       &__video {
         border-radius: 0;
@@ -175,10 +165,29 @@
         margin: 0 clamp(-24px, rem(-24px), -24px);
       }
     }
-    .play-button {
-      img {
-        width: 100%;
-      }
+  }
+}
+
+.testimonials-bg-bl {
+  background-image: url(../img/star-dark-blue-bg.svg);
+  .testimonials__title {
+    h2 {
+      color: $white;
     }
+
+    .section_subtitle {
+      color: $white;
+    }
+  }
+
+  .testimonial__desc {
+    color: $white;
+  }
+  .testimonial__name-box {
+    color: $white;
+  }
+  @include mq-inv-tablet {
+    background-image: none;
+    background-color: $main100;
   }
 }

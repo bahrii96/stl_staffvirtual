@@ -1,10 +1,9 @@
 @use "../inc" as *;
-
 .cta-video {
   position: relative;
   overflow: hidden;
   padding: rem(80px) 0;
-  background-image: url(../../img/base_bg.png);
+  background-image: url(../img/base_bg.png);
   background-size: cover;
   background-position: top;
   background-color: $softBlue;
@@ -24,7 +23,6 @@
     grid-template-columns: 0.8fr 1.2fr;
     gap: rem(80px);
   }
-
   &__right {
     display: flex;
     flex-direction: column;
@@ -61,7 +59,6 @@
     aspect-ratio: 1.7;
     box-shadow: 0px rem(4px) rem(4px) rgba(1, 60, 147, 0.04), 0px rem(-2px) rem(24px) rgba(24, 136, 255, 0.1);
     border: 0.5px solid #f2f4f7;
-
     a {
       position: absolute;
       top: 0;
@@ -78,24 +75,18 @@
     left: 0;
     background-color: $white;
     border-radius: rem(4px);
-
     img {
       object-fit: contain;
-      width: 100%;
-      height: 100%;
     }
   }
-
   .play-button {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     img {
       transition: transform 0.3s ease;
     }
-
     &:hover {
       img {
         transform: scale(1.1);
@@ -122,10 +113,6 @@
     h2 {
       font-size: clamp(18px, rem(24px), 24px);
       margin-bottom: clamp(14px, rem(16px), 16px);
-    }
-    &__buttons {
-      flex-wrap: wrap;
-      gap: rem(16px);
     }
   }
 
@@ -167,328 +154,88 @@
       width: 100%;
     }
     &__video {
-      //max-height: rem(192px);
-      width: calc(100% + rem(48px));
+      max-height: rem(192px);
       margin: 0 rem(-24px);
     }
 
     &__buttons {
       flex-direction: column;
       gap: rem(8px);
-
       .btn {
         max-width: 100%;
-      }
-    }
-  }
-
-  &.mirror-style {
-    .cta-video {
-      &__right {
-        order: 1;
-      }
-
-      &__left {
-        order: 2;
-      }
-
-      &__box {
-        grid-template-columns: 1.2fr 0.8fr;
-      }
-    }
-
-    @include mq-inv-medium {
-      padding-top: 0px;
-      .cta-video__box {
-        grid-template-columns: 1fr;
-      }
-      .cta-video__right {
-        order: 2;
-      }
-      .cta-video__left {
-        order: 1;
-      }
-    }
-  }
-
-  &.background-blue {
-    background-image: url(../../img/overlay-cta-person.svg);
-    background-size: cover;
-    background-position: top;
-
-    h2 {
-      color: $white;
-    }
-
-    .cta-video__poster {
-      background-color: #0a67c9;
-    }
-
-    .cta-video {
-      &__video {
-        border: 0px;
-        box-shadow: 0px rem(4px) rem(4px) rgba(1, 60, 147, 0.04), 0px rem(-2px) rem(24px) rgba(24, 136, 255, 0.1);
-      }
-
-      &__subtitle {
-        color: $white;
-      }
-
-      &__buttons {
-        .btn__blue {
-          background-color: $white;
-          color: $main100;
-          border: 1px solid $white;
-
-          &:hover {
-            background-color: $main100;
-            color: $white;
-            border: 1px solid $white;
-          }
-        }
-
-        .btn__white {
-          background-color: $main100;
-          color: $white;
-          border: 1px solid $white;
-
-          &:hover {
-            background-color: $white;
-            color: $main100;
-          }
-        }
       }
     }
   }
 }
 
-.cta-person {
-  position: relative;
-  margin-top: clamp(-70px, rem(-76px), -76px);
-  overflow-y: hidden;
-  margin-bottom: rem(-3px);
-
-  &__box {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.cta-video.cta-video-revers-right,
+.cta-video.cta-video-revers-left {
+  background-image: url(../img/overlay-cta-person.svg);
+  background-size: cover;
+  background-position: top;
+  .cta-video__right {
+    order: 1;
   }
-
-  &__left {
-    display: flex;
+  .cta-video__left {
+    order: 2;
   }
-
-  &__right {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: auto;
-    padding-top: clamp(100px, rem(120px), 120px);
+  .cta-video__box {
+    grid-template-columns: 1.2fr 0.8fr;
   }
-
-  &__subtitle {
-    font-weight: 700;
-    font-size: clamp(18px, rem(24px), 24px);
-    line-height: 1.08;
-    letter-spacing: -0.03em;
-    margin-bottom: rem(16px);
-    color: $main100;
+  .cta-video__subtitle {
+    color: $white;
   }
 
   h2 {
-    font-weight: 700;
-    font-size: clamp(24px, rem(32px), 32px);
-    line-height: 1.06;
-    letter-spacing: -0.03em;
-    margin-bottom: rem(40px);
+    color: $white;
   }
-
-  &__buttons {
-    display: flex;
-    gap: rem(24px);
+  .cta-video__video {
+    border: 0.5px solid #1975d7;
+    box-shadow: 0px rem(4px) rem(4px) rgba(1, 60, 147, 0.04), 0px rem(-2px) rem(24px) rgba(24, 136, 255, 0.1);
   }
-
-  .ctaImg {
-    max-height: rem(520px);
-    height: 100%;
-    aspect-ratio: 1.01;
-    margin-right: auto;
-    display: flex;
-
-    img {
-      object-fit: contain;
-      object-position: bottom;
+  .cta-video__poster {
+    background-color: #1975d7;
+  }
+  .btn__blue {
+    background-color: $white;
+    color: $main100;
+    border: 1px solid $white;
+    &:hover {
+      background-color: $main100;
+      color: $white;
+      border: 1px solid $white;
     }
   }
-
-  @include mq-inv-tablet {
-    &__right {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-top: clamp(65px, rem(130px), 130px);
-      padding-bottom: clamp(25px, rem(50px), 50px);
-    }
-
-    &__overlay {
-      top: 20%;
-    }
-
-    &__buttons {
-      //margin-bottom: clamp(16px, rem(24px), 30px);
-      flex-wrap: wrap;
-      gap: rem(16px);
-    }
-
-    &__subtitle {
-      font-size: clamp(16px, rem(18px), 18px);
-    }
-
-    &__box {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    h2 {
-      font-size: clamp(16px, rem(22px), 22px);
-      margin-bottom: clamp(14px, rem(16px), 16px);
-    }
-
-    .ctaImg {
-      max-width: 100%;
-
-      img {
-        object-position: bottom;
-      }
+  .btn__white {
+    background-color: $main100;
+    color: $white;
+    border: 1px solid $white;
+    &:hover {
+      background-color: $white;
+      color: $main100;
     }
   }
-
   @include mq-inv-medium {
-    margin-top: 0px;
-
-    &__box {
+    padding-top: 0px;
+    .cta-video__box {
       grid-template-columns: 1fr;
-      gap: rem(24px);
     }
-
-    &__right {
+    .cta-video__right {
       order: 2;
-      padding-top: 0;
     }
-
-    &__subtitle {
-      font-size: clamp(16px, rem(16px), 20px);
-      line-height: 1.25;
-      margin-bottom: rem(12px);
-    }
-
-    h2 {
-      font-size: clamp(18px, rem(18px), 24px);
-      line-height: 1.16;
-      margin-bottom: rem(24px);
-    }
-
-    &__buttons {
-      flex-direction: column;
-      gap: rem(8px);
-
-      .btn {
-        max-width: 100%;
-      }
-    }
-
-    &__left {
+    .cta-video__left {
       order: 1;
     }
-    .ctaImg {
-      max-height: rem(320px);
-      margin: 0 auto;
-    }
   }
-
-  &.mirror-style {
-    .ctaImg {
-      margin-left: auto;
-      margin-right: 0;
-      @include mq-inv-medium {
-        margin: 0 auto;
-      }
-    }
-
-    .cta-person {
-      &__right {
-        order: 1;
-      }
-
-      &__left {
-        order: 2;
-      }
-
-      &__box {
-        grid-template-columns: 1fr 1fr;
-        @include mq-inv-tablet {
-          //grid-template-columns: 11fr 1fr;
-        }
-      }
-    }
-
-    @include mq-inv-medium {
-      padding-top: 0px;
-      .cta-person__box {
-        grid-template-columns: 1fr;
-      }
-      .cta-person__right {
-        order: 2;
-      }
-      .cta-person__left {
-        order: 1;
-      }
-    }
+}
+.cta-video.cta-video-revers-left {
+  .cta-video__box {
+    grid-template-columns: 0.8fr 1.2fr;
   }
-
-  &.background-blue {
-    background-image: url(../../img/overlay-cta-person.svg);
-    background-size: 100%;
-    background-position: center clamp(100px, rem(120px), 120px);
-    background-repeat: no-repeat;
-    @include mq-inv-tablet {
-      background-size: auto 100%;
-      background-position: center clamp(40px, rem(80px), 80px);
-    }
-
-    h2 {
-      color: $white;
-    }
-
-    .cta-person {
-      &__subtitle {
-        color: $white;
-      }
-
-      &__buttons {
-        .btn__blue {
-          background-color: $white;
-          color: $main100;
-          border: 1px solid $white;
-
-          &:hover {
-            background-color: $main100;
-            color: $white;
-            border: 1px solid $white;
-          }
-        }
-
-        .btn__white {
-          background-color: $main100;
-          color: $white;
-          border: 1px solid $white;
-
-          &:hover {
-            background-color: $white;
-            color: $main100;
-          }
-        }
-      }
-    }
+  .cta-video__right {
+    order: 2;
+  }
+  .cta-video__left {
+    order: 1;
   }
 }

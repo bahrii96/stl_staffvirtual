@@ -34,18 +34,13 @@
       &::after {
         content: "";
         position: absolute;
-        background-image: url("../../img/collection-overlay.svg");
+        background-image: url("./../img/collection-overlay.svg");
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: right;
         width: 100%;
         height: 100%;
         left: 0;
         top: 0;
-      }
-      img {
-        width: 100%;
-        object-fit: cover;
       }
     }
 

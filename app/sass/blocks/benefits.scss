@@ -28,7 +28,7 @@
       margin-bottom: rem(16px);
     }
 
-    .section_description {
+    p {
       font-size: clamp(16px, rem(20px), 20px);
       line-height: 1.4;
       color: $lightRange100;
@@ -39,7 +39,7 @@
   ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: clamp(40px, rem(50px), 50px);
+    gap: clamp(40px, rem(60px), 60px);
   }
   li {
     display: flex;
@@ -59,7 +59,7 @@
   &__item-information {
     h3 {
       font-weight: 700;
-      font-size: clamp(20px, rem(22px), 22px);
+      font-size: clamp(20px, rem(24px), 24px);
       line-height: 1;
       margin-bottom: rem(16px);
     }
@@ -75,7 +75,7 @@
     padding: clamp(40px, rem(64px), 64px) 0;
     &__title {
       margin-bottom: clamp(40px, rem(64px), 64px);
-      .section_description {
+      p {
         font-size: clamp(14px, rem(16px), 16px);
       }
     }
@@ -102,7 +102,7 @@
       .section_title {
         margin-bottom: rem(8px);
       }
-      .section_description {
+      p {
         font-size: clamp(14px, rem(14px), 16px);
       }
     }
@@ -155,7 +155,7 @@
         margin-bottom: 0px;
       }
     }
-
+  
     .benefits__item-img {
       height: clamp(100px, rem(128px), 128px);
       flex: 0 0 clamp(100px, rem(128px), 128px);
@@ -167,10 +167,10 @@
         flex: 0 0 clamp(64px, rem(80px), 80px);
       }
     }
-
+  
     @include mq-inv-medium {
       padding: rem(40px) 0;
-
+  
       ul {
         display: grid;
         grid-template-columns: 1fr;
@@ -182,7 +182,7 @@
         gap: rem(10px);
         margin-bottom: 0px;
       }
-
+  
       .benefits__item-img {
         max-height: rem(70px);
         max-width: rem(70px);

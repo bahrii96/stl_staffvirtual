@@ -24,7 +24,7 @@
     &::after {
       content: "";
       position: absolute;
-      background-image: url("../../img/search.svg");
+      background-image: url("./../img/search.svg");
       background-size: contain;
       background-repeat: no-repeat;
       width: clamp(16px, rem(18px), 18px);
@@ -40,12 +40,12 @@
       border-radius: rem(4px);
       width: 100%;
       padding: rem(14px);
-      font-weight: 500;
-      font-size: clamp(16px, rem(16px), 16px);
-      line-height: 1.25;
-      letter-spacing: -0.02em;
 
       &::placeholder {
+        font-weight: 500;
+        font-size: clamp(16px, rem(16px), 16px);
+        line-height: 1.25;
+        letter-spacing: -0.02em;
         color: #537599;
       }
     }
@@ -139,7 +139,7 @@
       margin-bottom: rem(16px);
 
       &-form {
-        //padding: rem(10px);
+        padding: rem(10px);
 
         &::placeholder {
           font-size: clamp(12px, rem(14px), 14px);

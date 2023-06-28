@@ -93,7 +93,10 @@ svg:not(:root) {
 }
 
 button,
-input, {
+input,
+optgroup,
+select,
+textarea {
   margin: 0;
   border: 0;
   font: inherit;
@@ -181,7 +184,8 @@ ul {
 
 img {
   max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   user-select: none;
   border: 0;

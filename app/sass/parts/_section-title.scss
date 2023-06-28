@@ -27,7 +27,6 @@
   line-height: 1.1;
   letter-spacing: -0.04em;
   color: $lightRange100;
-  margin: 0;
 
   @include mq-inv-tablet {
     font-size: clamp(24px, rem(32px), 32px);

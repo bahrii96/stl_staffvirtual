@@ -11,7 +11,7 @@
     margin: 0 auto;
     text-align: center;
     margin-bottom: rem(32px);
-
+    
     .section_subtitle {
       color: $main100;
     }
@@ -42,28 +42,15 @@
   &__blocks {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-row-gap: clamp(64px, rem(64px), 64px);
-    background: #fbfdff;
+    border-top: 1px solid $mainLight20;
+    border-bottom: 1px solid $mainLight20;
     padding: rem(32px) 0;
     padding: clamp(16px, rem(32px), 32px) 0;
 
     &-item {
-      position: relative;
       padding: 0 rem(32px);
-      padding: 0 clamp(32px, rem(32px), 32px);
+      padding: 0 clamp(16px, rem(32px), 32px);
       border-right: 1px solid $mainLight20;
-
-      &:nth-child(-n + 4) {
-        &::after {
-          content: "";
-          position: absolute;
-          width: 102%;
-          height: 1px;
-          background-color: $mainLight20;
-          left: 0;
-          bottom: clamp(-32px, rem(-32px), -32px);
-        }
-      }
 
       &:last-child {
         border-right: none;
@@ -109,9 +96,13 @@
           font-size: clamp(14px, rem(16px), 16px);
         }
       }
-      &:nth-child(4n) {
-        border-right: 0;
-      }
+    }
+  }
+
+  &__blocks {
+    &:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
     }
   }
 
@@ -120,14 +111,24 @@
       padding: rem(24px) 0;
       display: flex;
       flex-wrap: wrap;
-      grid-row-gap: rem(16px);
-
       &-item {
         padding: 0 rem(16px);
         width: 50%;
-        border-right: 1px solid $mainLight20;
-        padding: rem(12px);
-
+        &:nth-child(1) {
+          border-bottom: 1px solid $mainLight20;
+          padding-bottom: rem(12px);
+        }
+        &:nth-child(2) {
+          border-right: none;
+          border-bottom: 1px solid $mainLight20;
+          padding-bottom: rem(12px);
+        }
+        &:nth-child(3) {
+          padding-top: rem(12px);
+        }
+        &:nth-child(4) {
+          padding-top: rem(12px);
+        }
         h4 {
           font-size: clamp(14px, rem(14px), 16px);
           margin-bottom: rem(8px);
@@ -140,14 +141,6 @@
           font-size: clamp(14px, rem(14px), 16px);
           strong {
             font-size: clamp(16px, rem(16px), 18px);
-          }
-        }
-        &:nth-child(2n) {
-          border-right: 0;
-        }
-        &:nth-child(-n + 4) {
-          &::after {
-            display: none;
           }
         }
       }

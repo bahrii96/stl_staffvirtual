@@ -1,0 +1,12 @@
+.competitive-advantage {
+  padding: rem(40px) 0;
+  .container {
+    position: relative;
+  }
+  .img {
+    margin-bottom: rem(-250px);
+    @include mq-inv-medium {
+      margin-bottom: rem(-100px);
+    }
+  }
+}

@@ -1,15 +1,15 @@
 if (document.querySelector(".swiper")) {
-  // swiper = new Swiper(".meet__slider", {
-  //   pagination: {
-  //     el: ".swiper-pagination",
-  //     clickable: true,
-  //   },
-  //   autoplay: {
-  //     delay: 3000,
-  //     disableOnInteraction: false,
-  //   },
-  //   loop: true,
-  // });
+  swiper = new Swiper(".meet__slider", {
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    loop: true,
+  });
 
   swiper = new Swiper(".blog-slider__slider", {
     // loop: true,

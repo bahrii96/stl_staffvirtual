@@ -91,15 +91,15 @@ function MobileNavigation() {
 // }
 
 
-// function accordionInit(accordion) {
-//     let accordionWrapper = $(accordion);
-//     if (accordionWrapper.length) {
-//         let accItem = accordionWrapper.find('.accordion_item .accordion_item--toggle');
-//         accItem.next().hide();
-//         accItem.click(function (e) {
-//             e.preventDefault();
-//             $(this).parent().toggleClass('active');
-//             $(this).next().slideToggle();
-//         });
-//     }
-// }
+function accordionInit(accordion) {
+    let accordionWrapper = $(accordion);
+    if (accordionWrapper.length) {
+        let accItem = accordionWrapper.find('.accordion_item .accordion_item--toggle');
+        accItem.next().hide();
+        accItem.click(function (e) {
+            e.preventDefault();
+            $(this).parent().toggleClass('active');
+            $(this).next().slideToggle();
+        });
+    }
+}

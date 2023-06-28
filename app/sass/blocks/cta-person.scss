@@ -4,16 +4,15 @@
   position: relative;
   margin-top: clamp(-70px, rem(-76px), -76px);
   overflow-y: hidden;
-  margin-bottom: rem(-3px);
 
   &__overlay {
-    background-image: url("../../img/overlay-cta-person.svg");
+    background-image: url(../img/overlay-cta-person.svg);
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
     width: 100%;
     height: 100%;
-    top: rem(96px);
+    top: clamp(76px, rem(76px), 76px);
   }
   &__box {
     display: grid;
@@ -74,10 +73,6 @@
     .img {
       max-height: rem(520px);
       height: 100%;
-      aspect-ratio: 1.01;
-      margin-left: auto;
-      display: flex;
-      transform: translateY(2px);
 
       img {
         object-fit: contain;
@@ -86,20 +81,12 @@
   }
 
   @include mq-inv-tablet {
-    &__overlay {
-      top: rem(40px);
-    }
-
     &__left {
       height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding-top: 20%;
-    }
-
-    &__overlay {
-      top: 20%;
     }
 
     &__buttons {
@@ -132,7 +119,6 @@
     margin-top: 0px;
 
     &__overlay {
-      top: clamp(110px, rem(110px), 110px);
       max-height: rem(564px);
       height: 100%;
     }
@@ -178,20 +164,9 @@
     }
   }
 }
-
-.cta-person.cta-person-revers {
-  .cta-person__left {
-    order: 2;
-  }
-  .cta-person__right .img {
-    margin-left: 0;
-    margin-right: auto;
-  }
-}
-
 .cta-person.cta-person-bg-white {
   .cta-person__overlay {
-    background-image: url("../../img/bg-star.svg");
+    background-image: url(../img/bg-star.svg);
   }
   .cta-person__subtitle {
     color: $main100;

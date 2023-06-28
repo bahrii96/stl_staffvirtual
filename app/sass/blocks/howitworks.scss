@@ -6,6 +6,7 @@
   background-image: url(../img/base_bg.png);
   background-size: cover;
   background-position: top;
+
   &__title {
     max-width: clamp(550px, rem(640px), 640px);
     text-align: center;
@@ -72,7 +73,7 @@
       }
     }
   }
-  
+
   @include mq-inv-tablet {
     padding: clamp(40px, rem(64px), 64px) 0;
     &-items {
@@ -80,7 +81,7 @@
       gap: clamp(20px, rem(24px), 24px);
     }
     &-item {
-      width: calc(33.3333333333% - clamp(20px, rem(24px), 24px) + clamp(20px, rem(24px), 24px)/ 3);
+      width: calc(33.3333333333% - clamp(20px, rem(24px), 24px) + clamp(20px, rem(24px), 24px) / 3);
       &--image {
         width: clamp(130px, rem(160px), 160px);
         height: clamp(130px, rem(160px), 160px);
@@ -95,7 +96,6 @@
       }
     }
   }
-
 
   @include mq-inv-medium {
     padding-top: rem(30px);

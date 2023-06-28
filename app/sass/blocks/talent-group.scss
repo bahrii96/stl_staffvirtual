@@ -6,6 +6,7 @@
 
   &__overlay {
     position: absolute;
+
     width: 81%;
     top: 0;
 
@@ -115,8 +116,6 @@
     background: $mainLight5;
 
     img {
-      width: 100%;
-      height: 100%;
       object-fit: cover;
     }
   }
@@ -142,10 +141,11 @@
       display: grid;
 
       &:nth-child(1) {
-        grid-area: 1 / 1 / 1 / 1;
+        grid-area: 1/1/2/3;
 
         .talent-group__img {
-          max-height: clamp(180px, rem(200px), 200px);
+          aspect-ratio: 2.4;
+          max-height: clamp(380px, rem(380px), 380px);
         }
 
         .talent-group__inf {
@@ -167,10 +167,6 @@
           &-link {
             margin-top: 0;
           }
-        }
-
-        .talent-group__img {
-          max-height: rem(200px);
         }
       }
     }
@@ -211,7 +207,10 @@
     &__item {
       margin: 0 clamp(-24px, rem(-24px), -24px);
       &:nth-child(1) {
+        grid-area: 1/1/1/1;
+
         .talent-group__img {
+          aspect-ratio: 2.2;
           max-height: rem(150px);
         }
       }
