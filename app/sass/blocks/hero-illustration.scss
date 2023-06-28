@@ -1,0 +1,129 @@
+@use "../inc" as *;
+.hero-illustration {
+  position: relative;
+  padding: clamp(200px, rem(292px), 220px) 0 clamp(200px, rem(252px), 220px);
+
+  &__overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    svg {
+      width: 100%;
+      position: relative;
+      z-index: -1;
+    }
+  }
+
+  &__title {
+    max-width: clamp(530px, rem(548px), 548px);
+    margin-bottom: rem(41px);
+
+    .section_subtitle {
+      color: #00183b;
+      line-height: 1.25;
+    }
+
+    .section_title {
+      font-weight: 900;
+      font-size: clamp(40px, rem(48px), 48px);
+      line-height: 1.17;
+      letter-spacing: -0.04em;
+      color: #00183b;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: rem(24px);
+    margin-bottom: rem(32px);
+  }
+
+  &__description {
+    font-size: clamp(16px, rem(16px), 16px);
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    color: rgba(0, 24, 59, 0.5);
+  }
+
+  @include mq-inv-tablet {
+    padding: rem(80px) 0 rem(130px);
+
+    &__title {
+      margin-bottom: rem(35px);
+
+      .section_title {
+        font-size: clamp(24px, rem(32px), 32px);
+      }
+    }
+
+    &__buttons {
+      margin-bottom: rem(26px);
+    }
+
+    &__description {
+      font-size: clamp(14px, rem(16px), 16px);
+    }
+  }
+
+  @include mq-inv-medium {
+    padding: rem(50px) 0 rem(90px);
+
+    &__title {
+      margin-bottom: rem(10px);
+
+      .section_title {
+        font-size: clamp(20px, rem(20px), 24px);
+      }
+    }
+
+    &__buttons {
+      flex-direction: column;
+      gap: rem(5px);
+      margin-bottom: rem(10px);
+    }
+  }
+}
+@keyframes shipAnimation {
+  0% {
+    transform: rotate(0deg) translate(-2px, 0px);
+  }
+  25% {
+    transform: rotate(-0.35deg) translate(2px, -0.2px);
+  }
+  50% {
+    transform: rotate(0deg) translate(-2px, 0px);
+  }
+  75% {
+    transform: rotate(-0.35deg) translate(2px, -0.2px);
+  }
+  100% {
+    transform: rotate(0deg) translate(-2px, 0px);
+  }
+}
+@keyframes shipAnimation-ship {
+  0% {
+    transform: rotate(0.35deg) translate(2px, -0.2px);
+  }
+  25% {
+    transform: rotate(0deg) translate(-2px, 0px);
+  }
+  50% {
+    transform: rotate(0.35deg) translate(2px, -0.2px);
+  }
+  75% {
+    transform: rotate(0deg) translate(-2px, 0px);
+  }
+  100% {
+    transform: rotate(0.35deg) translate(2px, -0.2px);
+  }
+}
+
+.animation-illustration-ship {
+  transition: transform 0.4s ease-in-out;
+  animation: shipAnimation-ship 4s ease-in-out infinite;
+}
+.animation-illustration {
+  transition: transform 0.4s ease-in-out;
+  animation: shipAnimation 4s ease-in-out infinite;
+}

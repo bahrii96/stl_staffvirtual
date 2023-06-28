@@ -1,0 +1,194 @@
+@use "../inc" as *;
+.benefits {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(80px, rem(128px), 128px) 0;
+
+  &__overlay {
+    position: absolute;
+    width: 81%;
+    top: rem(-24px);
+
+    img {
+      object-fit: cover;
+    }
+  }
+  &__title {
+    max-width: clamp(550px, rem(640px), 640px);
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: clamp(86px, rem(122px), 120px);
+
+    .section_subtitle {
+      color: $main100;
+      font-weight: 900;
+    }
+
+    .section_title {
+      margin-bottom: rem(16px);
+    }
+
+    .section_description {
+      font-size: clamp(16px, rem(20px), 20px);
+      line-height: 1.4;
+      color: $lightRange100;
+      letter-spacing: -0.01em;
+      font-weight: 300;
+    }
+  }
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: clamp(40px, rem(50px), 50px);
+  }
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, rem(16px), 16px);
+    margin-bottom: rem(40px);
+    &:nth-last-child(-n + 3) {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__item-img {
+    height: clamp(50px, rem(64px), 64px);
+    width: clamp(50px, rem(64px), 64px);
+  }
+
+  &__item-information {
+    h3 {
+      font-weight: 700;
+      font-size: clamp(20px, rem(22px), 22px);
+      line-height: 1;
+      margin-bottom: rem(16px);
+    }
+    p {
+      font-weight: 300;
+      font-size: clamp(16px, rem(20px), 20px);
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+    }
+  }
+
+  @include mq-inv-tablet {
+    padding: clamp(40px, rem(64px), 64px) 0;
+    &__title {
+      margin-bottom: clamp(40px, rem(64px), 64px);
+      .section_description {
+        font-size: clamp(14px, rem(16px), 16px);
+      }
+    }
+    ul {
+      gap: clamp(16px, rem(24px), 24px);
+    }
+    li {
+      margin-bottom: 0;
+    }
+    &__item-information {
+      h3 {
+        font-size: clamp(16px, rem(18px), 18px);
+      }
+      p {
+        font-size: clamp(14px, rem(16px), 16px);
+      }
+    }
+  }
+
+  @include mq-inv-medium {
+    padding: clamp(40px, rem(40px), 64px) 0;
+    &__title {
+      margin-bottom: rem(24px);
+      .section_title {
+        margin-bottom: rem(8px);
+      }
+      .section_description {
+        font-size: clamp(14px, rem(14px), 16px);
+      }
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: rem(20px);
+    }
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: rem(10px);
+      margin-bottom: 0px;
+    }
+
+    &__item-img {
+      max-height: rem(50px);
+      max-width: rem(50px);
+      margin: 0 auto;
+      display: block;
+    }
+
+    &__item-information {
+      text-align: center;
+      h3 {
+        text-align: center;
+        font-size: clamp(16px, rem(16px), 18px);
+        margin-bottom: rem(10px);
+      }
+      p {
+        font-size: clamp(14px, rem(14px), 16px);
+      }
+    }
+  }
+
+  &.benefits-revers {
+    padding: clamp(80px, rem(128px), 128px) 0;
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, rem(60px), 60px);
+    }
+    li {
+      display: flex;
+      flex-direction: row;
+      gap: rem(30px);
+      margin-bottom: clamp(10px, rem(10px), 10px);
+      &:nth-last-child(-n + 2) {
+        margin-bottom: 0px;
+      }
+    }
+
+    .benefits__item-img {
+      height: clamp(100px, rem(128px), 128px);
+      flex: 0 0 clamp(100px, rem(128px), 128px);
+    }
+
+    @include mq-inv-tablet {
+      .benefits__item-img {
+        height: clamp(64px, rem(80px), 80px);
+        flex: 0 0 clamp(64px, rem(80px), 80px);
+      }
+    }
+
+    @include mq-inv-medium {
+      padding: rem(40px) 0;
+
+      ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: rem(20px);
+      }
+      li {
+        display: flex;
+        flex-direction: column;
+        gap: rem(10px);
+        margin-bottom: 0px;
+      }
+
+      .benefits__item-img {
+        max-height: rem(70px);
+        max-width: rem(70px);
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+}

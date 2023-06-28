@@ -1,0 +1,159 @@
+@use "../inc" as *;
+
+.our-guide {
+  position: relative;
+	overflow: hidden;
+  color: #00183b;
+  padding-top: rem(131px);
+
+  &__overlay {
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__overlay-bg {
+    position: absolute;
+    overflow: hidden;
+    bottom: rem(-10px);
+    left: 0;
+    // height: rem(65px);
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+  &__left {
+    position: relative;
+    z-index: 2;
+    padding-bottom: rem(131px);
+    width: 50%;
+  }
+  &__right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__img {
+    height: 100%;
+    display: flex;
+    @include extra-extra-large {
+      width: 80%;
+      width: clamp(450px, 80%, 450px);
+    }
+    img {
+      object-fit: contain;
+      object-position: bottom;
+    }
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: rem(32px);
+    font-size: clamp(28px, rem(32px), 32px);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    margin-bottom: rem(16px);
+    margin-bottom: clamp(14px, rem(16px), 16px);
+  }
+
+  &__subtitle {
+    font-weight: 300;
+    font-size: rem(20px);
+    font-size: clamp(18px, rem(20px), 20px);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    margin-bottom: rem(16px);
+    margin-bottom: clamp(14px, rem(16px), 16px);
+  }
+
+  &__description {
+    font-size: rem(16px);
+    font-size: clamp(14px, rem(16px), 16px);
+    line-height: 1.38;
+    letter-spacing: 0.01em;
+  }
+
+  .btn {
+    margin-top: rem(40px);
+    margin-top: clamp(30px, rem(40px), 40px);
+  }
+
+  @include mq-inv-tablet {
+    padding-top: 0;
+    &__content {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    &__img {
+      max-width: clamp(560px, rem(560px), 600px);
+      margin: 0 auto;
+    }
+    &__left {
+      padding-top: clamp(50px, rem(64px), 64px);
+      padding-bottom: clamp(70px, rem(96px), 96px);
+      width: 100%;
+    }
+    &__right {
+      width: 100%;
+    }
+    &__overlay {
+      display: none;
+    }
+  }
+
+  @include mq-inv-medium {
+    &__left {
+      padding-top: clamp(32px, rem(32px), 32px);
+      padding-bottom: clamp(40px, rem(40px), 50px);
+    }
+    h2 {
+      font-size: rem(20px);
+      font-size: clamp(20px, rem(20px), 22px);
+      line-height: 1.1;
+      margin-bottom: rem(12px);
+      margin-bottom: clamp(12px, rem(12px), 14px);
+    }
+
+    &__subtitle {
+      font-size: rem(14px);
+      font-size: clamp(14px, rem(14px), 16px);
+      line-height: 1.43;
+      margin-bottom: rem(12px);
+      margin-bottom: clamp(12px, rem(12px), 14px);
+    }
+
+    &__description {
+      font-size: rem(12px);
+      font-size: clamp(12px, rem(12px), 14px);
+      line-height: 1.41;
+    }
+
+    .btn {
+      margin-top: clamp(24px, rem(24px), 30px);;
+    }
+
+    &__overlay {
+      position: absolute;
+      height: 30%;
+      width: 100%;
+    }
+
+    &__overlay-bg {
+      display: none;
+    }
+
+    &__img {
+      max-height: 320rem;
+    }
+  }
+}

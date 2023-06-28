@@ -1,0 +1,166 @@
+@use "../inc" as *;
+.blog-slider {
+  padding: rem(80px) 0 rem(72px);
+  background: $softBlue;
+
+  h2 {
+    font-weight: 500;
+    font-size: clamp(18px, rem(20px), 20px);
+    line-height: 1.2;
+    margin-bottom: rem(48px);
+  }
+
+  &__slider {
+    margin-right: clamp(-64px, rem(-64px), -64px);
+  }
+
+  &__card {
+    border-radius: 4px;
+    border: 0.5px solid #e9eaec;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+
+    &-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $main100;
+      border-radius: 4px 4px 0 0;
+      aspect-ratio: 2.2;
+      width: 100%;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    &-information {
+      padding: 0 clamp(18px, rem(24px), 24px);
+      border-radius: 0 0 4px 4px;
+      padding-bottom: clamp(32px, rem(48px), 48px);
+      display: flex;
+      flex-direction: column;
+      flex: auto;
+    }
+
+    &-profile-img {
+      width: clamp(30px, rem(40px), 40px);
+      height: clamp(30px, rem(40px), 40px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $mainLight20;
+      border: 4px solid #fff;
+      margin-top: clamp(-17px, rem(-22px), -22px);
+      border-radius: 50%;
+      z-index: 1;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: clamp(10px, rem(14px), 14px);
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      &::before {
+        content: "";
+        width: 65%;
+        height: 65%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $main100;
+        border-radius: 50%;
+      }
+    }
+
+    &-subtitle {
+      color: $main100;
+      font-size: clamp(12px, rem(12px), 14px);
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+      margin-bottom: 4px;
+    }
+
+    &-title * {
+      font-size: clamp(18px, rem(20px), 20px);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: $lightRange100;
+      margin-bottom: clamp(14px, rem(16px), 16px);
+
+      &:hover {
+        color: $main100;
+      }
+    }
+
+    &-name {
+      font-size: clamp(12px, rem(12px), 14px);
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+      margin-top: auto;
+
+      strong {
+        font-weight: 700;
+      }
+    }
+  }
+
+  @include mq-inv-tablet {
+    padding: rem(60px) 0;
+
+    h2 {
+      margin-bottom: rem(30px);
+    }
+
+    &__card {
+      &-img {
+        aspect-ratio: 2.8;
+      }
+
+      &-information {
+        padding-bottom: clamp(20px, rem(32px), 32px);
+      }
+    }
+  }
+
+  @include mq-inv-medium {
+    padding: rem(40px) 0;
+
+    h2 {
+      font-size: clamp(16px, rem(18px), 18px);
+      margin-bottom: rem(20px);
+    }
+
+    &__slider {
+      margin: 0 clamp(-24px, rem(-24px), -24px);
+    }
+
+    &__card {
+      border-radius: 0;
+      &-img {
+        aspect-ratio: 2.28;
+      }
+      &-information {
+        padding: 0 clamp(24px, rem(24px), 60px);
+        padding-bottom: clamp(20px, 2rem, 32px);
+      }
+    }
+  }
+}

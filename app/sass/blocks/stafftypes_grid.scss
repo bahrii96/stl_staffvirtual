@@ -1,0 +1,137 @@
+@use '../inc' as *;
+
+$itemWidth: calc(100%/3);
+$itemsGap: clamp(18px, rem(24px), 24px);
+
+$itemWidthDefault: calc($itemWidth - $itemsGap + $itemsGap/3);
+$itemWidthWide: calc($itemWidth*2 - $itemsGap + $itemsGap/1.5);
+
+.stafftypes_grid {
+  padding: rem(96px) 0;
+  &__title {
+    text-align: center;
+    max-width: clamp(550px, rem(640px), 640px);
+    margin: 0 auto;
+    margin-bottom: rem(65px);
+    .section_subtitle {
+      color: $main100;
+    }
+  }
+  &-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $itemsGap;
+    margin-bottom: $itemsGap;
+  }
+  &-item {
+    display: flex;
+    flex-direction: column;
+    width: $itemWidthDefault;
+    margin-bottom: $itemsGap;
+    &:nth-child(10n - 8) {
+      width: $itemWidthWide;
+    }
+    &:nth-child(10n - 4) {
+      width: $itemWidthWide;
+    }
+    &--image {
+      height: rem(265px);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $mainLight5;
+      margin-bottom: $itemsGap;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+    }
+    &--subtitle {
+      display: inline-block;
+      font-size: clamp(14px, rem(14px), 14px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: $SoftRange100;
+      line-height: 1;
+      margin-top: 0;
+      margin-bottom: rem(4px);
+    }
+    &--title {
+      margin: 0;
+      display: inline-block;
+      font-size: clamp(20px, rem(24px), 24px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: $main100;
+      font-weight: 900;
+      a {
+        color: $main100;
+      }
+    }
+  }
+
+  @include mq-inv-tablet {
+    $itemWidth: 50%;
+    $itemsGap: clamp(20px, rem(24px), 24px);
+
+    $itemWidthDefault: calc($itemWidth - $itemsGap + $itemsGap/3);
+    $itemWidthWide: 100%;
+
+    padding: clamp(50px, rem(60px), 60px) 0;
+    &-items {
+      gap: $itemsGap;
+    }
+    &-item {
+      width: $itemWidthDefault;
+      margin-bottom: 0;
+      &:nth-child(10n - 8) {
+        width: $itemWidthDefault;
+      }
+      &:nth-child(10n - 4) {
+        width: $itemWidthDefault;
+      }
+      &--image {
+        height: rem(180px);
+      }
+      &--subtitle {
+        // font-size: rem(12px);
+      }
+      &--title {
+        font-size: clamp(18px, rem(18px), 20px);
+      }
+    }
+  }
+
+  @include mq-inv-medium {
+    $itemWidthDefault: 100%;
+    $itemWidthWide: 100%;
+
+    padding: rem(50px) 0;
+    &__title {
+      margin-bottom: rem(24px);
+    }
+    &-item {
+      width: $itemWidthDefault;
+      margin-bottom: 0;
+      &:nth-child(10n - 8) {
+        width: $itemWidthWide;
+      }
+      &:nth-child(10n - 4) {
+        width: $itemWidthWide;
+      }
+      &--image {
+        height: rem(180px);
+        margin-bottom: rem(12px);
+      }
+      &--subtitle {
+        font-size: clamp(12px, rem(12px), 14px);
+      }
+      &--title {
+        font-size: clamp(18px, rem(18px), 20px);
+      }
+    }
+  }
+}

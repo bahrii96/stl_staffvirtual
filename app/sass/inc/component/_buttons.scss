@@ -1,0 +1,57 @@
+// <buttons>===============================================================================================
+.btn {
+  font-family: "CircularXX";
+  font-style: normal;
+  font-weight: 900;
+  font-size: rem(18px);
+  font-size: clamp(16px, rem(18px), 20px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  border-radius: rem(4px);
+  display: inline-block;
+  text-align: center;
+  padding: rem(9px) rem(18px);
+  padding: clamp(8px, rem(9px), 10px) clamp(15px, rem(18px), 18px);
+  border: rem(2px) solid $main100;
+  transition: all 0.3s ease 0s;
+
+  &__white {
+    background-color: $softBlue;
+    color: $main100;
+    &:hover {
+      background-color: $main100;
+      color: #fff;
+    }
+  }
+
+  // .btn__blue
+  &__blue {
+    background-color: $main100;
+    color: #fff;
+    &:hover {
+      background-color: $softBlue;
+      color: $main100;
+    }
+  }
+
+  @include mq-inv-tablet {
+    font-size: clamp(14px, rem(14px), 18px);
+    padding: rem(8px) rem(14px);
+    //&:after {
+    //  content: "";
+    //  height: 100%;
+    //  display: inline-block;
+    //}
+  }
+
+  @include mq-inv-medium {
+    font-size: clamp(14px, rem(14px), 16px);
+    border-width: 1px;
+    width: auto;
+    padding: clamp(8px, rem(8px), 12px) clamp(12px, rem(12px), 16px);
+    //max-width: rem(185px);
+    //max-width: clamp(180px, rem(185px), 185px);
+  }
+}
+
+// </buttons>===============================================================================================

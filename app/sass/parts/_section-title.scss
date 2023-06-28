@@ -1,0 +1,40 @@
+.section_subtitle {
+  display: inline-block;
+  font-weight: 500;
+  font-size: rem(24px);
+  font-size: clamp(20px, rem(24px), 24px);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: rem(12px);
+  margin-bottom: clamp(12px, rem(12px), 14px);
+  color: $SoftRange100;
+
+  @include mq-inv-tablet {
+    font-size: clamp(18px, rem(20px), 20px);
+    margin-bottom: rem(8px);
+
+  }
+  @include mq-inv-medium {
+    font-size: clamp(16px, rem(18px), 18px);
+    margin-bottom: rem(4px);
+  }
+}
+
+.section_title {
+  font-weight: 700;
+  font-size: rem(40px);
+  font-size: clamp(35px, rem(40px), 40px);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: $lightRange100;
+  margin: 0;
+
+  @include mq-inv-tablet {
+    font-size: clamp(24px, rem(32px), 32px);
+  }
+
+  @include mq-inv-medium {
+    font-size: clamp(20px, rem(20px), 24px);
+    line-height: 1.1;
+  }
+}

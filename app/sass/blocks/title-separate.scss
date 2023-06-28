@@ -1,0 +1,55 @@
+@use "../inc" as *;
+
+.title-separate {
+  padding: rem(128px) 0 rem(92px) 0;
+
+  &__title {
+    max-width: clamp(550px, rem(640px), 640px);
+    margin: 0 auto;
+    text-align: center;
+
+    .section_subtitle {
+      color: $main100;
+    }
+
+    .section_title {
+      margin-bottom: rem(16px);
+    }
+
+    p {
+      font-size: clamp(16px, rem(20px), 20px);
+      line-height: 1.4;
+      color: $lightRange100;
+      letter-spacing: -0.01em;
+      font-weight: 300;
+    }
+  }
+  @include mq-inv-tablet {
+    padding: rem(60px) 0;
+
+    &__title {
+      max-width: clamp(550px, rem(640px), 640px);
+
+      p {
+        font-size: clamp(14px, rem(16px), 16px);
+      }
+    }
+  }
+  @include mq-inv-medium {
+    padding: rem(40px) 0;
+
+    &__title {
+      margin-bottom: rem(16px);
+
+      .section_title {
+        font-size: rem(18px);
+        line-height: 1.2;
+        margin-bottom: clamp(12px, rem(14px), 14px);
+      }
+
+      p {
+        font-size: clamp(14px, rem(14px), 14px);
+      }
+    }
+  }
+}

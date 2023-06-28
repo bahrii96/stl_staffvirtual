@@ -1,0 +1,111 @@
+@use "inc" as *;
+@import "inc/reset";
+@import "inc/fonts";
+@import "inc/global";
+@import "inc/component/buttons";
+
+html {
+  font-size: $html-font-size;
+  scroll-behavior: smooth;
+  @include extra-extra-large {
+    font-size: 1vw;
+  }
+  @include mq-inv-tablet {
+    font-size: vw-t(16px);
+  }
+  @include mq-inv-medium {
+    font-size: vw-m(16px);
+  }
+}
+
+body {
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.3;
+  font-family: $fontFamily;
+  color: $lightRange100;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  min-width: 320px;
+}
+
+.container {
+  max-width: $container;
+  width: 100%;
+  padding: 0 rem(64px);
+  margin: 0 auto;
+  position: relative;
+  &_inner {
+    padding: 0 rem(160px);
+  }
+  @include extra-extra-large {
+    max-width: 100%;
+    padding: 0 rem(24px);
+    padding: 0 clamp(20px, rem(24px), 24px);
+    &_inner {
+      padding: 0 rem(64px);
+      padding: 0 clamp(60px, rem(64px), 64px);
+    }
+  }
+  @include mq-inv-medium {
+    padding: 0 clamp(16px, rem(16px), 16px);
+    &_inner {
+      padding: 0 clamp(24px, rem(24px), 24px);
+    }
+  }
+}
+
+main {
+  position: relative;
+  max-width: 2500px;
+  margin: 0 auto;
+}
+
+//header & common
+@import "parts/header";
+@import "parts/section-title";
+@import "parts/layout";
+
+//pages
+@import "pages/page.scss";
+@import "pages/post.scss";
+@import "pages/blog-inner";
+@import "pages/glossary";
+
+//footer
+@import "parts/footer";
+
+//blocks {only if needed}
+@import "blocks/home-hero.scss";
+
+@import "blocks/process.scss";
+@import "blocks/blog-grid.scss";
+@import "blocks/stats.scss";
+@import "blocks/meet-candidates.scss";
+@import "blocks/meet.scss";
+@import "blocks/testimonials.scss";
+@import "blocks/our-guide.scss";
+@import "blocks/message.scss";
+@import "blocks/stories.scss";
+@import "blocks/flag-video.scss";
+@import "blocks/logo-section.scss";
+@import "blocks/cta-person.scss";
+@import "blocks/cta-video.scss";
+@import "blocks/stafftypes_grid.scss";
+@import "blocks/howitworks.scss";
+@import "blocks/benefits.scss";
+@import "blocks/faq.scss";
+@import "blocks/white-papers.scss";
+// ==new-section-page
+@import "blocks/clients.scss";
+@import "blocks/step-process.scss";
+@import "blocks/img-box.scss";
+@import "blocks/talent-group.scss";
+@import "blocks/section-form";
+@import "blocks/collection";
+@import "blocks/title-separate";
+@import "blocks/hero-minus";
+@import "blocks/blog-slider";
+@import "blocks/hero-illustration";
+@import "blocks/testimonials-star";
+@import "blocks/video-box";

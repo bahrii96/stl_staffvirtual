@@ -1,0 +1,229 @@
+@use "../inc" as *;
+.step-process {
+  position: relative;
+  overflow: hidden;
+  padding-top: rem(128px);
+  padding-bottom: rem(160px);
+  background: $softBlue;
+
+  &__overlay {
+    position: absolute;
+    width: 81%;
+    top: rem(-60px);
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    max-width: clamp(550px, rem(640px), 640px);
+    text-align: center;
+    margin: 0 auto;
+
+    .section_subtitle {
+      color: $main100;
+      font-weight: 700;
+    }
+
+    .section_title {
+      margin-bottom: rem(16px);
+    }
+
+    p {
+      font-size: clamp(18px, rem(20px), 20px);
+      line-height: 1.4;
+      color: $lightRange90;
+      letter-spacing: -0.01em;
+      font-weight: 300;
+    }
+  }
+
+  &__box {
+    margin-top: rem(64px);
+    margin-bottom: rem(128px);
+    background: $softBlue;
+  }
+
+  &__item {
+    display: flex;
+    gap: clamp(80px, rem(96px), 96px);
+    padding: rem(96px);
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 100%;
+      width: rem(2px);
+      position: absolute;
+      background: #98acc2;
+      left: rem(115px);
+    }
+
+    &:last-child {
+      &::after {
+        height: rem(0px);
+      }
+    }
+  }
+
+  &__item-step {
+    width: rem(40px);
+    height: 50%;
+    background-color: $softBlue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 4;
+    padding: rem(24px) 0;
+    margin: rem(-24px) 0;
+
+    &-number {
+      font-weight: 700;
+      font-size: clamp(34px, rem(40px), 40px);
+      text-align: center;
+      letter-spacing: -0.04em;
+      color: #00183b;
+    }
+
+    &-step {
+      font-weight: 500;
+      font-size: clamp(16px, rem(18px), 18px);
+      letter-spacing: -0.04em;
+      top: 0;
+    }
+  }
+
+  &__item-content {
+    color: #00183b;
+
+    h3 {
+      font-weight: 700;
+      font-size: clamp(28px, rem(32px), 32px);
+      line-height: 1.38;
+      letter-spacing: -0.06em;
+      margin-bottom: rem(14px);
+    }
+
+    p {
+      font-weight: 300;
+      font-size: clamp(18px, rem(20px), 20px);
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+    }
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: rem(24px);
+  }
+
+  @include mq-inv-tablet {
+    padding-top: clamp(60px, rem(100px), 100px);
+    padding-bottom: clamp(60px, rem(100px), 100px);
+
+    &__overlay {
+      display: none;
+    }
+
+    &__title {
+      max-width: clamp(550px, rem(640px), 640px);
+
+      .section_title {
+        margin-bottom: rem(14px);
+      }
+
+      p {
+        font-size: clamp(14px, rem(16px), 16px);
+      }
+    }
+
+    &__box {
+      margin-top: clamp(34px, rem(40px), 40px);
+      margin-bottom: clamp(34px, rem(40px), 40px);
+    }
+
+    &__item {
+      gap: clamp(20px, rem(30px), 30px);
+      padding: clamp(30px, rem(40px), 40px);
+
+      &::after {
+        left: clamp(52px, rem(54px), 54px);
+      }
+    }
+
+    &__item-step {
+      font-size: clamp(24px, rem(26px), 26px);
+      width: clamp(40px, rem(50px), 50px);
+
+      &-number {
+        font-size: clamp(24px, rem(26px), 26px);
+      }
+      &-step {
+        font-size: clamp(14px, rem(16px), 16px);
+      }
+    }
+
+    &__item-content {
+      h3 {
+        font-size: clamp(24px, rem(26px), 26px);
+        margin-bottom: rem(10px);
+      }
+
+      p {
+        font-size: clamp(14px, rem(16px), 16px);
+      }
+    }
+    &__buttons {
+      margin-top: rem(20px);
+    }
+  }
+  @include mq-inv-medium {
+    padding-top: clamp(40px, rem(60px), 60px);
+    padding-bottom: clamp(40px, rem(60px), 60px);
+
+    p {
+      font-size: clamp(14px, rem(14px), 16px);
+    }
+
+    &__box {
+      margin-top: clamp(16px, rem(20px), 20px);
+      margin-bottom: clamp(16px, rem(20px), 20px);
+    }
+
+    &__item {
+      padding: clamp(16px, rem(20px), 20px);
+      gap: clamp(10px, rem(15px), 15px);
+
+      &::after {
+        left: clamp(30px, rem(32px), 32px);
+        width: 1px;
+      }
+    }
+
+    &__item-step {
+      padding: rem(10px) 0;
+      margin: rem(-10px) 0;
+
+      &-number {
+        font-size: clamp(16px, rem(18px), 18px);
+      }
+
+      &-step {
+        font-size: clamp(12px, rem(14px), 14px);
+      }
+    }
+
+    &__item-content {
+      h3 {
+        font-size: clamp(16px, rem(18px), 18px);
+      }
+
+      p {
+        font-size: clamp(14px, rem(14px), 16px);
+      }
+    }
+  }
+}

@@ -1,0 +1,312 @@
+@use "../inc" as *;
+
+.blog-grid {
+  position: relative;
+  overflow: hidden;
+  padding: rem(80px) 0;
+  background-color: $softBlue;
+
+  &__overlay {
+    position: absolute;
+    width: 81%;
+    top: rem(-50px);
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: clamp(18px, rem(20px), 20px);
+    line-height: 1.2;
+    margin-bottom: rem(32px);
+  }
+
+  &__box {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: clamp(16px, rem(24px), 24px);
+
+    display: grid;
+    grid-template-columns: repeat(2, auto) repeat(2, auto);
+  }
+
+  &__card {
+    border-radius: 4px;
+    border: 0.5px solid #e9eaec;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+
+    &-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $main100;
+      border-radius: 4px 4px 0 0;
+      aspect-ratio: 2.2;
+      width: 100%;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    &-information {
+      padding: 0 clamp(18px, rem(24px), 24px);
+      border-radius: 0 0 4px 4px;
+      padding-bottom: clamp(32px, rem(48px), 48px);
+      display: flex;
+      flex-direction: column;
+      flex: auto;
+    }
+
+    &-profile-img {
+      width: clamp(30px, rem(40px), 40px);
+      height: clamp(30px, rem(40px), 40px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $mainLight20;
+      border: 4px solid #fff;
+      margin-top: clamp(-17px, rem(-22px), -22px);
+      border-radius: 50%;
+      z-index: 1;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: clamp(10px, rem(14px), 14px);
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      &::before {
+        content: '';
+        width: 65%;
+        height: 65%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $main100;
+        border-radius: 50%;
+      }
+    }
+
+    &-subtitle {
+      color: $main100;
+      font-size: clamp(12px, rem(12px), 14px);
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+      margin-bottom: 4px;
+    }
+
+    &-title * {
+      font-size: clamp(18px, rem(20px), 20px);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: $lightRange100;
+      margin-bottom: clamp(14px, rem(16px), 16px);
+
+      &:hover {
+        color: $main100;
+      }
+    }
+
+    &-name {
+      font-size: clamp(12px, rem(12px), 14px);
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+      margin-top: auto;
+
+      strong {
+        font-weight: 700;
+      }
+    }
+
+    &:nth-child(1) {
+      grid-area: 1 / 1 / 3 / 3;
+
+      .blog-grid__card {
+        &-img {
+          aspect-ratio: 1.9;
+        }
+
+        &-information {
+          padding: 0 clamp(24px, rem(32px), 32px);
+          padding-bottom: clamp(32px, rem(48px), 48px);
+        }
+
+        &-profile-img {
+          margin-bottom: clamp(16px, rem(24px), 24px);
+          width: clamp(50px, rem(70px), 70px);
+          height: clamp(50px, rem(70px), 70px);
+          border: 4px solid #fff;
+          margin-top: clamp(-25px, rem(-35px), -35px);
+          border-radius: 50%;
+        }
+
+        &-subtitle {
+          font-size: clamp(14px, rem(14px), 14px);
+        }
+
+        &-title {
+          font-size: clamp(20px, rem(24px), 24px);
+        }
+
+        &-name {
+          margin-bottom: clamp(24px, rem(32px), 32px);
+        }
+
+        &-description {
+          display: inline-block;
+          margin-bottom: clamp(24px, rem(32px), 32px);
+
+
+          p {
+            font-size: clamp(14px, rem(14px), 16px);
+            line-height: 1.3;
+            letter-spacing: 0.02em;
+            color: $lightRange100;
+          }
+        }
+
+        &-time-link {
+          margin-top: auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          div {
+            font-size: clamp(12px, rem(12px), 14px);
+            color: $lightRange80;
+            letter-spacing: 0.01em;
+            line-height: 1.2;
+          }
+
+          a {
+            font-size: clamp(12px, rem(12px), 14px);
+            line-height: 1.2;
+            color: $main100;
+          }
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      grid-area: 1 / 3 / 2 / 4;
+    }
+
+    &:nth-child(3) {
+      grid-area: 1 / 4 / 2 / 5;
+    }
+
+    &:nth-child(4) {
+      grid-area: 2 / 3 / 3 / 4;
+    }
+
+    &:nth-child(5) {
+      grid-area: 2 / 4 / 3 / 5;
+    }
+  }
+
+  @include mq-inv-tablet {
+    &__box {
+      gap: clamp(16px, rem(24px), 24px);
+      grid-template-columns: repeat(2, auto);
+    }
+
+    &__card {
+      &-img {
+        aspect-ratio: 2.8;
+      }
+
+      &-information {
+        padding-bottom: clamp(20px, rem(32px), 32px);
+      }
+
+
+      &:nth-child(1) {
+        grid-area: 1 / 1 / 3 / 3;
+        .blog-grid__card {
+          &-img {
+            aspect-ratio: 3.4;
+          }
+        } 
+      }
+
+      &:nth-child(2) {
+        grid-area: 3 / 1 / 4 / 2;
+      }
+
+      &:nth-child(3) {
+        grid-area: 3 / 2 / 4 / 3;
+      }
+
+      &:nth-child(4) {
+        grid-area: 4 / 1 / 5 / 2;
+      }
+
+      &:nth-child(5) {
+        grid-area: 4 / 2 / 5 / 3;
+      }
+    }
+  }
+
+
+  @include mq-inv-medium {
+    padding: clamp(48px, rem(48px), 64px) 0;
+
+    &__overlay {
+      display: none;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    &__box {
+      margin: 0 clamp(-24px, rem(-48px), -60px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__card {
+      border-radius: 0;
+      &-img {
+        aspect-ratio: 2.28;
+      }
+      &-information {
+        padding: 0 clamp(24px, rem(24px), 60px);
+        padding-bottom: clamp(20px,2rem,32px);
+      }
+
+      &:nth-child(1) {
+        .blog-grid__card {
+          &-information {
+            padding: 0 clamp(24px, rem(24px), 60px);
+            padding-bottom: clamp(20px,2rem,32px);
+          }
+          &-img {
+            aspect-ratio: 1.3;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,256 @@
+@use "../inc" as *;
+.illustration-text {
+  padding: rem(24px);
+  background-color: $mainLight5;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: rem(34px);
+
+  &__left {
+    max-height: clamp(370px, rem(384px), 384px);
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    font-size: clamp(16px, rem(16px), 16px);
+    line-height: 1.5;
+  }
+
+  @include mq-inv-tablet {
+    grid-template-columns: 1fr;
+    gap: rem(20px);
+    &__left {
+      max-height: clamp(150px, rem(200px), 200px);
+    }
+  }
+
+  @include mq-inv-medium {
+    grid-template-columns: 1fr;
+    gap: rem(15px);
+    &__left {
+      max-height: clamp(100px, rem(150px), 150px);
+    }
+    &__right {
+      font-size: clamp(14px, rem(16px), 16px);
+    }
+  }
+}
+
+.block-quote {
+  padding: rem(64px) rem(96px);
+  background-color: $mainLight5;
+  background-image: url(../img/quote.svg);
+  background-size: rem(234px);
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__description {
+    font-weight: 300;
+    font-size: clamp(20px, rem(24px), 24px);
+
+    letter-spacing: 0.01em;
+  }
+  @include mq-inv-tablet {
+    padding: rem(60px) rem(60px);
+    background-size: rem(150px);
+
+    &__description {
+      font-size: clamp(20px, rem(22px), 22px);
+    }
+  }
+  @include mq-inv-medium {
+    padding: rem(40px) rem(20px);
+    background-size: rem(100px);
+
+    &__description {
+      font-size: clamp(18px, rem(20px), 20px);
+    }
+  }
+}
+
+.illustration-text-quote {
+  padding: rem(24px);
+  background-color: $mainLight5;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: rem(34px);
+
+  &__left {
+    max-height: clamp(370px, rem(384px), 384px);
+  }
+
+  &__right {
+    background-color: $mainLight5;
+    background-image: url(../img/quote.svg);
+    background-size: rem(234px);
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+
+    font-weight: 300;
+    font-size: clamp(20px, rem(24px), 24px);
+    line-height: 1.33;
+    letter-spacing: 0.01em;
+  }
+
+  @include mq-inv-tablet {
+    grid-template-columns: 1fr;
+    gap: rem(20px);
+
+    &__left {
+      max-height: clamp(150px, rem(200px), 200px);
+    }
+    &__right {
+      background-size: rem(150px);
+      font-size: clamp(20px, rem(22px), 22px);
+    }
+  }
+
+  @include mq-inv-medium {
+    grid-template-columns: 1fr;
+    gap: rem(15px);
+
+    &__left {
+      max-height: clamp(100px, rem(150px), 150px);
+    }
+    &__right {
+      background-size: rem(100px);
+      font-size: clamp(18px, rem(20px), 20px);
+    }
+  }
+}
+
+.cta-video-call {
+  padding: rem(8px);
+  background: #fcfcfd;
+  &__box {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: rem(65px);
+  }
+
+  // cta-video-call__left
+
+  &__video {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1.7;
+    box-shadow: 0px 4px 44px rgba(14, 65, 120, 0.2);
+    border-radius: 4px;
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__poster {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $main100;
+    border-radius: rem(4px);
+    img {
+      object-fit: contain;
+    }
+  }
+
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    img {
+      transition: transform 0.3s ease;
+    }
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  // cta-video-call__right
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    margin-right: rem(40px);
+  }
+
+  &__plan {
+    font-weight: 300;
+    font-size: clamp(18px, rem(20px), 20px);
+    line-height: 1.4;
+    text-align: right;
+    letter-spacing: -0.01em;
+    color: #1b4e87;
+    margin-bottom: rem(16px);
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: clamp(20px, rem(24px), 24px);
+    line-height: 1.08;
+    text-align: right;
+    letter-spacing: -0.03em;
+    color: #1b4e87;
+    margin-bottom: rem(30px);
+    span {
+      display: block;
+      margin-top: rem(4px);
+      font-weight: 400;
+      font-size: clamp(16px, rem(18px), 18px);
+      line-height: 1.33;
+      text-align: right;
+      letter-spacing: 0.1em;
+    }
+  }
+  @include mq-inv-tablet {
+    &__box {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: rem(20px);
+    }
+    &__video {
+      aspect-ratio: 1.9;
+    }
+
+    &__plan {
+      font-size: clamp(18px, rem(18px), 18px);
+      margin-bottom: rem(10px);
+    }
+
+    &__name {
+      margin-bottom: rem(20px);
+    }
+  }
+
+  @include mq-inv-medium {
+    &__right {
+      margin-right: 0;
+    }
+    &__plan {
+      font-size: clamp(16px, rem(18px), 18px);
+      margin-bottom: rem(10px);
+    }
+
+    &__name {
+      font-size: clamp(18px, rem(20px), 20px);
+      margin-bottom: rem(10px);
+      span {
+        font-size: clamp(14px, rem(16px), 16px);
+      }
+    }
+    .btn {
+      max-width: 100%;
+    }
+  }
+}

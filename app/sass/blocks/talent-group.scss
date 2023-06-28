@@ -1,0 +1,236 @@
+@use "../inc" as *;
+.talent-group {
+  position: relative;
+  overflow: hidden;
+  padding: rem(80px) 0 rem(102px);
+
+  &__overlay {
+    position: absolute;
+    width: 81%;
+    top: 0;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: clamp(22px, rem(24px), 24px);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: #00183b;
+    margin-bottom: clamp(46px, rem(54px), 54px);
+  }
+
+  &__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: rem(24px);
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 0.67fr 1.33fr;
+    border-radius: rem(4px);
+    border: 0.5px solid #e9eaec;
+
+    &:nth-child(1) {
+      grid-area: 1 / 1 / 3 / 2;
+      grid-template-columns: 1fr;
+      background: $white;
+      .talent-group__img {
+        max-height: rem(280px);
+        overflow: hidden;
+
+        img {
+          object-position: top;
+        }
+      }
+      .talent-group__inf {
+        padding: rem(25px) rem(24px) rem(24px) rem(36px);
+
+        h3 {
+          font-weight: 700;
+          font-size: clamp(18px, rem(18px), 18px);
+          line-height: 1.2;
+          text-align: left;
+          margin-bottom: rem(12px);
+        }
+
+        &-descr {
+          font-weight: 400;
+          font-size: clamp(16px, rem(16px), 16px);
+          line-height: 1.25;
+          letter-spacing: 0.01em;
+          text-align: left;
+          max-width: 65%;
+          margin-bottom: rem(0px);
+        }
+
+        &-link {
+          margin-top: rem(-18px);
+        }
+      }
+    }
+  }
+
+  &__inf {
+    padding: rem(40px) rem(48px) rem(24px) rem(23px);
+    background: $white;
+
+    h3 {
+      font-weight: 900;
+      font-size: clamp(20px, rem(22px), 22px);
+      line-height: 1.22;
+      text-align: right;
+      letter-spacing: -0.03em;
+      margin-bottom: rem(4px);
+    }
+
+    &-descr {
+      font-weight: 300;
+      font-size: clamp(16px, rem(18px), 18px);
+      line-height: 1.11;
+      text-align: right;
+      letter-spacing: 0.01em;
+      color: #4a525f;
+      margin-bottom: rem(60px);
+    }
+
+    &-link {
+      font-weight: 700;
+      font-size: clamp(14px, rem(14px), 14px);
+      line-height: 1.2;
+      text-align: right;
+
+      a {
+        color: #1975d7;
+      }
+    }
+  }
+
+  &__img {
+    background: $mainLight5;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @include mq-inv-tablet {
+    padding: rem(60px) 0 rem(80px);
+
+    &__overlay {
+      display: none;
+    }
+
+    h2 {
+      font-size: clamp(18px, rem(20px), 20px);
+      margin-bottom: clamp(40px, rem(44px), 44px);
+    }
+
+    &__box {
+      gap: rem(15px);
+    }
+
+    &__item {
+      grid-template-columns: 1fr;
+      display: grid;
+
+      &:nth-child(1) {
+        grid-area: 1 / 1 / 1 / 1;
+
+        .talent-group__img {
+          max-height: clamp(180px, rem(200px), 200px);
+        }
+
+        .talent-group__inf {
+          padding: clamp(14px, rem(16px), 16px);
+
+          h3 {
+            text-align: right;
+            font-size: clamp(18px, rem(18px), 18px);
+            margin-bottom: rem(4px);
+          }
+
+          &-descr {
+            text-align: right;
+            font-size: clamp(16px, rem(16px), 16px);
+            max-width: 100%;
+            margin-bottom: rem(10px);
+          }
+
+          &-link {
+            margin-top: 0;
+          }
+        }
+
+        .talent-group__img {
+          max-height: rem(200px);
+        }
+      }
+    }
+
+    &__inf {
+      padding: clamp(14px, rem(16px), 16px);
+
+      h3 {
+        font-size: clamp(18px, rem(18px), 18px);
+      }
+      &-descr {
+        font-size: clamp(16px, rem(16px), 16px);
+        margin-bottom: rem(10px);
+      }
+    }
+    &__img {
+      max-height: rem(200px);
+
+      img {
+        object-fit: cover;
+        object-position: top;
+      }
+    }
+  }
+
+  @include mq-inv-medium {
+    padding: rem(40px) 0 rem(40px);
+
+    h2 {
+      margin-bottom: clamp(20px, rem(24px), 24px);
+    }
+
+    &__box {
+      grid-template-columns: 1fr;
+      gap: rem(15px);
+    }
+
+    &__item {
+      margin: 0 clamp(-24px, rem(-24px), -24px);
+      &:nth-child(1) {
+        .talent-group__img {
+          max-height: rem(150px);
+        }
+      }
+      grid-template-columns: 1fr;
+      display: grid;
+    }
+
+    &__inf {
+      h3 {
+        font-size: clamp(18px, rem(20px), 20px);
+      }
+
+      &-descr {
+        font-size: clamp(16px, rem(18px), 18px);
+      }
+    }
+
+    &__img {
+      max-height: rem(150px);
+    }
+  }
+}

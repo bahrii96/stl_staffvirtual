@@ -1,0 +1,50 @@
+@use "../inc" as *;
+.hero-minus {
+  position: relative;
+  padding-top: clamp(140px, rem(160px), 160px);
+  padding-bottom: clamp(180px, rem(194px), 194px);
+  margin-bottom: rem(-80px);
+  overflow: hidden;
+  &__overlay {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    img {
+      object-fit: cover;
+      object-position: top;
+      height: 100%;
+      width: 100%;
+    }
+    &-bottom {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+    }
+  }
+
+  &__title {
+    max-width: rem(800px);
+    margin: 0 auto;
+    text-align: center;
+
+    .section_subtitle {
+      font-weight: 700;
+      color: $mainLight20;
+    }
+
+    .section_title {
+      color: $white;
+    }
+  }
+  @include mq-inv-tablet {
+    padding-top: clamp(90px, rem(100px), 100px);
+    padding-bottom: clamp(110px, rem(120px), 120px);
+    margin-bottom: rem(-60px);
+  }
+  @include mq-inv-medium {
+    padding-top: clamp(30px, rem(40px), 40px);
+    padding-bottom: clamp(40px, rem(50px), 50px);
+    margin-bottom: rem(-20px);
+  }
+}

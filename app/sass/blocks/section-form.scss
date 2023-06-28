@@ -1,0 +1,201 @@
+@use "../inc" as *;
+
+.section-form {
+  position: relative;
+  overflow: hidden;
+  padding: rem(120px) 0 rem(56px);
+  // background: $softBlue;
+
+  &__overlay {
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    top: 0;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(80px);
+
+    h2 {
+      font-weight: 500;
+      font-size: clamp(18px, rem(20px), 20px);
+      line-height: 1.2;
+      margin-bottom: rem(40px);
+    }
+  }
+
+  &__left,
+  &__right {
+    width: calc((100% - (80px)) / 2);
+  }
+
+  // .section-form__left
+  &__left {
+    ul {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: rem(48px);
+    }
+
+    li {
+      flex-basis: calc(50% - rem(24px));
+      max-width: rem(260px);
+
+      h3 {
+        position: relative;
+        font-size: clamp(16px, rem(16px), 16px);
+        font-weight: 500;
+        line-height: 1.25;
+        letter-spacing: 0.02em;
+        margin-bottom: rem(12px);
+
+        &:after {
+          content: "";
+          position: absolute;
+          background-image: url("../../img/arrow-black.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 50%;
+          height: 50%;
+          top: 43%;
+          transform: translateY(-50%);
+          margin-left: rem(2px);
+        }
+      }
+
+      p {
+        font-size: clamp(14px, rem(14px), 14px);
+        line-height: 1.43;
+        letter-spacing: 0.01em;
+        color: #333d4c;
+      }
+    }
+  }
+
+  &__form {
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: rem(24px);
+    }
+
+    .form-two-input {
+      display: flex;
+      gap: rem(24px);
+
+      span {
+        width: 100%;
+      }
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      &::placeholder {
+        font-size: clamp(14px, rem(16px), 16px);
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+        font-weight: 500;
+        color: #777e87;
+      }
+
+      font-size: clamp(14px, rem(16px), 16px);
+      font-family: "CircularXX";
+      font-weight: 500;
+      width: 100%;
+      padding: rem(14px);
+      color: #777e87;
+      background: #f8fafb;
+      border: none;
+    }
+  }
+
+  .btn {
+    margin-left: auto;
+  }
+
+  @include mq-inv-tablet {
+    padding: clamp(64px, rem(80px), 80px) 0;
+
+    &__left {
+      ul {
+        gap: rem(30px);
+      }
+
+      li {
+        flex-basis: calc(50% - rem(15px));
+        max-width: clamp(260px, rem(300px), 300px);
+
+        h3 {
+          margin-bottom: rem(8px);
+        }
+      }
+    }
+
+    &__box {
+      flex-direction: column;
+      gap: rem(20px);
+
+      h2 {
+        margin-bottom: rem(20px);
+      }
+    }
+    &__left,
+    &__right {
+      width: 100%;
+    }
+    &__form {
+      form {
+        gap: rem(15px);
+      }
+
+      .form-two-input {
+        gap: rem(15px);
+      }
+    }
+  }
+
+  @include mq-inv-medium {
+    padding: clamp(40px, rem(40px), 64px) 0;
+
+    &__left {
+      ul {
+        gap: rem(20px);
+      }
+
+      li {
+        flex-basis: calc(50% - rem(10px));
+      }
+    }
+
+    &__form {
+      form {
+        gap: rem(10px);
+      }
+
+      .form-two-input {
+        gap: rem(10px);
+        flex-direction: column;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea,
+      select {
+        padding: rem(6px);
+      }
+
+      .wpcf7-not-valid-tip {
+        font-size: clamp(14px, rem(16px), 16px);
+      }
+    }
+  }
+}

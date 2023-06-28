@@ -1,0 +1,242 @@
+@use "../inc" as *;
+.glossary {
+  background-color: $softBlue;
+  padding-bottom: rem(96px);
+
+  &__box {
+    position: relative;
+    background-color: $white;
+    padding: rem(64px);
+    z-index: 3;
+  }
+
+  &__header {
+    border: 0.5px solid #eef2f5;
+    border-radius: rem(4px);
+    padding: rem(32px) rem(24px);
+    margin-bottom: rem(32px);
+  }
+
+  &__search {
+    position: relative;
+    margin-bottom: rem(24px);
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url("../../img/search.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: clamp(16px, rem(18px), 18px);
+      height: clamp(16px, rem(18px), 18px);
+      right: rem(16px);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &-form {
+      position: relative;
+      background: #f8fafb;
+      border-radius: rem(4px);
+      width: 100%;
+      padding: rem(14px);
+      font-weight: 500;
+      font-size: clamp(16px, rem(16px), 16px);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+
+      &::placeholder {
+        color: #537599;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(14px);
+
+    li {
+      font-weight: 700;
+      font-size: clamp(18px, rem(20px), 20px);
+      letter-spacing: -0.01em;
+      color: #98acc2;
+      background: #f8fafb;
+      border-radius: rem(4px);
+      padding: rem(4px) rem(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    li.active {
+      background: #ffffff;
+      border: 1px solid #bac8d6;
+      border-radius: rem(4px);
+    }
+  }
+
+  &__row {
+    margin-bottom: rem(32px);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__row-title {
+    font-weight: 900;
+    font-size: clamp(36px, rem(40px), 40px);
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    padding: rem(24px) rem(32px);
+    margin-bottom: rem(32px);
+  }
+
+  &__item {
+    background: #ffffff;
+    border: 0.5px solid #dde3eb;
+    border-radius: rem(4px);
+    padding: rem(48px) rem(80px) rem(48px) rem(32px);
+    margin-bottom: rem(32px);
+    display: grid;
+    gap: clamp(32px, rem(48px), 48px);
+    grid-template-columns: 0.8fr 1.2fr;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: clamp(22px, rem(24px), 24px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: clamp(16px, rem(18px), 18px);
+      line-height: 1.33;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  @include mq-inv-tablet {
+    padding-bottom: rem(60px);
+    &__box {
+      padding: rem(30px);
+    }
+
+    &__header {
+      padding: rem(20px) rem(16px);
+      margin-bottom: rem(20px);
+    }
+
+    &__search {
+      position: relative;
+      margin-bottom: rem(16px);
+
+      &-form {
+        //padding: rem(10px);
+
+        &::placeholder {
+          font-size: clamp(12px, rem(14px), 14px);
+        }
+      }
+    }
+
+    &__nav {
+      gap: rem(10px);
+
+      li {
+        padding: rem(3px) rem(8px);
+        font-size: clamp(16px, rem(18px), 18px);
+      }
+    }
+
+    &__row {
+      margin-bottom: rem(20px);
+    }
+
+    &__row-title {
+      font-size: clamp(30px, rem(32px), 32px);
+      padding: rem(16px) rem(20px);
+      margin-bottom: rem(20px);
+    }
+
+    &__item {
+      padding: rem(30px) rem(40px) rem(30px) rem(30px);
+      margin-bottom: rem(20px);
+      gap: clamp(28px, rem(30px), 30px);
+
+      &-title {
+        font-size: clamp(18px, rem(20px), 20px);
+      }
+
+      &-text {
+        font-size: clamp(14px, rem(16px), 16px);
+      }
+    }
+  }
+  @include mq-inv-medium {
+    padding-bottom: rem(40px);
+
+    &__box {
+      padding: rem(10px);
+    }
+
+    &__header {
+      padding: rem(16px) rem(10px);
+      margin-bottom: rem(16px);
+    }
+
+    &__search {
+      position: relative;
+      margin-bottom: rem(10px);
+
+      &-form {
+        padding: rem(4px);
+
+        &::placeholder {
+          font-size: clamp(12px, rem(14px), 14px);
+        }
+      }
+    }
+
+    &__nav {
+      gap: rem(10px);
+
+      li {
+        padding: rem(3px) rem(6px);
+        font-size: clamp(14px, rem(16px), 16px);
+      }
+    }
+
+    &__row {
+      margin-bottom: rem(16px);
+    }
+
+    &__row-title {
+      font-size: clamp(18px, rem(22px), 22px);
+      padding: rem(4px) rem(16px);
+      margin-bottom: rem(16px);
+    }
+
+    &__item {
+      padding: rem(16px);
+      margin-bottom: rem(16px);
+      gap: clamp(10px, rem(16px), 16px);
+      grid-template-columns: 1fr;
+
+      &-title {
+        font-size: clamp(16px, rem(18px), 18px);
+      }
+
+      &-text {
+        font-size: clamp(14px, rem(14px), 16px);
+      }
+    }
+  }
+}

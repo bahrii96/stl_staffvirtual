@@ -1,0 +1,196 @@
+@use "../inc" as *;
+
+.stories {
+  position: relative;
+  overflow: hidden;
+  padding: rem(120px) 0 0;
+  &__overlay {
+    position: absolute;
+    height: 86%;
+    width: 80%;
+    top: rem(-40px);
+    img {
+      object-fit: cover;
+    }
+  }
+  &__title {
+    max-width: clamp(550px, rem(640px), 640px);
+    margin: 0 auto;
+    text-align: center;
+    h2 {
+      line-height: 1.1;
+      letter-spacing: -0.06em;
+    }
+    .section_subtitle {
+      color: $lightRange100;
+    }
+  }
+
+  &__box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  &__card {
+    transition: transform 1s ease;
+
+    padding: rem(40px) rem(20px);
+    &:nth-child(1) {
+      transform: rotate(2deg);
+      margin-top: rem(32px);
+      &:hover {
+        animation: shake 3s ease-in-out infinite;
+      }
+    }
+    &:nth-child(2) {
+      transform: rotate(-2deg);
+      &:hover {
+        animation: shake-two 3s ease-in-out infinite;
+      }
+    }
+    &:nth-child(3) {
+      transform: rotate(2deg);
+      &:hover {
+        animation: shake 3s ease-in-out infinite;
+      }
+    }
+    &:nth-child(4) {
+      transform: rotate(-2deg);
+      margin-top: rem(32px);
+      &:hover {
+        animation: shake-two 3s ease-in-out infinite;
+      }
+    }
+
+    @keyframes shake {
+      0% {
+        transform: rotate(2deg);
+      }
+      25% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(2deg);
+      }
+      75% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(2deg);
+      }
+    }
+
+    @keyframes shake-two {
+      0% {
+        transform: rotate(-2deg);
+      }
+      25% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(-2deg);
+      }
+      75% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(-2deg);
+      }
+    }
+  }
+  &__card-img {
+    img {
+      aspect-ratio: 0.97;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__card-description {
+    font-family: "Gloria Hallelujah";
+    font-size: clamp(18px, rem(22px), 22px);
+    line-height: 1.14;
+    letter-spacing: -0.04em;
+    color: #00183b;
+    margin-top: rem(20px);
+  }
+  &__logo-box {
+    margin-top: rem(30px);
+    .logo {
+      width: clamp(50px, rem(64px), 64px);
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      gap: rem(50px);
+    }
+    li {
+      display: flex;
+      align-items: center;
+      gap: rem(15px);
+    }
+    div {
+      letter-spacing: -0.03em;
+      color: #627d98;
+      img {
+        height: auto;
+      }
+    }
+    h3 {
+      font-weight: 600;
+      margin-bottom: rem(4px);
+      font-size: clamp(14px, rem(16px), 16px);
+    }
+    h4 {
+      font-size: clamp(14px, rem(16px), 16px);
+    }
+  }
+
+  @include mq-inv-tablet {
+    padding: rem(64px) 0 rem(20px);
+    &__box {
+      grid-template-columns: 1fr 1fr;
+    }
+    &__logo-box ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @include mq-inv-medium {
+    padding: rem(40px) 0 rem(40px);
+    &__overlay {
+      height: 21%;
+      width: 262%;
+      top: 2.5rem;
+    }
+
+    &__box {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    &__card {
+      padding: rem(30px) rem(20px);
+      &:nth-child(1) {
+        margin-top: 0;
+      }
+
+      &:nth-child(4) {
+        margin-top: 0;
+      }
+    }
+    &__card-description {
+      font-size: rem(16px);
+    }
+    &__logo-box {
+      ul {
+        flex-direction: column;
+      }
+      li {
+        justify-content: center;
+      }
+    }
+  }
+}

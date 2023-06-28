@@ -1,0 +1,54 @@
+@use "../inc" as *;
+.page_text--inner {
+  background-color: $softBlue;
+  padding: 0 rem(15px);
+  padding-bottom: rem(96px);
+  @include mq-inv-tablet {
+    padding-bottom: rem(60px);
+  }
+  @include mq-inv-medium {
+    padding-bottom: rem(40px);
+  }
+  .container_inner-text {
+    margin: 0 auto;
+    max-width: clamp(1070px, rem(1088px), 1088px);
+    padding: clamp(100px, rem(112px), 112px) clamp(120px, rem(128px), 128px);
+    background-color: $white;
+
+    @include mq-inv-tablet {
+      padding: clamp(30px, rem(36px), 36px);
+    }
+    @include mq-inv-medium {
+      padding: clamp(10px, rem(15px), 15px);
+    }
+  }
+  p {
+    font-size: clamp(16px, rem(18px), 18px);
+    line-height: 1.42;
+
+    strong {
+      font-weight: 700;
+      margin: clamp(15px, rem(20px), 20px) 0;
+      display: block;
+    }
+  }
+  ul {
+    margin: clamp(15px, rem(20px), 20px) 0 clamp(15px, rem(20px), 20px) rem(20px);
+    li {
+      position: relative;
+      font-size: clamp(16px, rem(18px), 18px);
+      &::after {
+        content: "";
+        position: absolute;
+        width: clamp(7px, rem(7px), 7px);
+        height: clamp(7px, rem(7px), 7px);
+        background-image: url("../../assets/img/dot.svg");
+        background-size: cover;
+        background-size: contain;
+        background-repeat: no-repeat;
+        left: clamp(-15px, rem(-15px), -15px);
+        top: clamp(7px, rem(7px), 7px);
+      }
+    }
+  }
+}

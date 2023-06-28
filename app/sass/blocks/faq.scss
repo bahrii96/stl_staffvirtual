@@ -1,0 +1,139 @@
+@use "../inc" as *;
+
+.faq {
+  padding: clamp(64px, rem(96px), 96px) 0;
+  position: relative;
+  overflow: hidden;
+  &__overlay {
+    position: absolute;
+    width: 81%;
+    top: rem(-24px);
+
+    img {
+      object-fit: cover;
+    }
+  }
+  h2 {
+    font-weight: 700;
+    font-size: clamp(20px, rem(24px), 24px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: rem(32px);
+  }
+
+  &__accordion-item {
+    background: $white;
+    border-bottom: 0.5px solid #dadada;
+    &:last-child {
+      border-bottom: 0px;
+    }
+  }
+  &__accordion-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(20px) rem(20px) rem(20px) 0;
+
+    h3 {
+      font-weight: 700;
+      font-size: clamp(16px, rem(18px), 18px);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+  }
+
+  &__accordion-toggle {
+    position: relative;
+    min-width: rem(20px);
+    height: rem(20px);
+    border-radius: 50%;
+    margin-left: rem(10px);
+
+    background: #333d4c;
+    cursor: pointer;
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: rem(10px);
+      height: rem(2px);
+
+      transition: transform 0.3s ease-in-out;
+      background-color: $white;
+      z-index: 3;
+    }
+    &::before {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+
+  &__accordion-content-box {
+    padding: rem(24px) rem(130px) rem(46px) rem(24px);
+    display: none;
+    p {
+      font-size: clamp(14px, rem(16px), 16px);
+      line-height: 1.38;
+      letter-spacing: 0.01em;
+    }
+  }
+
+  .accordion-toggle::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  &__accordion-item.open .accordion-toggle::before {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  &__accordion-item.open .accordion-toggle {
+    background-color: #dadada;
+  }
+  &__accordion-item.open .faq__accordion-content-box {
+    //display: block;
+  }
+
+  @include mq-inv-tablet {
+    padding: clamp(40px, rem(64px), 64px) 0;
+  }
+
+  @include mq-inv-medium {
+    padding: clamp(40px, rem(40px), 64px) 0;
+
+    &__overlay {
+      display: none;
+    }
+    h2 {
+      font-size: clamp(24px, rem(24px), 28px);
+      margin-bottom: rem(20px);
+    }
+
+    &__accordion-header {
+      padding: 15px 15px 15px 0;
+      gap: rem(2px);
+      h3 {
+        font-size: clamp(16px, rem(16px), 18px);
+      }
+    }
+
+    &__accordion-toggle {
+      min-width: rem(14px);
+      height: rem(14px);
+      padding: rem(6px);
+      &::after,
+      &::before {
+        width: rem(6px);
+        height: rem(1px);
+      }
+    }
+
+    &__accordion-content-box {
+      padding: clamp(20px, rem(20px), 24px) clamp(16px, rem(16px), 20px);
+      display: none;
+      p {
+        font-size: clamp(14px, rem(14px), 16px);
+      }
+    }
+  }
+}

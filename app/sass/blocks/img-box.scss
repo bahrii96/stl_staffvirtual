@@ -1,0 +1,114 @@
+@use "../inc" as *;
+
+.img-box {
+  padding: rem(80px) 0;
+
+  &__box {
+    display: flex;
+    gap: rem(80px);
+  }
+
+  &__img,
+  &__information {
+    flex: 0 0 calc(50% - rem(40px));
+  }
+
+  &__img {
+    height: clamp(350px, rem(376px), 376px);
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__information {
+    h2 {
+      font-weight: 700;
+      font-size: clamp(22px, rem(24px), 24px);
+      line-height: 1;
+      margin-bottom: rem(32px);
+    }
+  }
+
+  &__subtitle {
+    font-weight: 300;
+    font-size: clamp(18px, rem(20px), 20px);
+    line-height: 1.2;
+    margin-bottom: rem(24px);
+    letter-spacing: 0.03em;
+  }
+
+  &__description {
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    font-size: clamp(14px, rem(16px), 16px);
+  }
+
+  @include mq-inv-tablet {
+    padding: rem(60px) 0;
+
+    &__box {
+      gap: rem(20px);
+      flex-direction: column;
+    }
+
+    &__img {
+      height: auto;
+      display: flex;
+
+      img {
+        aspect-ratio: 2;
+      }
+    }
+
+    &__information {
+      h2 {
+        font-size: clamp(18px, rem(20px), 20px);
+        margin-bottom: rem(20px);
+      }
+    }
+
+    &__subtitle {
+      font-size: clamp(16px, rem(18px), 18px);
+      margin-bottom: rem(14px);
+    }
+  }
+  @include mq-inv-medium {
+    padding: rem(30px) 0;
+
+    &__box {
+      flex-direction: column;
+    }
+
+    &__img {
+      margin: 0 clamp(-24px, rem(24px), -24px);
+    }
+
+    &__information {
+      h2 {
+        margin-bottom: rem(10px);
+      }
+    }
+
+    &__subtitle {
+      font-size: clamp(16px, rem(18px), 18px);
+      margin-bottom: rem(10px);
+    }
+
+    &__description {
+      font-size: clamp(14px, rem(14px), 16px);
+    }
+  }
+}
+
+.img-box.img-box-right {
+  .img-box__box {
+    flex-direction: row-reverse;
+  }
+
+  @include mq-inv-tablet {
+    .img-box__box {
+      flex-direction: column;
+    }
+  }
+}

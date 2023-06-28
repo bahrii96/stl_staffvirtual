@@ -1,0 +1,86 @@
+@use "../inc" as *;
+.error-page {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(96px, rem(96px), 96px) 0 clamp(90px, rem(90px), 90px);
+
+  &__overlay {
+    position: absolute;
+    width: 81%;
+    top: rem(-24px);
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    max-width: clamp(550px, rem(640px), 640px);
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: rem(48px);
+
+    .section_subtitle {
+      color: $main100;
+      font-weight: 900;
+    }
+
+    .section_title {
+      margin-bottom: rem(16px);
+    }
+
+    p {
+      font-size: clamp(18px, rem(20px), 20px);
+      line-height: 1.4;
+      color: $lightRange100;
+      letter-spacing: -0.01em;
+      font-weight: 300;
+      margin-bottom: rem(24px);
+    }
+  }
+  &__img {
+    max-width: clamp(380px, rem(384px), 384px);
+    max-height: clamp(380px, rem(384px), 384px);
+    display: flex;
+    margin: auto;
+  }
+
+  @include mq-inv-tablet {
+    padding: clamp(60px, rem(64px), 64px) 0;
+
+    &__overlay {
+      display: none;
+    }
+
+    &__title {
+      margin-bottom: rem(20px);
+      p {
+        font-size: clamp(14px, rem(16px), 16px);
+        margin-bottom: rem(20px);
+      }
+    }
+
+    &__img {
+      max-width: clamp(250px, rem(300px), 300px);
+      max-height: clamp(250px, rem(300px), 300px);
+    }
+  }
+
+  @include mq-inv-medium {
+    padding: rem(40px) 0;
+
+    &__title {
+      .section_title {
+        margin-bottom: rem(8px);
+      }
+
+      p {
+        font-size: clamp(14px, rem(14px), 14px);
+      }
+    }
+
+    &__img {
+      max-width: clamp(150px, rem(200px), 200px);
+      max-height: clamp(150px, rem(200px), 200px);
+    }
+  }
+}

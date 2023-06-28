@@ -1,0 +1,215 @@
+@use "../inc" as *;
+.white-papers {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(100px, rem(152px), 152px) 0;
+  background-color: $softBlue;
+  &__overlay {
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    top: 0;
+    img {
+      object-fit: cover;
+    }
+  }
+  &__overlay-bg {
+    position: absolute;
+    overflow: hidden;
+    bottom: rem(-10px);
+    left: 0;
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  &__box {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: clamp(80px, rem(120px), 120px);
+  }
+
+  h2 {
+    position: relative;
+    font-weight: 700;
+    font-size: clamp(20px, rem(24px), 24px);
+    line-height: 1;
+    margin-bottom: clamp(20px, rem(40px), 40px);
+    &:after {
+      content: "";
+      position: absolute;
+      background-image: url("../../img/arrow-black.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 45%;
+      height: 45%;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: rem(4px);
+    }
+  }
+
+  &__left {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(50px);
+    }
+
+    li {
+      flex-basis: calc(50% - 25px);
+      a {
+        color: $lightRange100;
+        &:hover {
+          color: $main100;
+        }
+      }
+      h3 {
+        position: relative;
+        font-size: clamp(14px, rem(16px), 16px);
+        font-weight: 500;
+        line-height: 1.25;
+        letter-spacing: 0.02em;
+        margin-bottom: rem(12px);
+
+        &:after {
+          content: "";
+          position: absolute;
+          background-image: url("../../img/arrow-black.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 6px;
+          height: 11px;
+          top: 50%;
+          transform: translateY(-50%);
+          margin-left: 5px;
+        }
+      }
+
+      p {
+        font-size: clamp(14px, rem(14px), 16px);
+        line-height: 1.43;
+        letter-spacing: 0.01em;
+        color: #333d4c;
+        width: 85%;
+      }
+    }
+  }
+
+  &__img {
+    margin-left: auto;
+    max-width: clamp(250px, rem(306px), 306px);
+    width: 100%;
+    opacity: 0.3;
+  }
+  &.full-img {
+    padding-bottom: rem(10px);
+
+    .white-papers__overlay {
+      display: none;
+    }
+
+    .white-papers__box {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .white-papers__img {
+      height: 100%;
+      display: flex;
+      width: auto;
+      max-width: 100%;
+      opacity: 1;
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+
+  @include mq-inv-tablet {
+    padding: clamp(64px, rem(80px), 80px) 0;
+    &__overlay-bg {
+      display: none;
+    }
+    &__box {
+      gap: clamp(20px, rem(32px), 32px);
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    &__right {
+      display: flex;
+      justify-content: center;
+    }
+    &__img {
+      margin: 0 auto;
+      max-width: clamp(180px, rem(220px), 220px);
+    }
+    &__left {
+      width: 100%;
+      ul {
+        gap: clamp(16px, rem(24px), 24px);
+      }
+      li {
+        h3 {
+          &:after {
+            position: relative;
+            display: inline-block;
+            top: auto;
+            transform: none;
+            // display: none;
+          }
+        }
+      }
+    }
+    &.full-img {
+      .white-papers__img {
+        max-width: 50%;
+      }
+    }
+  }
+
+  @include mq-inv-medium {
+    padding: clamp(40px, rem(40px), 64px) 0;
+    &__overlay {
+      display: none;
+    }
+
+    &__box {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    h2 {
+      text-align: center;
+      line-height: 1;
+      margin-bottom: rem(20px);
+    }
+    &__left {
+      order: 2;
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      li {
+        flex: 1 1 auto;
+        h3 {
+          font-size: clamp(14px, rem(14px), 16px);
+          margin-bottom: rem(6px);
+        }
+        p {
+          font-size: clamp(12px, rem(12px), 14px);
+        }
+      }
+    }
+
+    &__img {
+      margin: auto;
+      width: 100%;
+    }
+    &.full-img {
+      .white-papers__box {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

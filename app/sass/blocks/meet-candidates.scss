@@ -1,0 +1,256 @@
+@use "../inc" as *;
+
+.meet-candidates {
+  position: relative;
+  overflow: hidden;
+  padding: rem(96px) 0 rem(126px);
+
+  &__overlay {
+    position: absolute;
+    height: 93%;
+    width: 80%;
+    top: 0;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__subtitle {
+    font-size: rem(18px);
+    font-size: clamp(16px, rem(18px), 18px);
+    line-height: 1.33;
+    letter-spacing: 0.1em;
+    margin-bottom: rem(40px);
+    margin-bottom: clamp(30px, rem(40px), 40px);
+    color: #333d4c;
+    margin-top: clamp(-50px, rem(-60px), -50px);
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: rem(32px);
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    margin-bottom: rem(16px);
+  }
+
+  p {
+    font-size: rem(18px);
+    line-height: 1.33;
+    letter-spacing: 0.02em;
+    margin-bottom: rem(24px);
+  }
+
+  &__box {
+    display: grid;
+    grid-template-columns: 35.71% 55.71%;
+    gap: 8.57%;
+  }
+
+  &__information {
+    h2 {
+      font-weight: 700;
+      font-size: rem(32px);
+      font-size: clamp(24px, rem(32px), 32px);
+      line-height: 1.06;
+      letter-spacing: -0.03em;
+      margin-bottom: rem(16px);
+      margin-bottom: clamp(14px, rem(16px), 16px);
+    }
+
+    p {
+      font-size: rem(18px);
+      font-size: clamp(16px, rem(18px), 18px);
+      line-height: 1.33;
+      letter-spacing: 0.02em;
+      margin-bottom: rem(24px);
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(10px, rem(12px), 12px);
+      margin-bottom: rem(40px);
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      position: relative;
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: 0.02em;
+      padding-left: rem(40px);
+      font-size: clamp(14px, rem(16px), 16px);
+
+      &::after {
+        content: "";
+        position: absolute;
+        background-image: url("../../img/done.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: clamp(16px, rem(18px), 18px);
+        height: clamp(16px, rem(18px), 18px);
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+
+  &__video-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem(24px);
+    height: fit-content;
+  }
+
+  &__video {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1.76;
+
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__poster {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $main100;
+    border-radius: rem(4px);
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    img {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  @include mq-inv-tablet {
+    padding: clamp(40px, rem(80px), 80px) 0;
+
+    &__box {
+      gap: 0;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    &__subtitle {
+      margin-top: 0;
+      // padding: 0 clamp(60px, rem(64px), 64px);
+    }
+
+    &__information {
+      background-color: #fff;
+      padding: clamp(40px, rem(48px), 48px) 0;
+      padding-bottom: 0;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+
+      ul {
+        gap: clamp(14px, rem(18px), 18px);
+      }
+
+      li {
+        padding-left: clamp(30px, rem(35px), 35px);
+
+        &:after {}
+      }
+    }
+  }
+
+  @include mq-inv-medium {
+    padding: rem(40px) 0 rem(40px);
+
+    &__overlay {
+      display: none;
+    }
+
+    &__subtitle {
+      font-size: clamp(14px, rem(14px), 16px);
+      line-height: 1.4;
+      margin-bottom: clamp(16px, rem(16px), 18px);
+    }
+
+    h2 {
+      font-size: clamp(20px, rem(20px), 24px);
+      line-height: 1.1;
+      margin-bottom: clamp(16px, rem(16px), 18px);
+    }
+
+    p {
+      font-size: clamp(14px, rem(14px), 16px);
+      line-height: 1.29;
+      margin-bottom: clamp(24px, rem(24px), 30px);
+    }
+
+    &__box {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(40px, rem(40px), 50px);
+    }
+
+    &__information {
+      padding: 0;
+
+      ul {
+        margin-bottom: clamp(24px, rem(24px), 30px);
+      }
+
+      li {
+        font-size: clamp(12px, rem(12px), 14px);
+        line-height: 1.5;
+        padding-left: clamp(26px, rem(26px), 30px);
+      }
+
+      .btn {
+        max-width: 100%;
+        width: auto;
+      }
+    }
+
+    &__video-box {
+      grid-template-columns: 1fr;
+    }
+
+    &__poster {
+      border-radius: 0;
+    }
+
+    .play-button {
+      max-width: rem(54px);
+      width: 100%;
+    }
+
+    &__video {
+      margin: 0 rem(-24px);
+      aspect-ratio: 1.66;
+    }
+  }
+}

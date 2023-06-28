@@ -1,0 +1,90 @@
+@use "../inc" as *;
+.logo-section {
+  background: $softBlue;
+  padding: rem(78px) 0;
+  padding: clamp(40px, rem(78px), 78px) 0;
+  &__logo {
+    width: rem(64px);
+    width: clamp(64px, rem(64px), 64px);
+    height: rem(64px);
+    height: clamp(64px, rem(64px), 64px);
+    img {
+      object-fit: contain;
+      object-position: top;
+    }
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: clamp(36px, rem(48px), 48px);
+    li {
+      display: flex;
+      align-items: center;
+      gap: rem(15px);
+    }
+  }
+
+  &-info {
+    letter-spacing: -0.03em;
+    color: #627d98;
+    font-size: clamp(14px, rem(16px), 16px);
+    h4 {
+      font-weight: 600;
+      margin-bottom: rem(4px);
+    }
+  }
+
+  &.only_logos {
+    .logo-section__logo {
+      height: 100%;
+      max-height: rem(80px);
+      width: auto;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &.blue-bg {
+    background-color: $main100;
+    .logo-section {
+      &-info {
+        color: #fff;
+      }
+    }
+  }
+
+  @include mq-inv-tablet {
+    ul {
+      flex-wrap: wrap;
+      max-width: clamp(525px, rem(525px), 550px);
+      margin: 0 auto;
+      li {
+        width: calc(50% - rem(24px));
+        justify-content: center;
+      }
+    }
+  }
+
+  @include mq-inv-medium {
+    padding: rem(40px) 0;
+    padding: clamp(50px, rem(40px), 55px) 0;
+
+    &.only_logos {
+      .logo-section__logo {
+        max-height: rem(26px);
+      }
+    }
+    ul {
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(20px, rem(24px), 24px);
+      li {
+        justify-content: center;
+        gap: clamp(10px, rem(15px), 15px);
+        width: 100%;
+      }
+    }
+  }
+}

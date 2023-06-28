@@ -1,0 +1,151 @@
+@use "../inc" as *;
+
+.video-box {
+  padding: rem(80px) 0;
+
+  &__box {
+    display: flex;
+    gap: rem(80px);
+  }
+
+  &__video-box,
+  &__information {
+    flex: 0 0 calc(50% - rem(40px));
+  }
+
+  &__video-box {
+    border-radius: rem(4px);
+    background: $mainLight5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(54px) rem(40px);
+  }
+
+  &__video {
+    position: relative;
+    overflow: hidden;
+    max-height: clamp(250px, rem(270px), 270px);
+    max-width: clamp(470px, rem(480px), 480px);
+    height: 100%;
+    border-radius: rem(4px);
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__poster {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    img {
+      object-fit: cover;
+    }
+  }
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    img {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__information {
+    h2 {
+      font-weight: 700;
+      font-size: clamp(22px, rem(24px), 24px);
+      line-height: 1;
+      margin-bottom: rem(32px);
+    }
+  }
+
+  &__subtitle {
+    font-weight: 300;
+    font-size: clamp(18px, rem(20px), 20px);
+    line-height: 1.2;
+    margin-bottom: rem(24px);
+    letter-spacing: 0.03em;
+  }
+
+  &__description {
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    font-size: clamp(14px, rem(16px), 16px);
+  }
+
+  @include mq-inv-tablet {
+    padding: rem(60px) 0;
+
+    &__box {
+      gap: rem(20px);
+      flex-direction: column;
+    }
+    &__video-box {
+      padding: clamp(20px, rem(24px), 24px);
+    }
+    &__video {
+      max-height: clamp(300px, rem(320px), 320px);
+      max-width: 100%;
+    }
+
+    &__information {
+      h2 {
+        font-size: clamp(18px, rem(20px), 20px);
+        margin-bottom: rem(20px);
+      }
+    }
+
+    &__subtitle {
+      font-size: clamp(16px, rem(18px), 18px);
+      margin-bottom: rem(14px);
+    }
+  }
+  @include mq-inv-medium {
+    padding: rem(30px) 0;
+
+    &__video-box {
+      margin: 0 clamp(-24px, rem(24px), -24px);
+    }
+
+    &__information {
+      h2 {
+        margin-bottom: rem(10px);
+      }
+    }
+
+    &__subtitle {
+      font-size: clamp(16px, rem(18px), 18px);
+      margin-bottom: rem(10px);
+    }
+
+    &__description {
+      font-size: clamp(14px, rem(14px), 16px);
+    }
+  }
+}
+
+.video-box.video-box-right {
+  .video-box__box {
+    flex-direction: row-reverse;
+  }
+
+  @include mq-inv-tablet {
+    .video-box__box {
+      flex-direction: column;
+    }
+  }
+}

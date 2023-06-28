@@ -1,0 +1,31 @@
+@use "../inc" as *;
+.hero-wave {
+  padding-top: clamp(140px, rem(160px), 160px);
+  padding-bottom: clamp(180px, rem(194px), 194px);
+  background-image: url("../../img/contact-bg.svg");
+  background-size: cover;
+  background-position: bottom;
+
+  &__title {
+    max-width: rem(640px);
+    margin: 0 auto;
+    text-align: center;
+
+    .section_subtitle {
+      font-weight: 700;
+      color: $mainLight20;
+    }
+
+    .section_title {
+      color: $white;
+    }
+  }
+  @include mq-inv-tablet {
+    padding-top: clamp(90px, rem(100px), 100px);
+    padding-bottom: clamp(110px, rem(120px), 120px);
+  }
+  @include mq-inv-medium {
+    padding-top: clamp(30px, rem(40px), 40px);
+    padding-bottom: clamp(40px, rem(50px), 50px);
+  }
+}

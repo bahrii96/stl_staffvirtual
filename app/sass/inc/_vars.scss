@@ -1,0 +1,59 @@
+@use "sass:math";
+// colors
+$SoftRange100: #537599;
+$softBlue: #fbfdff;
+$lightRange100: #1c2737;
+$lightRange80: #4a525f;
+$lightRange20: #d2d4d7;
+$lightRange90: #333d4c;
+$main100: #1888ff;
+$mainLight20: #d1e7ff;
+$mainLight5: #f3f9ff;
+
+$white: #ffffff;
+$gray: #f3f9ff;
+
+// fonts
+$fontFamily: "CircularXX";
+$lineHeight: 1.4;
+//
+
+// $containerWidthBig: 1210px;
+
+// layout
+$html-font-size: 16px;
+
+$vpwidthMob: 320px;
+$vpwidthTab: 720px;
+
+@function stripUnit($value) {
+  @return math.div($value, ($value * 0 + 1));
+}
+
+@function rem($pxValue) {
+  @return #{math.div(stripUnit($pxValue), stripUnit($html-font-size))}rem;
+}
+
+@function vw-m($pxValue) {
+  @return #{math.div(stripUnit($pxValue), stripUnit($vpwidthMob)) * 100}vw;
+}
+
+@function vw-t($pxValue) {
+  @return #{math.div(stripUnit($pxValue), stripUnit($vpwidthTab)) * 100}vw;
+}
+
+$container: rem(1440px);
+//
+
+@mixin itemGrid($n, $gap) {
+  width: calc(100% / #{$n} - #{$gap}px + #{$gap}px / #{$n});
+  margin-right: #{$gap}px;
+
+  &:nth-child(#{$n + 1}n) {
+    margin-right: #{$gap}px;
+  }
+
+  &:nth-child(#{$n}n) {
+    margin-right: 0;
+  }
+}
