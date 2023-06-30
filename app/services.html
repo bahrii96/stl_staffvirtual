@@ -1,1024 +1,1053 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-	<meta charset="utf-8" />
-	<title>StaffVirtual</title>
-	<meta name="description" content="" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<meta name="theme-color" content="#ffffff" />
+  <head>
+    <meta charset="utf-8" />
+    <title>StaffVirtual</title>
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+  
+    <!-- fonts preloading -->
+    <link rel="preload" href="fonts/CircularXX-LightItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Medium.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Black.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-BlackItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-MediumItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-BookItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Book.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-ExtraBlack.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-BoldItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Italic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-ExtraBlackItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Thin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Light.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/GloriaHallelujah.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- fonts preloading -->
+  
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="libs/fancybox/fancybox.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  
+    <style>
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+    <script defer>
+      window.addEventListener("DOMContentLoaded", event => {
+        const animationLogo = document.getElementById("logo_animation");
+  
+        setTimeout(function () {
+          document.getElementById("preloader").classList.add("loaded");
+        }, 3000);
+  
+        setTimeout(() => {
+          animationLogo.play();
+        }, 3000);
+      });
+    </script>
+  </head>
 
-	<!-- fonts preloading -->
-	<link rel="preload" href="fonts/CircularXX-LightItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Bold.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Medium.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Black.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-BlackItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-MediumItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-BookItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Regular.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Book.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-ExtraBlack.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-BoldItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Italic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-ExtraBlackItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Thin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Light.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/GloriaHallelujah.woff2" as="font" type="font/woff2" crossorigin>
-	<!-- fonts preloading -->
+  <body class="page_home">
+    <div class="preloader" id="preloader">
+      <lottie-player class="preloader_animation" loop speed="1.7" autoplay src="./lottie/preloader-animation.json"> </lottie-player>
+    </div>
+    <div class="header_top-row">
+      <div class="container">
+        <nav class="header_top-navigation">
+          <ul>
+            <li class="offcanvas-toggle">
+              <a href="#" class="">About Us</a>
+            </li>
+            <li>
+              <a href="#">Why Philippines?</a>
+            </li>
+            <li>
+              <a href="#">Careers - Apply today!</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    
+    <header class="header">
+      <div class="header_bottom-row">
+        <div class="container">
+          <a href="/stl_staffvirtual/app" class="header_logo">
+            <img src="img/logo.svg" alt="Logo" />
+          </a>
+          <a href="/stl_staffvirtual/app" class="header_logo-mobile">
+            <img src="img/logo_mobile.svg" alt="Logo" />
+          </a>
+          <nav class="header_main-navigation">
+            <ul>
+              <li class="menu-item-has-children">
+                <a href="#">About US</a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="/stl_staffvirtual/app/our-teammates.html">Our Teammates</a>
+                  </li>
+                  <li>
+                    <a href="/stl_staffvirtual/app/modern-offices.html">Modern Offices</a>
+                  </li>
+                  <li>
+                    <a href="/stl_staffvirtual/app/clients.html">Clients</a>
+                  </li>
+                  <li>
+                    <a href="/stl_staffvirtual/app/blog.html">Blog</a>
+                  </li>
+                  <li>
+                    <a href="/stl_staffvirtual/app/become-a-reseller.html">Become a Reseller</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item-has-children">
+                <a href="#">Industries</a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="/stl_staffvirtual/app/industries.html">Industries</a>
+                  </li>
+                  <li>
+                    <a href="/stl_staffvirtual/app/industries-sub-page.html">Technology</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item-has-children">
+                <a href="#">Services</a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="/stl_staffvirtual/app/services.html">Services</a>
+                  </li>
+                  <li>
+                    <a href="/stl_staffvirtual/app/services-sub-page.html">Technology</a>
+                  </li>
+                  <li>
+                    <a href="/stl_staffvirtual/app/services-sub-page-sub-page.html">Process</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/why-philippines.html">Why Philippines</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/careers.html">Careers</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/our-process.html">Our Process</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/glossary.html">Glossary</a>
+              </li>
+            </ul>
+            <a href="/stl_staffvirtual/app/contact-us.html" class="header_button btn btn__blue">Contact Us</a>
+          </nav>
+          <button class="header_navigation-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    
+    <div class="offcanvas__navigation" id="offcanvas__navigation">
+      <div class="offcanvas__navigation-title">
+        <h2>About Us</h2>
+      </div>
+      <nav class="offcanvas__navigation-nav">
+        <ul>
+          <li>
+            <a href="">Our Story</a>
+          </li>
+          <li>
+            <a href="">Our Teammates</a>
+          </li>
+          <li>
+            <a href="">Modern Offices</a>
+          </li>
+          <li>
+            <a href="">Clients</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="">ISO Certification</a>
+          </li>
+          <li>
+            <a href="">News & Press</a>
+          </li>
+          <li>
+            <a href="">Glossary</a>
+          </li>
+          <li>
+            <a href="">Events</a>
+          </li>
+          <li>
+            <a href="">Blog</a>
+          </li>
+          <li>
+            <a href="">Become a Reseller</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    
+    <div class="mobile_navigation" id="mobile_navigation">
+      <nav class="mobile_navigation-main">
+        <ul>
+          <li class="menu-item-has-children">
+            <a href="#">About US</a>
+            <ul class="sub-menu">
+              <li>
+                <a href="/stl_staffvirtual/app/our-teammates.html">Our Teammates</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/modern-offices.html">Modern Offices</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/clients.html">Clients</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/blog.html">Blog</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/become-a-reseller.html">Become a Reseller</a>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item-has-children">
+            <a href="#">Services</a>
+            <ul class="sub-menu">
+              <li>
+                <a href="/stl_staffvirtual/app/services.html">Services</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/services-sub-page.html">Technology</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/services-sub-page-sub-page.html">Process</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/stl_staffvirtual/app/why-philippines.html">Why Philippines</a>
+          </li>
+          <li>
+            <a href="/stl_staffvirtual/app/careers.html">Careers</a>
+          </li>
+          <li>
+            <a href="/stl_staffvirtual/app/our-process.html">Our Process</a>
+          </li>
+          <li>
+            <a href="/stl_staffvirtual/app/glossary.html">Glossary</a>
+          </li>
+        </ul>
+        <a href="/stl_staffvirtual/app/contact-us.html" class="header_button btn btn__blue">Contact Us</a>
+      </nav>
+    </div>
+    <main>
+      <section class="flag-video">
+        <div class="flag-video__overlay-top">
+          <img src="img/video-wave.svg" alt="star" />
+        </div>
+        <div class="flag-video__overlay">
+          <img src="./img/ovorlay-section-flag.svg" alt="star" />
+        </div>
+        <div class="container container_inner">
+          <div class="flag-video__title">
+            <h2 class="section_title">American with more than 10 years experience in the BPO industry</h2>
+          </div>
+      
+          <div class="flag-video__video">
+            <div class="flag-video__poster">
+              <img src="./img/flag.png" alt=" " />
+            </div>
+            <div class="flag-video__poster-profile">
+              <img src="./img/flag-portret.png" alt=" " />
+            </div>
+            <div class="flag-video__video-logo"><img src="./img/logo-video-flag.svg" alt="" /></div>
+      
+            <a class="popup-video" href="https://www.youtube.com/embed/jid2A7ldc_8?autoplay=1">
+              <button class="play-button">
+                <img src="./img/play-video-flag.svg" alt="" />
+                <img src="./img/play-viseo.svg" alt="" /></button
+            ></a>
+          </div>
+        </div>
+      </section>
+      <!--  -->
+      <section class="our-guide">
+        <div class="our-guide__overlay"><img src="./img/bg-star.svg" alt="star" /></div>
+        <div class="container container_inner">
+          <div class="our-guide__content">
+            <div class="our-guide__left">
+              <h2>Partner with us for Reliable Offshore Staffing Solutions that Drive Growth</h2>
+              <div class="our-guide__subtitle">
+                <p>STAFFVIRTUAL is a leading provider of offshore staffing solutions, with over a decade of experience helping businesses achieve their goals.</p>
+              </div>
+              <div class="our-guide__description">
+                <p>
+                  We specialize in creating exceptional teams that boost business efficiency and profitability. Our comprehensive range of services includes full-service BPO and PEO solutions, enabling our
+                  clients to streamline their customer support, back-office operations, and IT processes. As your Employer of Record, we take care of payroll, benefits administration, and legal compliance
+                  for your staff, providing a hassle-free one-stop-shop solution for your business needs.
+                </p>
+              </div>
+              <a href="#" class="btn btn__blue">Explore our Salary Guide</a>
+            </div>
+            <div class="our-guide__right">
+              <div class="our-guide__img"><img src="./img/blog.png" alt="" /></div>
+            </div>
+            <div class="our-guide__overlay-bg"><img src="./img/bg-blue.svg" alt="star" /></div>
+          </div>
+        </div>
+      </section>
+      <!--  -->
+      <section class="logo-section">
+      	<div class="container container_inner">
+      		<div class="logo-section__box">
+      			<ul>
+      				<li>
+      					<div class="logo-section__logo"><img src="./img/logo-stories.svg" alt=""></div>
+      					<div class="logo-section-info">
+      						<h4>BPO Employer</h4>
+      						<p>of the year 2022</p>
+      					</div>
+      				</li>
+      				<li>
+      					<div class="logo-section__logo"><img src="./img/logo-stories.svg" alt=""></div>
+      					<div class="logo-section-info">
+      						<h4>BPO Employer</h4>
+      						<p>of the year 2022</p>
+      					</div>
+      				</li>
+      				<li>
+      					<div class="logo-section__logo"><img src="./img/logo-stories.svg" alt=""></div>
+      					<div class="logo-section-info">
+      						<h4>BPO Employer</h4>
+      						<p>of the year 2022</p>
+      					</div>
+      				</li>
+      				<li>
+      					<div class="logo-section__logo"><img src="./img/logo-stories.svg" alt=""></div>
+      					<div class="logo-section-info">
+      						<h4>BPO Employer</h4>
+      						<p>of the year 2022</p>
+      					</div>
+      				</li>
+      			</ul>
+      		</div>
+      	</div>
+      	</div>
+      </section>
+      <!--  -->
+      <section class="howitworks">
+        <div class="container">
+          <div class="howitworks__title">
+            <span class="section_subtitle">
+              How it works
+            </span>
+            <h2 class="section_title">
+              We help you recruit and manage your BPO team in the philippines
+            </h2>
+            <p>STAFFVIRTUAL can help you scale up or down as needed, without the hassle of recruiting, training, and managing
+              new staff.</p>
+          </div>
+          <div class="howitworks-items">
+            <div class="howitworks-item">
+              <div class="howitworks-item--image">
+                <img src="img/howitworks/howitworks1.svg" alt="">
+              </div>
+              <div class="howitworks-item--info">
+                <h4>Build a team</h4>
+                <p>We carefully select and train our employees to ensure they have the expertise and experience required to
+                  meet your specific needs</p>
+              </div>
+            </div>
+            <div class="howitworks-item">
+              <div class="howitworks-item--image">
+                <img src="img/howitworks/howitworks2.svg" alt="">
+              </div>
+              <div class="howitworks-item--info">
+                <h4>Full support</h4>
+                <p>Our streamlined processes and experienced staff can help you increase your efficiency and productivity, so
+                  you can focus on your core business activities</p>
+              </div>
+            </div>
+            <div class="howitworks-item">
+              <div class="howitworks-item--image">
+                <img src="img/howitworks/howitworks3.svg" alt="">
+              </div>
+              <div class="howitworks-item--info">
+                <h4>Save cost</h4>
+                <p>We offer flexible pricing plans that allow you to choose the services you need and pay only for what you
+                  use</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--  -->
+      <section class="testimonials ">
+      	<div class="container container_inner">
+      		<div class="testimonials__title">
+      			<span class="section_subtitle">Meet our happy clients</span>
+      			<h2 class="section_title">We help our clients optimise the profitability and scalability</h2>
+      		</div>
+      
+      		<div class="testimonials__box">
+      			<div class="testimonial">
+      				<div class="testimonial__video">
+      					<div class="testimonial__poster">
+      						<img src="./img/testimonials/1.png" alt=" " />
+      					</div>
+      					<div class="testimonial__video-logo"><img src="./img/logo-video-meet.svg" alt="" /></div>
+      
+      					<a class="popup-video" href="https://www.youtube.com/embed/jid2A7ldc_8?autoplay=1">
+      						<button class="play-button">
+      							<img src="./img/play-viseo.svg" alt="" /></button></a>
+      				</div>
+      				<div class="testimonial__desc">
+      					<p>" The cost savings of STAFFVIRTUAL is very dramatic, although the primary reason we use them is for the
+      						quality of the people we get."</p>
+      				</div>
+      
+      				<div class="testimonial__name-box"><span class="testimonial__name-box-name">Max Armbruster</span> - <span
+      						class="testimonial__name-box-optimise">CEO, IBM</span></div>
+      				<div class="testimonial__logo"><img src="./img/optimise-logo.svg" alt="" /></div>
+      			</div>
+      			<div class="testimonial">
+      				<div class="testimonial__video">
+      					<div class="testimonial__poster">
+      						<img src="./img/testimonials/2.png" alt=" " />
+      					</div>
+      					<div class="testimonial__video-logo"><img src="./img/logo-video-meet.svg" alt="" /></div>
+      
+      					<a class="popup-video" href="https://www.youtube.com/embed/jid2A7ldc_8?autoplay=1">
+      						<button class="play-button">
+      							<img src="./img/play-viseo.svg" alt="" /></button></a>
+      				</div>
+      				<div class="testimonial__desc">
+      					<p>" The cost savings of STAFFVIRTUAL is very dramatic, although the primary reason we use them is for the
+      						quality of the people we get."</p>
+      				</div>
+      
+      				<div class="testimonial__name-box"><span class="testimonial__name-box-name">Max Armbruster</span> - <span
+      						class="testimonial__name-box-optimise">CEO, IBM</span></div>
+      				<div class="testimonial__logo"><img src="./img/optimise-logo.svg" alt="" /></div>
+      			</div>
+      			<div class="testimonial">
+      				<div class="testimonial__video">
+      					<div class="testimonial__poster">
+      						<img src="./img/testimonials/3.png" alt=" " />
+      					</div>
+      					<div class="testimonial__video-logo"><img src="./img/logo-video-meet.svg" alt="" /></div>
+      
+      					<a class="popup-video" href="https://www.youtube.com/embed/jid2A7ldc_8?autoplay=1">
+      						<button class="play-button">
+      							<img src="./img/play-viseo.svg" alt="" /></button></a>
+      				</div>
+      				<div class="testimonial__desc">
+      					<p>" The cost savings of STAFFVIRTUAL is very dramatic, although the primary reason we use them is for the
+      						quality of the people we get."</p>
+      				</div>
+      
+      				<div class="testimonial__name-box"><span class="testimonial__name-box-name">Max Armbruster</span> - <span
+      						class="testimonial__name-box-optimise">CEO, IBM</span></div>
+      				<div class="testimonial__logo"><img src="./img/optimise-logo.svg" alt="" /></div>
+      			</div>
+      		</div>
+      	</div>
+      </section>
+      <!--  -->
+      <section class="benefits">
+      	<div class="benefits__overlay"><img src="./img/bg-star.svg" alt="star" /></div>
+      	<div class="container container_inner">
+      		<div class="benefits__title">
+      			<span class="section_subtitle">A world of benefits</span>
+      			<h2 class="section_title">We help you get a growth team set up to drive value for your company</h2>
+      			<p>
+      				Our talented teammates are passionate about delivering results and exceeding expectations.
+      			</p>
+      		</div>
+      
+      		<ul>
+      			<li>
+      				<div class="benefits__item-img"><img src="./img/benefits/Duotone.svg" alt=""></div>
+      				<div class="benefits__item-information">
+      					<h3>Access to Top Talent</h3>
+      					<p>STAFFVIRTUAL's recruitment process is designed to attract and retain top talent</p>
+      				</div>
+      			</li>
+      			<li>
+      				<div class="benefits__item-img"><img src="./img/benefits/Duotone.svg" alt=""></div>
+      				<div class="benefits__item-information">
+      					<h3>Cost Savings</h3>
+      					<p>We can help you save on labor costs and enjoy flexible pricing plans that allow you to pay only for the
+      						services you
+      						need.</p>
+      				</div>
+      			</li>
+      			<li>
+      				<div class="benefits__item-img"><img src="./img/benefits/Duotone.svg" alt=""></div>
+      				<div class="benefits__item-information">
+      					<h3>Scalability</h3>
+      					<p>With STAFFVIRTUAL, you can quickly scale up or down as needed, without the hassle of recruiting, training,
+      						and managing
+      						new staff.</p>
+      				</div>
+      			</li>
+      			<li>
+      				<div class="benefits__item-img"><img src="./img/benefits/Duotone.svg" alt=""></div>
+      				<div class="benefits__item-information">
+      					<h3>Improved Efficiency</h3>
+      					<p>Our streamlined processes and experienced staff can help you increase your efficiency and productivity.</p>
+      				</div>
+      			</li>
+      			<li>
+      				<div class="benefits__item-img"><img src="./img/benefits/Duotone.svg" alt=""></div>
+      				<div class="benefits__item-information">
+      					<h3>Risk Reduction</h3>
+      					<p>We ensure compliance with labor laws, provide secure data handling, and implement disaster recovery plans.
+      					</p>
+      				</div>
+      			</li>
+      			<li>
+      				<div class="benefits__item-img"><img src="./img/benefits/Duotone-5.svg" alt=""></div>
+      				<div class="benefits__item-information">
+      					<h3>Focus on Core Business Activities</h3>
+      					<p>Outsourcing non-core activities to STAFFVIRTUAL frees up your time and resources to focus on core business
+      						activities.</p>
+      				</div>
+      			</li>
+      		</ul>
+      
+      	</div>
+      </section>
+      <!--  -->
+      <section class="benefits benefits-revers">
+      	<div class="benefits__overlay"><img src="./img/bg-star.svg" alt="star" /></div>
+      	<div class="container container_inner">
+      		<div class="benefits__title">
+      			<span class="section_subtitle">Explore our Services</span>
+      			<h2 class="section_title">We are proud to deliver value to our partner clients through Services</h2>
+      			<p>
+      				Our talented teammates are passionate about delivering results and exceeding expectations.
+      			</p>
+      		</div>
+      
+      		<ul>
+      			<li>
+      				<div class="benefits__item-img"><img src="./img/benefits/Duotone.svg" alt=""></div>
+      				<div class="benefits__item-information">
+      					<h3>Customer Experience</h3>
+      					<p>We provide high-quality customer support to help businesses keep their customers satisfied.</p>
+      				</div>
+      			</li>
+      			<li>
+      				<div class="benefits__item-img"><img src="./img/benefits/Duotone-1.svg" alt=""></div>
+      				<div class="benefits__item-information">
+      					<h3>Back-Office</h3>
+      					<p>We handle administrative and support tasks to ensure the smooth running of businesses.</p>
+      				</div>
+      			</li>
+      			<li>
+      				<div class="benefits__item-img"><img src="./img/benefits/Duotone-2.svg" alt=""></div>
+      				<div class="benefits__item-information">
+      					<h3>IT</h3>
+      					<p>We offer a wide range of IT services, including technical support, software development, and infrastructure
+      						management.</p>
+      				</div>
+      			</li>
+      			<li>
+      				<div class="benefits__item-img"><img src="./img/benefits/Duotone-3.svg" alt=""></div>
+      				<div class="benefits__item-information">
+      					<h3>Legal</h3>
+      					<p>Our legal services provide businesses with contract review, legal research, and IP protection to mitigate
+      						risks and
+      						protect assets.</p>
+      				</div>
+      			</li>
+      			<li>
+      				<div class="benefits__item-img"><img src="./img/benefits/Duotone-4.svg" alt=""></div>
+      				<div class="benefits__item-information">
+      					<h3>PEO</h3>
+      					<p>We offer PEO services, acting as the employer of record for businesses' employees & providing payroll,
+      						benefits,
+      						compliance & risk management.</p>
+      				</div>
+      			</li>
+      			<li>
+      				<div class="benefits__item-img"><img src="./img/benefits/Duotone-5.svg" alt=""></div>
+      				<div class="benefits__item-information">
+      					<h3>Creative</h3>
+      					<p>STAFFVIRTUAL's recruitment process is designed to attract and retain top talent</p>
+      				</div>
+      			</li>
+      		</ul>
+      
+      	</div>
+      </section>
+      <!--  -->
+      <section class="cta-video cta-video-revers-right">
+      	<div class="container container_inner">
+      		<div class="cta-video__box">
+      			<div class="cta-video__left">
+      				<div class="cta-video__video">
+      					<div class="cta-video__poster">
+      						<img src="./img/cta-video.png" alt=" " />
+      					</div>
+      
+      					<a class="popup-video" href="https://www.youtube.com/embed/jid2A7ldc_8?autoplay=1">
+      						<button class="play-button">
+      							<img src="./img/play-viseo.svg" alt="" /></button></a>
+      				</div>
+      
+      
+      			</div>
+      			<div class="cta-video__right">
+      				<div class="cta-video__subtitle">Schedule a free intro call</div>
+      				<h2>We are ready to get you set up for success with your new team</h2>
+      				<div class="cta-video__buttons">
+      					<button type="button" class="btn btn__blue">Schedule a free intro call</button>
+      					<button type="button" class="btn btn__white">Start a Chat</button>
+      				</div>
+      			</div>
+      		</div>
+      	</div>
+      </section>
+      <!--  -->
+      <section class="fag">
+      	<div class="fag__overlay"><img src="./img/bg-star.svg" alt="star" /></div>
+      	<div class="container container_inner">
+      
+      		<h2>Frequently Asked Questions</h2>
+      
+      
+      		<div class="fag__accordion">
+      			<div class="fag__accordion-item open">
+      
+      				<div class="fag__accordion-header accordion-header">
+      					<h3>
+      						What kind of training and support do STAFFVIRTUAL's employees receive?
+      					</h3>
+      					<button class="fag__accordion-toggle accordion-toggle"></button>
+      				</div>
+      				<div class="fag__accordion-content-box">
+      					<p>
+      						STAFFVIRTUAL's employees receive extensive training and ongoing support to ensure they have the skills and
+      						knowledge
+      						needed to provide high-quality outsourcing services. 
+      
+      						The company provides regular training sessions, performance monitoring, and feedback mechanisms to ensure
+      						that
+      						its
+      						employees are delivering top-quality work and meeting clients' expectations.
+      					</p>
+      				</div>
+      			</div>
+      			<div class="fag__accordion-item">
+      
+      				<div class="fag__accordion-header accordion-header">
+      					<h3>
+      						What kind of training and support do STAFFVIRTUAL's employees receive?
+      					</h3>
+      					<button class="fag__accordion-toggle accordion-toggle"></button>
+      				</div>
+      				<div class="fag__accordion-content-box">
+      					<p>
+      						STAFFVIRTUAL's employees receive extensive training and ongoing support to ensure they have the skills and
+      						knowledge
+      						needed to provide high-quality outsourcing services. 
+      
+      						The company provides regular training sessions, performance monitoring, and feedback mechanisms to ensure
+      						that
+      						its
+      						employees are delivering top-quality work and meeting clients' expectations.
+      					</p>
+      				</div>
+      			</div>
+      			<div class="fag__accordion-item">
+      
+      				<div class="fag__accordion-header accordion-header">
+      					<h3>
+      						What kind of training and support do STAFFVIRTUAL's employees receive?
+      					</h3>
+      					<button class="fag__accordion-toggle accordion-toggle"></button>
+      				</div>
+      				<div class="fag__accordion-content-box">
+      					<p>
+      						STAFFVIRTUAL's employees receive extensive training and ongoing support to ensure they have the skills and
+      						knowledge
+      						needed to provide high-quality outsourcing services. 
+      
+      						The company provides regular training sessions, performance monitoring, and feedback mechanisms to ensure
+      						that
+      						its
+      						employees are delivering top-quality work and meeting clients' expectations.
+      					</p>
+      				</div>
+      			</div>
+      
+      			<div class="fag__accordion-item">
+      
+      				<div class="fag__accordion-header accordion-header">
+      					<h3>
+      						What kind of training and support do STAFFVIRTUAL's employees receive?
+      					</h3>
+      					<button class="fag__accordion-toggle accordion-toggle"></button>
+      				</div>
+      				<div class="fag__accordion-content-box">
+      					<p>
+      						STAFFVIRTUAL's employees receive extensive training and ongoing support to ensure they have the skills and
+      						knowledge
+      						needed to provide high-quality outsourcing services. 
+      
+      						The company provides regular training sessions, performance monitoring, and feedback mechanisms to ensure
+      						that
+      						its
+      						employees are delivering top-quality work and meeting clients' expectations.
+      					</p>
+      				</div>
+      			</div>
+      
+      			<div class="fag__accordion-item">
+      
+      				<div class="fag__accordion-header accordion-header">
+      					<h3>
+      						What kind of training and support do STAFFVIRTUAL's employees receive?
+      					</h3>
+      					<button class="fag__accordion-toggle accordion-toggle"></button>
+      				</div>
+      				<div class="fag__accordion-content-box">
+      					<p>
+      						STAFFVIRTUAL's employees receive extensive training and ongoing support to ensure they have the skills and
+      						knowledge
+      						needed to provide high-quality outsourcing services. 
+      
+      						The company provides regular training sessions, performance monitoring, and feedback mechanisms to ensure
+      						that
+      						its
+      						employees are delivering top-quality work and meeting clients' expectations.
+      					</p>
+      				</div>
+      			</div>
+      
+      
+      		</div>
+      	</div>
+      </section>
+      <!--  -->
+      <section class="white-papers">
+      	<div class="white-papers__overlay"><img src="./img/bg-star-blue.svg" alt="star" /></div>
+      
+      
+      	<div class="container container_inner">
+      		<h2>White Papers</h2>
+      		<div class="white-papers__box">
+      			<div class="white-papers__left">
+      				<ul>
+      					<li>
+      						<a href="">
+      							<h3>Outlook on the BPO industry in 2023</h3>
+      						</a>
+      						<p>Improved customer satisfaction and reduced operating costs.</p>
+      					</li>
+      					<li>
+      						<h3>Outlook on the BPO industry in 2023</h3>
+      						<p>Outsourcing of HR tasks and co-employment of local employees.</p>
+      					</li>
+      					<li>
+      						<h3>Outlook on the BPO industry in 2023</h3>
+      						<p>Cost-effective management of administrative and support functions.</p>
+      					</li>
+      					<li>
+      						<h3>Outlook on the BPO industry in 2023</h3>
+      						<p>Streamlining production and reducing costs for creative projects.</p>
+      					</li>
+      					<li>
+      						<h3>Outlook on the BPO industry in 2023</h3>
+      						<p>Access to specialised IT expertise and cost savings.</p>
+      					</li>
+      					<li>
+      						<h3>Outlook on the BPO industry in 2023</h3>
+      						<p>Increased productivity and reduced administrative burden.</p>
+      					</li>
+      				</ul>
+      
+      			</div>
+      
+      
+      			<div class="white-papers__right">
+      				<div class="white-papers__img"><img src="./img/white-papers-logo.png" alt=""></div>
+      			</div>
+      
+      		</div>
+      	</div>
+      </section>
+      <!--  -->
+      <section class="cta-person">
+      	<div class="cta-person__overlay"></div>
+      	<div class="container container_inner">
+      
+      		<div class="cta-person__box">
+      			<div class="cta-person__left">
+      				<div class="cta-person__subtitle">Schedule a free intro call</div>
+      				<h2>We are ready to get you set up for success with your new team</h2>
+      				<div class="cta-person__buttons">
+      					<button type="button" class="btn btn__white">Schedule a free intro call</button>
+      					<button type="button" class="btn btn__border btn__blue">Start a Chat</button>
+      				</div>
+      			</div>
+      			<div class="cta-person__right">
+      				<div class="img"><img src="./img/blog.png" alt="" /></div>
+      			</div>
+      		</div>
+      	</div>
+      </section>
+    </main>
 
-
-	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-	<link rel="stylesheet" href="libs/fancybox/fancybox.css" />
-	<link rel="stylesheet" href="css/main.css" />
-</head>
-
-<body class="page_home">
-	<div class="header_top-row">
-	  <div class="container">
-	    <nav class="header_top-navigation">
-	      <ul>
-	        <li class="offcanvas-toggle">
-	          <a href="#" class="">About Us</a>
-	        </li>
-	        <li>
-	          <a href="#">Why Philippines?</a>
-	        </li>
-	        <li>
-	          <a href="#">Careers - Apply today!</a>
-	        </li>
-	      </ul>
-	    </nav>
-	  </div>
-	</div>
-	
-	<header class="header">
-	  <div class="header_bottom-row">
-	    <div class="container">
-	      <a href="/" class="header_logo">
-	        <img src="img/logo.svg" alt="Logo" />
-	      </a>
-	      <a href="" class="header_logo-mobile">
-	        <img src="img/logo_mobile.svg" alt="Logo" />
-	      </a>
-	      <nav class="header_main-navigation">
-	        <ul>
-	          <li class="menu-item-has-children">
-	            <a href="#">About US</a>
-	            <ul class="sub-menu">
-	              <li>
-	                <a href="/our-teammates.html">Our Teammates</a>
-	              </li>
-	              <li>
-	                <a href="/modern-offices.html">Modern Offices</a>
-	              </li>
-	              <li>
-	                <a href="/clients.html">Clients</a>
-	              </li>
-	              <li>
-	                <a href="/blog.html">Blog</a>
-	              </li>
-	              <li>
-	                <a href="/become-a-reseller.html">Become a Reseller</a>
-	              </li>
-	            </ul>
-	          </li>
-	          <li class="menu-item-has-children">
-	            <a href="#">Industries</a>
-	            <ul class="sub-menu">
-	              <li>
-	                <a href="industries.html">Industries</a>
-	              </li>
-	              <li>
-	                <a href="/industries-sub-page.html">Technology</a>
-	              </li>
-	            </ul>
-	          </li>
-	          <li class="menu-item-has-children">
-	            <a href="#">Services</a>
-	            <ul class="sub-menu">
-	              <li>
-	                <a href="services.html">Services</a>
-	              </li>
-	              <li>
-	                <a href="/services-sub-page.html">Technology</a>
-	              </li>
-	              <li>
-	                <a href="/services-sub-page-sub-page.html">Process</a>
-	              </li>
-	            </ul>
-	          </li>
-	          <li>
-	            <a href="/why-philippines.html">Why Philippines</a>
-	          </li>
-	          <li>
-	            <a href="/careers.html">Careers</a>
-	          </li>
-	          <li>
-	            <a href="/our-process.html">Our Process</a>
-	          </li>
-	          <li>
-	            <a href="/glossary.html">Glossary</a>
-	          </li>
-	        </ul>
-	        <a href="/contact-us.html" class="header_button btn btn__blue">Contact Us</a>
-	      </nav>
-	      <button class="header_navigation-toggle">
-	        <span></span>
-	        <span></span>
-	        <span></span>
-	      </button>
-	    </div>
-	  </div>
-	</header>
-	
-	<div class="offcanvas__navigation" id="offcanvas__navigation">
-	  <div class="offcanvas__navigation-title">
-	    <h2>About Us</h2>
-	  </div>
-	  <nav class="offcanvas__navigation-nav">
-	    <ul>
-	      <li>
-	        <a href="">Our Story</a>
-	      </li>
-	      <li>
-	        <a href="">Our Teammates</a>
-	      </li>
-	      <li>
-	        <a href="">Modern Offices</a>
-	      </li>
-	      <li>
-	        <a href="">Clients</a>
-	      </li>
-	    </ul>
-	    <ul>
-	      <li>
-	        <a href="">ISO Certification</a>
-	      </li>
-	      <li>
-	        <a href="">News & Press</a>
-	      </li>
-	      <li>
-	        <a href="">Glossary</a>
-	      </li>
-	      <li>
-	        <a href="">Events</a>
-	      </li>
-	      <li>
-	        <a href="">Blog</a>
-	      </li>
-	      <li>
-	        <a href="">Become a Reseller</a>
-	      </li>
-	    </ul>
-	  </nav>
-	</div>
-	
-	<div class="mobile_navigation" id="mobile_navigation">
-	  <nav class="mobile_navigation-main">
-	    <ul>
-	      <li class="menu-item-has-children">
-	        <a href="#">About US</a>
-	        <ul class="sub-menu">
-	          <li>
-	            <a href="/our-teammates.html">Our Teammates</a>
-	          </li>
-	          <li>
-	            <a href="/modern-offices.html">Modern Offices</a>
-	          </li>
-	          <li>
-	            <a href="/clients.html">Clients</a>
-	          </li>
-	          <li>
-	            <a href="/blog.html">Blog</a>
-	          </li>
-	          <li>
-	            <a href="/become-a-reseller.html">Become a Reseller</a>
-	          </li>
-	        </ul>
-	      </li>
-	      <li class="menu-item-has-children">
-	        <a href="#">Services</a>
-	        <ul class="sub-menu">
-	          <li>
-	            <a href="services.html">Services</a>
-	          </li>
-	          <li>
-	            <a href="/services-sub-page.html">Technology</a>
-	          </li>
-	          <li>
-	            <a href="/services-sub-page-sub-page.html">Process</a>
-	          </li>
-	        </ul>
-	      </li>
-	      <li>
-	        <a href="/why-philippines.html">Why Philippines</a>
-	      </li>
-	      <li>
-	        <a href="/careers.html">Careers</a>
-	      </li>
-	      <li>
-	        <a href="/our-process.html">Our Process</a>
-	      </li>
-	      <li>
-	        <a href="/glossary.html">Glossary</a>
-	      </li>
-	    </ul>
-	    <a href="#" class="header_button btn btn__blue">Contact Us</a>
-	  </nav>
-	</div>
-	<main>
-		<section class="flag-video">
-		  <div class="flag-video__overlay-top">
-		    <img src="img/video-wave.svg" alt="star" />
-		  </div>
-		  <div class="flag-video__overlay">
-		    <img src="./img/ovorlay-section-flag.svg" alt="star" />
-		  </div>
-		  <div class="container container_inner">
-		    <div class="flag-video__title">
-		      <h2 class="section_title">American with more than 10 years experience in the BPO industry</h2>
-		    </div>
-		
-		    <div class="flag-video__video">
-		      <div class="flag-video__poster">
-		        <img src="./img/flag.png" alt=" " />
-		      </div>
-		      <div class="flag-video__poster-profile">
-		        <img src="./img/flag-portret.png" alt=" " />
-		      </div>
-		      <div class="flag-video__video-logo"><img src="./img/logo-video-flag.svg" alt="" /></div>
-		
-		      <a class="popup-video" href="https://www.youtube.com/embed/jid2A7ldc_8?autoplay=1">
-		        <button class="play-button">
-		          <img src="./img/play-video-flag.svg" alt="" />
-		          <img src="./img/play-viseo.svg" alt="" /></button
-		      ></a>
-		    </div>
-		  </div>
-		</section>
-		<!--  -->
-		<section class="our-guide">
-		  <div class="our-guide__overlay"><img src="./img/bg-star.svg" alt="star" /></div>
-		  <div class="container container_inner">
-		    <div class="our-guide__content">
-		      <div class="our-guide__left">
-		        <h2>Partner with us for Reliable Offshore Staffing Solutions that Drive Growth</h2>
-		        <div class="our-guide__subtitle">
-		          <p>STAFFVIRTUAL is a leading provider of offshore staffing solutions, with over a decade of experience helping businesses achieve their goals.</p>
-		        </div>
-		        <div class="our-guide__description">
-		          <p>
-		            We specialize in creating exceptional teams that boost business efficiency and profitability. Our comprehensive range of services includes full-service BPO and PEO solutions, enabling our
-		            clients to streamline their customer support, back-office operations, and IT processes. As your Employer of Record, we take care of payroll, benefits administration, and legal compliance
-		            for your staff, providing a hassle-free one-stop-shop solution for your business needs.
-		          </p>
-		        </div>
-		        <a href="#" class="btn btn__blue">Explore our Salary Guide</a>
-		      </div>
-		      <div class="our-guide__right">
-		        <div class="our-guide__img"><img src="./img/blog.png" alt="" /></div>
-		      </div>
-		      <div class="our-guide__overlay-bg"><img src="./img/bg-blue.svg" alt="star" /></div>
-		    </div>
-		  </div>
-		</section>
-		<!--  -->
-		<section class="logo-section">
-			<div class="container container_inner">
-				<div class="logo-section__box">
-					<ul>
-						<li>
-							<div class="logo-section__logo"><img src="./img/logo-stories.svg" alt=""></div>
-							<div class="logo-section-info">
-								<h4>BPO Employer</h4>
-								<p>of the year 2022</p>
-							</div>
-						</li>
-						<li>
-							<div class="logo-section__logo"><img src="./img/logo-stories.svg" alt=""></div>
-							<div class="logo-section-info">
-								<h4>BPO Employer</h4>
-								<p>of the year 2022</p>
-							</div>
-						</li>
-						<li>
-							<div class="logo-section__logo"><img src="./img/logo-stories.svg" alt=""></div>
-							<div class="logo-section-info">
-								<h4>BPO Employer</h4>
-								<p>of the year 2022</p>
-							</div>
-						</li>
-						<li>
-							<div class="logo-section__logo"><img src="./img/logo-stories.svg" alt=""></div>
-							<div class="logo-section-info">
-								<h4>BPO Employer</h4>
-								<p>of the year 2022</p>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-			</div>
-		</section>
-		<!--  -->
-		<section class="howitworks">
-		  <div class="container">
-		    <div class="howitworks__title">
-		      <span class="section_subtitle">
-		        How it works
-		      </span>
-		      <h2 class="section_title">
-		        We help you recruit and manage your BPO team in the philippines
-		      </h2>
-		      <p>STAFFVIRTUAL can help you scale up or down as needed, without the hassle of recruiting, training, and managing
-		        new staff.</p>
-		    </div>
-		    <div class="howitworks-items">
-		      <div class="howitworks-item">
-		        <div class="howitworks-item--image">
-		          <img src="img/howitworks/howitworks1.svg" alt="">
-		        </div>
-		        <div class="howitworks-item--info">
-		          <h4>Build a team</h4>
-		          <p>We carefully select and train our employees to ensure they have the expertise and experience required to
-		            meet your specific needs</p>
-		        </div>
-		      </div>
-		      <div class="howitworks-item">
-		        <div class="howitworks-item--image">
-		          <img src="img/howitworks/howitworks2.svg" alt="">
-		        </div>
-		        <div class="howitworks-item--info">
-		          <h4>Full support</h4>
-		          <p>Our streamlined processes and experienced staff can help you increase your efficiency and productivity, so
-		            you can focus on your core business activities</p>
-		        </div>
-		      </div>
-		      <div class="howitworks-item">
-		        <div class="howitworks-item--image">
-		          <img src="img/howitworks/howitworks3.svg" alt="">
-		        </div>
-		        <div class="howitworks-item--info">
-		          <h4>Save cost</h4>
-		          <p>We offer flexible pricing plans that allow you to choose the services you need and pay only for what you
-		            use</p>
-		        </div>
-		      </div>
-		    </div>
-		  </div>
-		</section>
-		<!--  -->
-		<section class="testimonials ">
-			<div class="container container_inner">
-				<div class="testimonials__title">
-					<span class="section_subtitle">Meet our happy clients</span>
-					<h2 class="section_title">We help our clients optimise the profitability and scalability</h2>
-				</div>
-		
-				<div class="testimonials__box">
-					<div class="testimonial">
-						<div class="testimonial__video">
-							<div class="testimonial__poster">
-								<img src="./img/testimonials/1.png" alt=" " />
-							</div>
-							<div class="testimonial__video-logo"><img src="./img/logo-video-meet.svg" alt="" /></div>
-		
-							<a class="popup-video" href="https://www.youtube.com/embed/jid2A7ldc_8?autoplay=1">
-								<button class="play-button">
-									<img src="./img/play-viseo.svg" alt="" /></button></a>
-						</div>
-						<div class="testimonial__desc">
-							<p>" The cost savings of STAFFVIRTUAL is very dramatic, although the primary reason we use them is for the
-								quality of the people we get."</p>
-						</div>
-		
-						<div class="testimonial__name-box"><span class="testimonial__name-box-name">Max Armbruster</span> - <span
-								class="testimonial__name-box-optimise">CEO, IBM</span></div>
-						<div class="testimonial__logo"><img src="./img/optimise-logo.svg" alt="" /></div>
-					</div>
-					<div class="testimonial">
-						<div class="testimonial__video">
-							<div class="testimonial__poster">
-								<img src="./img/testimonials/2.png" alt=" " />
-							</div>
-							<div class="testimonial__video-logo"><img src="./img/logo-video-meet.svg" alt="" /></div>
-		
-							<a class="popup-video" href="https://www.youtube.com/embed/jid2A7ldc_8?autoplay=1">
-								<button class="play-button">
-									<img src="./img/play-viseo.svg" alt="" /></button></a>
-						</div>
-						<div class="testimonial__desc">
-							<p>" The cost savings of STAFFVIRTUAL is very dramatic, although the primary reason we use them is for the
-								quality of the people we get."</p>
-						</div>
-		
-						<div class="testimonial__name-box"><span class="testimonial__name-box-name">Max Armbruster</span> - <span
-								class="testimonial__name-box-optimise">CEO, IBM</span></div>
-						<div class="testimonial__logo"><img src="./img/optimise-logo.svg" alt="" /></div>
-					</div>
-					<div class="testimonial">
-						<div class="testimonial__video">
-							<div class="testimonial__poster">
-								<img src="./img/testimonials/3.png" alt=" " />
-							</div>
-							<div class="testimonial__video-logo"><img src="./img/logo-video-meet.svg" alt="" /></div>
-		
-							<a class="popup-video" href="https://www.youtube.com/embed/jid2A7ldc_8?autoplay=1">
-								<button class="play-button">
-									<img src="./img/play-viseo.svg" alt="" /></button></a>
-						</div>
-						<div class="testimonial__desc">
-							<p>" The cost savings of STAFFVIRTUAL is very dramatic, although the primary reason we use them is for the
-								quality of the people we get."</p>
-						</div>
-		
-						<div class="testimonial__name-box"><span class="testimonial__name-box-name">Max Armbruster</span> - <span
-								class="testimonial__name-box-optimise">CEO, IBM</span></div>
-						<div class="testimonial__logo"><img src="./img/optimise-logo.svg" alt="" /></div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--  -->
-		<section class="benefits">
-			<div class="benefits__overlay"><img src="./img/bg-star.svg" alt="star" /></div>
-			<div class="container container_inner">
-				<div class="benefits__title">
-					<span class="section_subtitle">A world of benefits</span>
-					<h2 class="section_title">We help you get a growth team set up to drive value for your company</h2>
-					<p>
-						Our talented teammates are passionate about delivering results and exceeding expectations.
-					</p>
-				</div>
-		
-				<ul>
-					<li>
-						<div class="benefits__item-img"><img src="./img/benefits/Duotone.svg" alt=""></div>
-						<div class="benefits__item-information">
-							<h3>Access to Top Talent</h3>
-							<p>STAFFVIRTUAL's recruitment process is designed to attract and retain top talent</p>
-						</div>
-					</li>
-					<li>
-						<div class="benefits__item-img"><img src="./img/benefits/Duotone.svg" alt=""></div>
-						<div class="benefits__item-information">
-							<h3>Cost Savings</h3>
-							<p>We can help you save on labor costs and enjoy flexible pricing plans that allow you to pay only for the
-								services you
-								need.</p>
-						</div>
-					</li>
-					<li>
-						<div class="benefits__item-img"><img src="./img/benefits/Duotone.svg" alt=""></div>
-						<div class="benefits__item-information">
-							<h3>Scalability</h3>
-							<p>With STAFFVIRTUAL, you can quickly scale up or down as needed, without the hassle of recruiting, training,
-								and managing
-								new staff.</p>
-						</div>
-					</li>
-					<li>
-						<div class="benefits__item-img"><img src="./img/benefits/Duotone.svg" alt=""></div>
-						<div class="benefits__item-information">
-							<h3>Improved Efficiency</h3>
-							<p>Our streamlined processes and experienced staff can help you increase your efficiency and productivity.</p>
-						</div>
-					</li>
-					<li>
-						<div class="benefits__item-img"><img src="./img/benefits/Duotone.svg" alt=""></div>
-						<div class="benefits__item-information">
-							<h3>Risk Reduction</h3>
-							<p>We ensure compliance with labor laws, provide secure data handling, and implement disaster recovery plans.
-							</p>
-						</div>
-					</li>
-					<li>
-						<div class="benefits__item-img"><img src="./img/benefits/Duotone-5.svg" alt=""></div>
-						<div class="benefits__item-information">
-							<h3>Focus on Core Business Activities</h3>
-							<p>Outsourcing non-core activities to STAFFVIRTUAL frees up your time and resources to focus on core business
-								activities.</p>
-						</div>
-					</li>
-				</ul>
-		
-			</div>
-		</section>
-		<!--  -->
-		<section class="benefits benefits-revers">
-			<div class="benefits__overlay"><img src="./img/bg-star.svg" alt="star" /></div>
-			<div class="container container_inner">
-				<div class="benefits__title">
-					<span class="section_subtitle">Explore our Services</span>
-					<h2 class="section_title">We are proud to deliver value to our partner clients through Services</h2>
-					<p>
-						Our talented teammates are passionate about delivering results and exceeding expectations.
-					</p>
-				</div>
-		
-				<ul>
-					<li>
-						<div class="benefits__item-img"><img src="./img/benefits/Duotone.svg" alt=""></div>
-						<div class="benefits__item-information">
-							<h3>Customer Experience</h3>
-							<p>We provide high-quality customer support to help businesses keep their customers satisfied.</p>
-						</div>
-					</li>
-					<li>
-						<div class="benefits__item-img"><img src="./img/benefits/Duotone-1.svg" alt=""></div>
-						<div class="benefits__item-information">
-							<h3>Back-Office</h3>
-							<p>We handle administrative and support tasks to ensure the smooth running of businesses.</p>
-						</div>
-					</li>
-					<li>
-						<div class="benefits__item-img"><img src="./img/benefits/Duotone-2.svg" alt=""></div>
-						<div class="benefits__item-information">
-							<h3>IT</h3>
-							<p>We offer a wide range of IT services, including technical support, software development, and infrastructure
-								management.</p>
-						</div>
-					</li>
-					<li>
-						<div class="benefits__item-img"><img src="./img/benefits/Duotone-3.svg" alt=""></div>
-						<div class="benefits__item-information">
-							<h3>Legal</h3>
-							<p>Our legal services provide businesses with contract review, legal research, and IP protection to mitigate
-								risks and
-								protect assets.</p>
-						</div>
-					</li>
-					<li>
-						<div class="benefits__item-img"><img src="./img/benefits/Duotone-4.svg" alt=""></div>
-						<div class="benefits__item-information">
-							<h3>PEO</h3>
-							<p>We offer PEO services, acting as the employer of record for businesses' employees & providing payroll,
-								benefits,
-								compliance & risk management.</p>
-						</div>
-					</li>
-					<li>
-						<div class="benefits__item-img"><img src="./img/benefits/Duotone-5.svg" alt=""></div>
-						<div class="benefits__item-information">
-							<h3>Creative</h3>
-							<p>STAFFVIRTUAL's recruitment process is designed to attract and retain top talent</p>
-						</div>
-					</li>
-				</ul>
-		
-			</div>
-		</section>
-		<!--  -->
-		<section class="cta-video cta-video-revers-right">
-			<div class="container container_inner">
-				<div class="cta-video__box">
-					<div class="cta-video__left">
-						<div class="cta-video__video">
-							<div class="cta-video__poster">
-								<img src="./img/cta-video.png" alt=" " />
-							</div>
-		
-							<a class="popup-video" href="https://www.youtube.com/embed/jid2A7ldc_8?autoplay=1">
-								<button class="play-button">
-									<img src="./img/play-viseo.svg" alt="" /></button></a>
-						</div>
-		
-		
-					</div>
-					<div class="cta-video__right">
-						<div class="cta-video__subtitle">Schedule a free intro call</div>
-						<h2>We are ready to get you set up for success with your new team</h2>
-						<div class="cta-video__buttons">
-							<button type="button" class="btn btn__blue">Schedule a free intro call</button>
-							<button type="button" class="btn btn__white">Start a Chat</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--  -->
-		<section class="fag">
-			<div class="fag__overlay"><img src="./img/bg-star.svg" alt="star" /></div>
-			<div class="container container_inner">
-		
-				<h2>Frequently Asked Questions</h2>
-		
-		
-				<div class="fag__accordion">
-					<div class="fag__accordion-item open">
-		
-						<div class="fag__accordion-header accordion-header">
-							<h3>
-								What kind of training and support do STAFFVIRTUAL's employees receive?
-							</h3>
-							<button class="fag__accordion-toggle accordion-toggle"></button>
-						</div>
-						<div class="fag__accordion-content-box">
-							<p>
-								STAFFVIRTUAL's employees receive extensive training and ongoing support to ensure they have the skills and
-								knowledge
-								needed to provide high-quality outsourcing services. 
-		
-								The company provides regular training sessions, performance monitoring, and feedback mechanisms to ensure
-								that
-								its
-								employees are delivering top-quality work and meeting clients' expectations.
-							</p>
-						</div>
-					</div>
-					<div class="fag__accordion-item">
-		
-						<div class="fag__accordion-header accordion-header">
-							<h3>
-								What kind of training and support do STAFFVIRTUAL's employees receive?
-							</h3>
-							<button class="fag__accordion-toggle accordion-toggle"></button>
-						</div>
-						<div class="fag__accordion-content-box">
-							<p>
-								STAFFVIRTUAL's employees receive extensive training and ongoing support to ensure they have the skills and
-								knowledge
-								needed to provide high-quality outsourcing services. 
-		
-								The company provides regular training sessions, performance monitoring, and feedback mechanisms to ensure
-								that
-								its
-								employees are delivering top-quality work and meeting clients' expectations.
-							</p>
-						</div>
-					</div>
-					<div class="fag__accordion-item">
-		
-						<div class="fag__accordion-header accordion-header">
-							<h3>
-								What kind of training and support do STAFFVIRTUAL's employees receive?
-							</h3>
-							<button class="fag__accordion-toggle accordion-toggle"></button>
-						</div>
-						<div class="fag__accordion-content-box">
-							<p>
-								STAFFVIRTUAL's employees receive extensive training and ongoing support to ensure they have the skills and
-								knowledge
-								needed to provide high-quality outsourcing services. 
-		
-								The company provides regular training sessions, performance monitoring, and feedback mechanisms to ensure
-								that
-								its
-								employees are delivering top-quality work and meeting clients' expectations.
-							</p>
-						</div>
-					</div>
-		
-					<div class="fag__accordion-item">
-		
-						<div class="fag__accordion-header accordion-header">
-							<h3>
-								What kind of training and support do STAFFVIRTUAL's employees receive?
-							</h3>
-							<button class="fag__accordion-toggle accordion-toggle"></button>
-						</div>
-						<div class="fag__accordion-content-box">
-							<p>
-								STAFFVIRTUAL's employees receive extensive training and ongoing support to ensure they have the skills and
-								knowledge
-								needed to provide high-quality outsourcing services. 
-		
-								The company provides regular training sessions, performance monitoring, and feedback mechanisms to ensure
-								that
-								its
-								employees are delivering top-quality work and meeting clients' expectations.
-							</p>
-						</div>
-					</div>
-		
-					<div class="fag__accordion-item">
-		
-						<div class="fag__accordion-header accordion-header">
-							<h3>
-								What kind of training and support do STAFFVIRTUAL's employees receive?
-							</h3>
-							<button class="fag__accordion-toggle accordion-toggle"></button>
-						</div>
-						<div class="fag__accordion-content-box">
-							<p>
-								STAFFVIRTUAL's employees receive extensive training and ongoing support to ensure they have the skills and
-								knowledge
-								needed to provide high-quality outsourcing services. 
-		
-								The company provides regular training sessions, performance monitoring, and feedback mechanisms to ensure
-								that
-								its
-								employees are delivering top-quality work and meeting clients' expectations.
-							</p>
-						</div>
-					</div>
-		
-		
-				</div>
-			</div>
-		</section>
-		<!--  -->
-		<section class="white-papers">
-			<div class="white-papers__overlay"><img src="./img/bg-star-blue.svg" alt="star" /></div>
-		
-		
-			<div class="container container_inner">
-				<h2>White Papers</h2>
-				<div class="white-papers__box">
-					<div class="white-papers__left">
-						<ul>
-							<li>
-								<a href="">
-									<h3>Outlook on the BPO industry in 2023</h3>
-								</a>
-								<p>Improved customer satisfaction and reduced operating costs.</p>
-							</li>
-							<li>
-								<h3>Outlook on the BPO industry in 2023</h3>
-								<p>Outsourcing of HR tasks and co-employment of local employees.</p>
-							</li>
-							<li>
-								<h3>Outlook on the BPO industry in 2023</h3>
-								<p>Cost-effective management of administrative and support functions.</p>
-							</li>
-							<li>
-								<h3>Outlook on the BPO industry in 2023</h3>
-								<p>Streamlining production and reducing costs for creative projects.</p>
-							</li>
-							<li>
-								<h3>Outlook on the BPO industry in 2023</h3>
-								<p>Access to specialised IT expertise and cost savings.</p>
-							</li>
-							<li>
-								<h3>Outlook on the BPO industry in 2023</h3>
-								<p>Increased productivity and reduced administrative burden.</p>
-							</li>
-						</ul>
-		
-					</div>
-		
-		
-					<div class="white-papers__right">
-						<div class="white-papers__img"><img src="./img/white-papers-logo.png" alt=""></div>
-					</div>
-		
-				</div>
-			</div>
-		</section>
-		<!--  -->
-		<section class="cta-person">
-			<div class="cta-person__overlay"></div>
-			<div class="container container_inner">
-		
-				<div class="cta-person__box">
-					<div class="cta-person__left">
-						<div class="cta-person__subtitle">Schedule a free intro call</div>
-						<h2>We are ready to get you set up for success with your new team</h2>
-						<div class="cta-person__buttons">
-							<button type="button" class="btn btn__white">Schedule a free intro call</button>
-							<button type="button" class="btn btn__border btn__blue">Start a Chat</button>
-						</div>
-					</div>
-					<div class="cta-person__right">
-						<div class="img"><img src="./img/blog.png" alt="" /></div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-	</main>
-
-	<footer class="footer">
-	    <div class="container">
-	        <div class="footer_top">
-	            <div class="footer_col">
-	                <a href="#" class="footer_logo">
-	                    <img src="img/logo_footer.svg" alt="staffvirtual">
-	                </a>
-	                <div class="footer_slogan">
-	                    <p>We partner with businesses to drive success by delivering unbeatable cost savings in the BPO
-	                        industry</p>
-	                </div>
-	                <div class="footer_nav">
-	                    <ul>
-	                        <li>
-	                            <a href="#">Why the Philippines</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Careers</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Contact Us</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Our Team</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Our Process</a>
-	                        </li>
-	                    </ul>
-	                </div>
-	            </div>
-	            <div class="footer_col">
-	                <h4 class="footer_col-title">
-	                    About Us
-	                </h4>
-	                <div class="footer_nav">
-	                    <ul>
-	                        <li>
-	                            <a href="#">Our Story</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Our Teammates</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Modern Offices</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Clients</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">ISO Certifications </a>
-	                        </li>
-	                        <li>
-	                            <a href="#">News & Press</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Glossary</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Blog</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Become a Reseller</a>
-	                        </li>
-	                    </ul>
-	                </div>
-	            </div>
-	            <div class="footer_col">
-	                <h4 class="footer_col-title">
-	                    Outsourcing Services
-	                </h4>
-	                <div class="footer_nav">
-	                    <ul>
-	                        <li>
-	                            <a href="">Back Office</a>
-	                        </li>
-	                        <li>
-	                            <a href="">IT</a>
-	                        </li>
-	                        <li>
-	                            <a href="">Legal</a>
-	                        </li>
-	                        <li>
-	                            <a href="">Marketing</a>
-	                        </li>
-	                        <li>
-	                            <a href="">HR</a>
-	                        </li>
-	                        <li>
-	                            <a href="">Business Development</a>
-	                        </li>
-	                        <li>
-	                            <a href="">Customer Experience</a>
-	                        </li>
-	                    </ul>
-	                </div>
-	            </div>
-	            <div class="footer_col">
-	                <h4 class="footer_col-title">
-	                    Industries
-	                </h4>
-	                <div class="footer_nav">
-	                    <ul>
-	                        <li>
-	                            <a href="#">Startups</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">eCommerce</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Legal</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Technology</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">MSPS</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Property Management</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Healthcare</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Travel</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Logistics</a>
-	                        </li>
-	                    </ul>
-	                </div>
-	            </div>
-	        </div>
-	        <div class="footer_bottom">
-	            <div class="footer_col footer_social-links">
-	                <h4 class="footer_col-title">
-	                    Follow US
-	                </h4>
-	                <div class="footer_social-links--items">
-	                    <a href="">
-	                        <img src="img/social/facebook.svg" alt="">
-	                    </a>
-	                    <a href="">
-	                        <img src="img/social/tiktok.svg" alt="">
-	                    </a>
-	                    <a href="">
-	                        <img src="img/social/linkedin.svg" alt="">
-	                    </a>
-	                    <a href="">
-	                        <img src="img/social/instagram.svg" alt="">
-	                    </a>
-	                    <a href="">
-	                        <img src="img/social/youtube.svg" alt="">
-	                    </a>
-	                </div>
-	            </div>
-	            <div class="footer_col">
-	                <div class="footer_col-title">
-	                    <h4>Contact</h4>
-	                </div>
-	                <div class="footer_nav">
-	                    <ul>
-	                        <li>
-	                            <a href="mailto:info@staffvirtual.com">info@staffvirtual.com</a>
-	                        </li>
-	                        <li>
-	                            <a href="tel:+63890210696">+63 890 210 696</a>
-	                        </li>
-	                        <li>
-	                            <a href="tel:+63890210697">+63 890 210 697</a>
-	                        </li>
-	                    </ul>
-	                </div>
-	            </div>
-	            <div class="footer_col">
-	                <div class="footer_col-title">
-	                    <h4>USA</h4>
-	                </div>
-	                <div class="footer_location">
-	                    <p>
-	                        78 SW 7th St. Suite 05-109C <br>
-	                        Miami, FL 33130,<br>
-	                        USA
-	                    </p>
-	                </div>
-	            </div>
-	            <div class="footer_col">
-	                <div class="footer_col-title">
-	                    <h4>The Philippines</h4>
-	                </div>
-	                <div class="footer_location">
-	                    <p>
-	                        32nd fl, Robinsons Equitable Tower, <br>
-	                        ADB Avenue, Ortigas Center, <br>
-	                        Pasig City, NCR Philippines
-	                    </p>
-	                </div>
-	            </div>
-	        </div>
-	        <div class="footer_copyright">
-	            <p>STAFFVIRTUAL Inc・©2023</p>
-	            <div class="footer_copyright-nav">
-	                <ul>
-	                    <li>
-	                        <a href="">Privacy Statement</a>
-	                    </li>
-	                    <li>
-	                        <a href="">Privacy notice for California Residents</a>
-	                    </li>
-	                    <li>
-	                        <a href="">Global Supplier Code of Conduct</a>
-	                    </li>
-	                    <li>
-	                        <a href="">Cookie Policy</a>
-	                    </li>
-	                </ul>
-	            </div>
-	        </div>
-	    </div>
-	</footer>
-</body>
-<script src="libs/jquery/jquery.min.js"></script>
-<script src="libs/fancybox/fancybox.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="js/common.js"></script>
-<script src="js/blocks/accordion.js"></script>
-<script src="js/blocks/video.js"></script>
-<script src="js/blocks/slider-settings.js"></script>
-<script src="js/blocks/star-rating.js"></script>
-<script src="js/glossary.js"></script>
-
+    <footer class="footer">
+        <div class="container">
+            <div class="footer_top">
+                <div class="footer_col">
+                    <a href="#" class="footer_logo">
+                        <img src="img/logo_footer.svg" alt="staffvirtual">
+                    </a>
+                    <div class="footer_slogan">
+                        <p>We partner with businesses to drive success by delivering unbeatable cost savings in the BPO
+                            industry</p>
+                    </div>
+                    <div class="footer_nav">
+                        <ul>
+                            <li>
+                                <a href="#">Why the Philippines</a>
+                            </li>
+                            <li>
+                                <a href="#">Careers</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#">Our Team</a>
+                            </li>
+                            <li>
+                                <a href="#">Our Process</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_col">
+                    <h4 class="footer_col-title">
+                        About Us
+                    </h4>
+                    <div class="footer_nav">
+                        <ul>
+                            <li>
+                                <a href="#">Our Story</a>
+                            </li>
+                            <li>
+                                <a href="#">Our Teammates</a>
+                            </li>
+                            <li>
+                                <a href="#">Modern Offices</a>
+                            </li>
+                            <li>
+                                <a href="#">Clients</a>
+                            </li>
+                            <li>
+                                <a href="#">ISO Certifications </a>
+                            </li>
+                            <li>
+                                <a href="#">News & Press</a>
+                            </li>
+                            <li>
+                                <a href="#">Glossary</a>
+                            </li>
+                            <li>
+                                <a href="#">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#">Become a Reseller</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_col">
+                    <h4 class="footer_col-title">
+                        Outsourcing Services
+                    </h4>
+                    <div class="footer_nav">
+                        <ul>
+                            <li>
+                                <a href="">Back Office</a>
+                            </li>
+                            <li>
+                                <a href="">IT</a>
+                            </li>
+                            <li>
+                                <a href="">Legal</a>
+                            </li>
+                            <li>
+                                <a href="">Marketing</a>
+                            </li>
+                            <li>
+                                <a href="">HR</a>
+                            </li>
+                            <li>
+                                <a href="">Business Development</a>
+                            </li>
+                            <li>
+                                <a href="">Customer Experience</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_col">
+                    <h4 class="footer_col-title">
+                        Industries
+                    </h4>
+                    <div class="footer_nav">
+                        <ul>
+                            <li>
+                                <a href="#">Startups</a>
+                            </li>
+                            <li>
+                                <a href="#">eCommerce</a>
+                            </li>
+                            <li>
+                                <a href="#">Legal</a>
+                            </li>
+                            <li>
+                                <a href="#">Technology</a>
+                            </li>
+                            <li>
+                                <a href="#">MSPS</a>
+                            </li>
+                            <li>
+                                <a href="#">Property Management</a>
+                            </li>
+                            <li>
+                                <a href="#">Healthcare</a>
+                            </li>
+                            <li>
+                                <a href="#">Travel</a>
+                            </li>
+                            <li>
+                                <a href="#">Logistics</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="footer_col footer_social-links">
+                    <h4 class="footer_col-title">
+                        Follow US
+                    </h4>
+                    <div class="footer_social-links--items">
+                        <a href="">
+                            <img src="img/social/facebook.svg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="img/social/tiktok.svg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="img/social/linkedin.svg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="img/social/instagram.svg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="img/social/youtube.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer_col">
+                    <div class="footer_col-title">
+                        <h4>Contact</h4>
+                    </div>
+                    <div class="footer_nav">
+                        <ul>
+                            <li>
+                                <a href="mailto:info@staffvirtual.com">info@staffvirtual.com</a>
+                            </li>
+                            <li>
+                                <a href="tel:+63890210696">+63 890 210 696</a>
+                            </li>
+                            <li>
+                                <a href="tel:+63890210697">+63 890 210 697</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_col">
+                    <div class="footer_col-title">
+                        <h4>USA</h4>
+                    </div>
+                    <div class="footer_location">
+                        <p>
+                            78 SW 7th St. Suite 05-109C <br>
+                            Miami, FL 33130,<br>
+                            USA
+                        </p>
+                    </div>
+                </div>
+                <div class="footer_col">
+                    <div class="footer_col-title">
+                        <h4>The Philippines</h4>
+                    </div>
+                    <div class="footer_location">
+                        <p>
+                            32nd fl, Robinsons Equitable Tower, <br>
+                            ADB Avenue, Ortigas Center, <br>
+                            Pasig City, NCR Philippines
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_copyright">
+                <p>STAFFVIRTUAL Inc・©2023</p>
+                <div class="footer_copyright-nav">
+                    <ul>
+                        <li>
+                            <a href="">Privacy Statement</a>
+                        </li>
+                        <li>
+                            <a href="">Privacy notice for California Residents</a>
+                        </li>
+                        <li>
+                            <a href="">Global Supplier Code of Conduct</a>
+                        </li>
+                        <li>
+                            <a href="">Cookie Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+  </body>
+  <script src="libs/jquery/jquery.min.js"></script>
+  <script src="libs/fancybox/fancybox.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/blocks/accordion.js"></script>
+  <script src="js/blocks/video.js"></script>
+  <script src="js/blocks/slider-settings.js"></script>
+  <script src="js/blocks/star-rating.js"></script>
+  <script src="js/glossary.js"></script>
+  <script src="libs/lottie/lottie-player.js"></script>
 </html>

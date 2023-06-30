@@ -1,39 +1,69 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-  	<meta charset="utf-8" />
-  	<title>StaffVirtual</title>
-  	<meta name="description" content="" />
-  	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  	<meta name="theme-color" content="#ffffff" />
+    <meta charset="utf-8" />
+    <title>StaffVirtual</title>
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
   
-  	<!-- fonts preloading -->
-  	<link rel="preload" href="fonts/CircularXX-LightItalic.woff2" as="font" type="font/woff2" crossorigin>
-  	<link rel="preload" href="fonts/CircularXX-Bold.woff2" as="font" type="font/woff2" crossorigin>
-  	<link rel="preload" href="fonts/CircularXX-Medium.woff2" as="font" type="font/woff2" crossorigin>
-  	<link rel="preload" href="fonts/CircularXX-Black.woff2" as="font" type="font/woff2" crossorigin>
-  	<link rel="preload" href="fonts/CircularXX-BlackItalic.woff2" as="font" type="font/woff2" crossorigin>
-  	<link rel="preload" href="fonts/CircularXX-MediumItalic.woff2" as="font" type="font/woff2" crossorigin>
-  	<link rel="preload" href="fonts/CircularXX-BookItalic.woff2" as="font" type="font/woff2" crossorigin>
-  	<link rel="preload" href="fonts/CircularXX-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  	<link rel="preload" href="fonts/CircularXX-Book.woff2" as="font" type="font/woff2" crossorigin>
-  	<link rel="preload" href="fonts/CircularXX-ExtraBlack.woff2" as="font" type="font/woff2" crossorigin>
-  	<link rel="preload" href="fonts/CircularXX-BoldItalic.woff2" as="font" type="font/woff2" crossorigin>
-  	<link rel="preload" href="fonts/CircularXX-Italic.woff2" as="font" type="font/woff2" crossorigin>
-  	<link rel="preload" href="fonts/CircularXX-ExtraBlackItalic.woff2" as="font" type="font/woff2" crossorigin>
-  	<link rel="preload" href="fonts/CircularXX-Thin.woff2" as="font" type="font/woff2" crossorigin>
-  	<link rel="preload" href="fonts/CircularXX-Light.woff2" as="font" type="font/woff2" crossorigin>
-  	<link rel="preload" href="fonts/GloriaHallelujah.woff2" as="font" type="font/woff2" crossorigin>
-  	<!-- fonts preloading -->
+    <!-- fonts preloading -->
+    <link rel="preload" href="fonts/CircularXX-LightItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Medium.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Black.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-BlackItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-MediumItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-BookItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Book.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-ExtraBlack.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-BoldItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Italic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-ExtraBlackItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Thin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Light.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/GloriaHallelujah.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- fonts preloading -->
   
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="libs/fancybox/fancybox.css" />
+    <link rel="stylesheet" href="css/main.css" />
   
-  	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  	<link rel="stylesheet" href="libs/fancybox/fancybox.css" />
-  	<link rel="stylesheet" href="css/main.css" />
+    <style>
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+    <script defer>
+      window.addEventListener("DOMContentLoaded", event => {
+        const animationLogo = document.getElementById("logo_animation");
+  
+        setTimeout(function () {
+          document.getElementById("preloader").classList.add("loaded");
+        }, 3000);
+  
+        setTimeout(() => {
+          animationLogo.play();
+        }, 3000);
+      });
+    </script>
   </head>
 
   <body class="page_home">
+    <div class="preloader" id="preloader">
+      <lottie-player class="preloader_animation" loop speed="1.7" autoplay src="./lottie/preloader-animation.json"> </lottie-player>
+    </div>
     <div class="header_top-row">
       <div class="container">
         <nav class="header_top-navigation">
@@ -55,10 +85,10 @@
     <header class="header">
       <div class="header_bottom-row">
         <div class="container">
-          <a href="/" class="header_logo">
+          <a href="/stl_staffvirtual/app" class="header_logo">
             <img src="img/logo.svg" alt="Logo" />
           </a>
-          <a href="" class="header_logo-mobile">
+          <a href="/stl_staffvirtual/app" class="header_logo-mobile">
             <img src="img/logo_mobile.svg" alt="Logo" />
           </a>
           <nav class="header_main-navigation">
@@ -67,19 +97,19 @@
                 <a href="#">About US</a>
                 <ul class="sub-menu">
                   <li>
-                    <a href="/our-teammates.html">Our Teammates</a>
+                    <a href="/stl_staffvirtual/app/our-teammates.html">Our Teammates</a>
                   </li>
                   <li>
-                    <a href="/modern-offices.html">Modern Offices</a>
+                    <a href="/stl_staffvirtual/app/modern-offices.html">Modern Offices</a>
                   </li>
                   <li>
-                    <a href="/clients.html">Clients</a>
+                    <a href="/stl_staffvirtual/app/clients.html">Clients</a>
                   </li>
                   <li>
-                    <a href="/blog.html">Blog</a>
+                    <a href="/stl_staffvirtual/app/blog.html">Blog</a>
                   </li>
                   <li>
-                    <a href="/become-a-reseller.html">Become a Reseller</a>
+                    <a href="/stl_staffvirtual/app/become-a-reseller.html">Become a Reseller</a>
                   </li>
                 </ul>
               </li>
@@ -87,10 +117,10 @@
                 <a href="#">Industries</a>
                 <ul class="sub-menu">
                   <li>
-                    <a href="industries.html">Industries</a>
+                    <a href="/stl_staffvirtual/app/industries.html">Industries</a>
                   </li>
                   <li>
-                    <a href="/industries-sub-page.html">Technology</a>
+                    <a href="/stl_staffvirtual/app/industries-sub-page.html">Technology</a>
                   </li>
                 </ul>
               </li>
@@ -98,30 +128,30 @@
                 <a href="#">Services</a>
                 <ul class="sub-menu">
                   <li>
-                    <a href="services.html">Services</a>
+                    <a href="/stl_staffvirtual/app/services.html">Services</a>
                   </li>
                   <li>
-                    <a href="/services-sub-page.html">Technology</a>
+                    <a href="/stl_staffvirtual/app/services-sub-page.html">Technology</a>
                   </li>
                   <li>
-                    <a href="/services-sub-page-sub-page.html">Process</a>
+                    <a href="/stl_staffvirtual/app/services-sub-page-sub-page.html">Process</a>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="/why-philippines.html">Why Philippines</a>
+                <a href="/stl_staffvirtual/app/why-philippines.html">Why Philippines</a>
               </li>
               <li>
-                <a href="/careers.html">Careers</a>
+                <a href="/stl_staffvirtual/app/careers.html">Careers</a>
               </li>
               <li>
-                <a href="/our-process.html">Our Process</a>
+                <a href="/stl_staffvirtual/app/our-process.html">Our Process</a>
               </li>
               <li>
-                <a href="/glossary.html">Glossary</a>
+                <a href="/stl_staffvirtual/app/glossary.html">Glossary</a>
               </li>
             </ul>
-            <a href="/contact-us.html" class="header_button btn btn__blue">Contact Us</a>
+            <a href="/stl_staffvirtual/app/contact-us.html" class="header_button btn btn__blue">Contact Us</a>
           </nav>
           <button class="header_navigation-toggle">
             <span></span>
@@ -181,19 +211,19 @@
             <a href="#">About US</a>
             <ul class="sub-menu">
               <li>
-                <a href="/our-teammates.html">Our Teammates</a>
+                <a href="/stl_staffvirtual/app/our-teammates.html">Our Teammates</a>
               </li>
               <li>
-                <a href="/modern-offices.html">Modern Offices</a>
+                <a href="/stl_staffvirtual/app/modern-offices.html">Modern Offices</a>
               </li>
               <li>
-                <a href="/clients.html">Clients</a>
+                <a href="/stl_staffvirtual/app/clients.html">Clients</a>
               </li>
               <li>
-                <a href="/blog.html">Blog</a>
+                <a href="/stl_staffvirtual/app/blog.html">Blog</a>
               </li>
               <li>
-                <a href="/become-a-reseller.html">Become a Reseller</a>
+                <a href="/stl_staffvirtual/app/become-a-reseller.html">Become a Reseller</a>
               </li>
             </ul>
           </li>
@@ -201,30 +231,30 @@
             <a href="#">Services</a>
             <ul class="sub-menu">
               <li>
-                <a href="services.html">Services</a>
+                <a href="/stl_staffvirtual/app/services.html">Services</a>
               </li>
               <li>
-                <a href="/services-sub-page.html">Technology</a>
+                <a href="/stl_staffvirtual/app/services-sub-page.html">Technology</a>
               </li>
               <li>
-                <a href="/services-sub-page-sub-page.html">Process</a>
+                <a href="/stl_staffvirtual/app/services-sub-page-sub-page.html">Process</a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="/why-philippines.html">Why Philippines</a>
+            <a href="/stl_staffvirtual/app/why-philippines.html">Why Philippines</a>
           </li>
           <li>
-            <a href="/careers.html">Careers</a>
+            <a href="/stl_staffvirtual/app/careers.html">Careers</a>
           </li>
           <li>
-            <a href="/our-process.html">Our Process</a>
+            <a href="/stl_staffvirtual/app/our-process.html">Our Process</a>
           </li>
           <li>
-            <a href="/glossary.html">Glossary</a>
+            <a href="/stl_staffvirtual/app/glossary.html">Glossary</a>
           </li>
         </ul>
-        <a href="#" class="header_button btn btn__blue">Contact Us</a>
+        <a href="/stl_staffvirtual/app/contact-us.html" class="header_button btn btn__blue">Contact Us</a>
       </nav>
     </div>
     <main>
@@ -521,4 +551,5 @@
   <script src="js/blocks/slider-settings.js"></script>
   <script src="js/blocks/star-rating.js"></script>
   <script src="js/glossary.js"></script>
+  <script src="libs/lottie/lottie-player.js"></script>
 </html>

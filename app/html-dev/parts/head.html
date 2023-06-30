@@ -1,32 +1,59 @@
 <head>
-	<meta charset="utf-8" />
-	<title>StaffVirtual</title>
-	<meta name="description" content="" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<meta name="theme-color" content="#ffffff" />
+  <meta charset="utf-8" />
+  <title>StaffVirtual</title>
+  <meta name="description" content="" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="theme-color" content="#ffffff" />
 
-	<!-- fonts preloading -->
-	<link rel="preload" href="fonts/CircularXX-LightItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Bold.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Medium.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Black.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-BlackItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-MediumItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-BookItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Regular.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Book.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-ExtraBlack.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-BoldItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Italic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-ExtraBlackItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Thin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Light.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/GloriaHallelujah.woff2" as="font" type="font/woff2" crossorigin>
-	<!-- fonts preloading -->
+  <!-- fonts preloading -->
+  <link rel="preload" href="fonts/CircularXX-LightItalic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/CircularXX-Bold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/CircularXX-Medium.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/CircularXX-Black.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/CircularXX-BlackItalic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/CircularXX-MediumItalic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/CircularXX-BookItalic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/CircularXX-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/CircularXX-Book.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/CircularXX-ExtraBlack.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/CircularXX-BoldItalic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/CircularXX-Italic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/CircularXX-ExtraBlackItalic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/CircularXX-Thin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/CircularXX-Light.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/GloriaHallelujah.woff2" as="font" type="font/woff2" crossorigin />
+  <!-- fonts preloading -->
 
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="libs/fancybox/fancybox.css" />
+  <link rel="stylesheet" href="css/main.css" />
 
-	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-	<link rel="stylesheet" href="libs/fancybox/fancybox.css" />
-	<link rel="stylesheet" href="css/main.css" />
+  <style>
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  <script defer>
+    window.addEventListener("DOMContentLoaded", event => {
+      const animationLogo = document.getElementById("logo_animation");
+
+      setTimeout(function () {
+        document.getElementById("preloader").classList.add("loaded");
+      }, 3000);
+
+      setTimeout(() => {
+        animationLogo.play();
+      }, 3000);
+    });
+  </script>
 </head>

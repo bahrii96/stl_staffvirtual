@@ -17,5 +17,8 @@
     "gulp-rigger": "^0.5.8",
     "gulp-sass": "^5.1.0",
     "sass": "^1.49.8"
+  },
+	"dependencies": {
+    "@lottiefiles/lottie-player": "^2.0.2"
   }
 }

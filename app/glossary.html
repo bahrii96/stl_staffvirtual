@@ -1,648 +1,625 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-	<meta charset="utf-8" />
-	<title>StaffVirtual</title>
-	<meta name="description" content="" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<meta name="theme-color" content="#ffffff" />
+  <head>
+    <meta charset="utf-8" />
+    <title>StaffVirtual</title>
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+  
+    <!-- fonts preloading -->
+    <link rel="preload" href="fonts/CircularXX-LightItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Medium.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Black.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-BlackItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-MediumItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-BookItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Book.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-ExtraBlack.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-BoldItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Italic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-ExtraBlackItalic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Thin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/CircularXX-Light.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/GloriaHallelujah.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- fonts preloading -->
+  
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="libs/fancybox/fancybox.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  
+    <style>
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+    <script defer>
+      window.addEventListener("DOMContentLoaded", event => {
+        const animationLogo = document.getElementById("logo_animation");
+  
+        setTimeout(function () {
+          document.getElementById("preloader").classList.add("loaded");
+        }, 3000);
+  
+        setTimeout(() => {
+          animationLogo.play();
+        }, 3000);
+      });
+    </script>
+  </head>
 
-	<!-- fonts preloading -->
-	<link rel="preload" href="fonts/CircularXX-LightItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Bold.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Medium.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Black.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-BlackItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-MediumItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-BookItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Regular.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Book.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-ExtraBlack.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-BoldItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Italic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-ExtraBlackItalic.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Thin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CircularXX-Light.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/GloriaHallelujah.woff2" as="font" type="font/woff2" crossorigin>
-	<!-- fonts preloading -->
+  <body class="page_home">
+    <div class="preloader" id="preloader">
+      <lottie-player class="preloader_animation" loop speed="1.7" autoplay src="./lottie/preloader-animation.json"> </lottie-player>
+    </div>
+    <div class="header_top-row">
+      <div class="container">
+        <nav class="header_top-navigation">
+          <ul>
+            <li class="offcanvas-toggle">
+              <a href="#" class="">About Us</a>
+            </li>
+            <li>
+              <a href="#">Why Philippines?</a>
+            </li>
+            <li>
+              <a href="#">Careers - Apply today!</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    
+    <header class="header">
+      <div class="header_bottom-row">
+        <div class="container">
+          <a href="/stl_staffvirtual/app" class="header_logo">
+            <img src="img/logo.svg" alt="Logo" />
+          </a>
+          <a href="/stl_staffvirtual/app" class="header_logo-mobile">
+            <img src="img/logo_mobile.svg" alt="Logo" />
+          </a>
+          <nav class="header_main-navigation">
+            <ul>
+              <li class="menu-item-has-children">
+                <a href="#">About US</a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="/stl_staffvirtual/app/our-teammates.html">Our Teammates</a>
+                  </li>
+                  <li>
+                    <a href="/stl_staffvirtual/app/modern-offices.html">Modern Offices</a>
+                  </li>
+                  <li>
+                    <a href="/stl_staffvirtual/app/clients.html">Clients</a>
+                  </li>
+                  <li>
+                    <a href="/stl_staffvirtual/app/blog.html">Blog</a>
+                  </li>
+                  <li>
+                    <a href="/stl_staffvirtual/app/become-a-reseller.html">Become a Reseller</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item-has-children">
+                <a href="#">Industries</a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="/stl_staffvirtual/app/industries.html">Industries</a>
+                  </li>
+                  <li>
+                    <a href="/stl_staffvirtual/app/industries-sub-page.html">Technology</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item-has-children">
+                <a href="#">Services</a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="/stl_staffvirtual/app/services.html">Services</a>
+                  </li>
+                  <li>
+                    <a href="/stl_staffvirtual/app/services-sub-page.html">Technology</a>
+                  </li>
+                  <li>
+                    <a href="/stl_staffvirtual/app/services-sub-page-sub-page.html">Process</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/why-philippines.html">Why Philippines</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/careers.html">Careers</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/our-process.html">Our Process</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/glossary.html">Glossary</a>
+              </li>
+            </ul>
+            <a href="/stl_staffvirtual/app/contact-us.html" class="header_button btn btn__blue">Contact Us</a>
+          </nav>
+          <button class="header_navigation-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    
+    <div class="offcanvas__navigation" id="offcanvas__navigation">
+      <div class="offcanvas__navigation-title">
+        <h2>About Us</h2>
+      </div>
+      <nav class="offcanvas__navigation-nav">
+        <ul>
+          <li>
+            <a href="">Our Story</a>
+          </li>
+          <li>
+            <a href="">Our Teammates</a>
+          </li>
+          <li>
+            <a href="">Modern Offices</a>
+          </li>
+          <li>
+            <a href="">Clients</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="">ISO Certification</a>
+          </li>
+          <li>
+            <a href="">News & Press</a>
+          </li>
+          <li>
+            <a href="">Glossary</a>
+          </li>
+          <li>
+            <a href="">Events</a>
+          </li>
+          <li>
+            <a href="">Blog</a>
+          </li>
+          <li>
+            <a href="">Become a Reseller</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    
+    <div class="mobile_navigation" id="mobile_navigation">
+      <nav class="mobile_navigation-main">
+        <ul>
+          <li class="menu-item-has-children">
+            <a href="#">About US</a>
+            <ul class="sub-menu">
+              <li>
+                <a href="/stl_staffvirtual/app/our-teammates.html">Our Teammates</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/modern-offices.html">Modern Offices</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/clients.html">Clients</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/blog.html">Blog</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/become-a-reseller.html">Become a Reseller</a>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item-has-children">
+            <a href="#">Services</a>
+            <ul class="sub-menu">
+              <li>
+                <a href="/stl_staffvirtual/app/services.html">Services</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/services-sub-page.html">Technology</a>
+              </li>
+              <li>
+                <a href="/stl_staffvirtual/app/services-sub-page-sub-page.html">Process</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/stl_staffvirtual/app/why-philippines.html">Why Philippines</a>
+          </li>
+          <li>
+            <a href="/stl_staffvirtual/app/careers.html">Careers</a>
+          </li>
+          <li>
+            <a href="/stl_staffvirtual/app/our-process.html">Our Process</a>
+          </li>
+          <li>
+            <a href="/stl_staffvirtual/app/glossary.html">Glossary</a>
+          </li>
+        </ul>
+        <a href="/stl_staffvirtual/app/contact-us.html" class="header_button btn btn__blue">Contact Us</a>
+      </nav>
+    </div>
+    <main>
+      <section class="hero-minus">
+      	<div class="hero-minus__overlay"><img src="./img/hero-minus.png" alt="">
+      		<div class="hero-minus__overlay-bottom"><img src="./img/hero-minus-bottom.png" alt=""></div>
+      
+      	</div>
+      	<div class="container container_inner">
+      		<div class="hero-minus__title">
+      			<div class="section_subtitle">Outsourcing 101</div>
+      			<h2 class="section_title">We have gathered the industry terminology for you to explore and study</h2>
+      		</div>
+      	</div>
+      </section>
+      <!--  -->
+      <section class="glossary">
+        <div class="container container_inner">
+          <div class="glossary__box">
+            <div class="glossary__header">
+              <div class="glossary__search">
+                <input id="myGlossaryInput" type="text" placeholder="Search outsourcing terms" class="glossary__search-form" />
+              </div>
+              <ul class="glossary__nav" id="glossaryNav"></ul>
+            </div>
+            <div class="glossary__list" id="myGlossaryTable">
+              <div class="glossary__row">
+                <h3 class="glossary__row-title">A</h3>
+                <div class="glossary__items">
+                  <div class="glossary__item">
+                    <h4 class="glossary__item-title">Automation</h4>
+                    <div class="glossary__item-text">
+                      Automation is the process of using technology to automate repetitive or manual tasks that are typically performed by humans. In the BPO industry, automation is used to improve
+                      operational efficiency, reduce costs, and enhance the quality of service provided to clients. By automating tasks such as data entry, document processing, and customer support,
+                      BPO companies can increase productivity, reduce errors, and provide faster response times to clients.
+                    </div>
+                  </div>
+                  <div class="glossary__item">
+                    <h4 class="glossary__item-title">Agent</h4>
+                    <div class="glossary__item-text">
+                      An agent is a representative of a BPO company who interacts with customers on behalf of a client company. Agents are typically responsible for providing customer service, sales,
+                      and technical support. They may communicate with customers via phone, email, or chat, and are trained to handle a variety of inquiries and issues. Good agents are essential to
+                      the success of a BPO company, as they represent the face of the client company and are responsible for maintaining positive customer relationships.
+                    </div>
+                  </div>
+                  <div class="glossary__item">
+                    <h4 class="glossary__item-title">Attrition</h4>
+                    <div class="glossary__item-text">
+                      Attrition refers to the rate at which employees leave a BPO company, typically due to dissatisfaction with working conditions, pay, or other factors. High attrition rates can be
+                      a major challenge for BPO companies, as they can lead to decreased productivity, increased training costs, and a loss of institutional knowledge. BPO companies often invest in
+                      programs to improve employee satisfaction and retention, such as employee engagement initiatives, training and development programs, and competitive compensation and benefits
+                      packages.
+                    </div>
+                  </div>
+                  <div class="glossary__item">
+                    <h4 class="glossary__item-title">Analytics</h4>
+                    <div class="glossary__item-text">
+                      Analytics is the process of using data analysis to identify patterns and insights that can be used to improve business processes and decision-making. In the BPO industry,
+                      analytics is used to optimize operations, improve customer service, and provide clients with insights into their business operations. BPO companies use analytics tools to analyze
+                      data such as call volumes, customer feedback, and performance metrics, and use this information to make data-driven decisions about staffing, training, and process improvements.
+                    </div>
+                  </div>
+                  <div class="glossary__item">
+                    <h4 class="glossary__item-title">Audit</h4>
+                    <div class="glossary__item-text">
+                      An audit is an independent review of a BPO company's operations, financial records, and internal controls, often conducted by a third-party auditor. Audits are typically
+                      conducted to ensure compliance with regulatory requirements, identify areas for improvement, and provide assurance to clients that the BPO company is operating effectively and
+                      efficiently. BPO companies may be audited for compliance with industry-specific standards, such as PCI DSS (Payment Card Industry Data Security Standard), or for adherence to
+                      client-specific requirements. The audit process typically involves a review of policies and procedures, documentation, and interviews with key personnel.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="glossary__row">
+                <h3 class="glossary__row-title">B</h3>
+                <div class="glossary__items">
+                  <div class="glossary__item">
+                    <h4 class="glossary__item-title">Business Continuity Planning (BCP)</h4>
+                    <div class="glossary__item-text">
+                      BCP is the process of creating a plan to ensure that critical business functions can continue to operate in the event of a disruption or disaster. In the BPO industry, BCP is
+                      important to ensure that client operations can continue uninterrupted in the event of an outage, natural disaster, or other unforeseen event. BCP typically includes provisions
+                      for data backup and recovery, alternative work locations, and communication plans.
+                    </div>
+                  </div>
+                  <div class="glossary__item">
+                    <h4 class="glossary__item-title">Business Process Mapping</h4>
+                    <div class="glossary__item-text">
+                      Business process mapping is the process of creating a visual representation of a business process in order to identify opportunities for improvement. In the BPO industry, process
+                      mapping is used to optimize operations and improve efficiency. By analyzing the flow of work, identifying bottlenecks, and streamlining processes, BPO companies can reduce costs,
+                      improve quality, and enhance the customer experience.
+                    </div>
+                  </div>
+                  <div class="glossary__item">
+                    <h4 class="glossary__item-title">Business Process Outsourcing (BPO)</h4>
+                    <div class="glossary__item-text">
+                      BPO refers to the practice of outsourcing non-core business functions to third-party providers. These functions can include back-office operations such as payroll, accounting,
+                      and customer service, as well as front-office functions such as sales, marketing, and IT support. BPO is a popular business model for companies looking to reduce costs, increase
+                      efficiency, and access specialized expertise.
+                    </div>
+                  </div>
 
+                  <div class="glossary__item">
+                    <h4 class="glossary__item-title">Back Office</h4>
+                    <div class="glossary__item-text">
+                      The back office refers to the administrative functions of a business that are not directly customer-facing, such as data entry, billing, and accounting. In the BPO industry,
+                      back-office functions are often outsourced to third-party providers in order to reduce costs and improve efficiency. BPO companies may offer a variety of back-office services,
+                      including data entry, document processing, accounting, and HR administration.
+                    </div>
+                  </div>
+                  <div class="glossary__item">
+                    <h4 class="glossary__item-title">Bench Strength</h4>
+                    <div class="glossary__item-text">
+                      Bench strength refers to the availability and readiness of skilled staff to handle additional workload or projects. In the BPO industry, bench strength is important to ensure
+                      that a company has the capacity to handle fluctuations in demand and new business opportunities. BPO companies often maintain a pool of trained staff who are not currently
+                      assigned to a project, but who can be quickly mobilized as needed. By maintaining strong bench strength, BPO companies can provide fast, high-quality service to clients while
+                      maintaining profitability.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="glossary__row">
+                <h3 class="glossary__row-title">R</h3>
+              </div>
+              <div class="glossary__row">
+                <h3 class="glossary__row-title">T</h3>
+              </div>
+              <div class="glossary__row">
+                <h3 class="glossary__row-title">C</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-	<link rel="stylesheet" href="libs/fancybox/fancybox.css" />
-	<link rel="stylesheet" href="css/main.css" />
-</head>
-
-<body class="page_home">
-	<div class="header_top-row">
-	  <div class="container">
-	    <nav class="header_top-navigation">
-	      <ul>
-	        <li class="offcanvas-toggle">
-	          <a href="#" class="">About Us</a>
-	        </li>
-	        <li>
-	          <a href="#">Why Philippines?</a>
-	        </li>
-	        <li>
-	          <a href="#">Careers - Apply today!</a>
-	        </li>
-	      </ul>
-	    </nav>
-	  </div>
-	</div>
-	
-	<header class="header">
-	  <div class="header_bottom-row">
-	    <div class="container">
-	      <a href="/" class="header_logo">
-	        <img src="img/logo.svg" alt="Logo" />
-	      </a>
-	      <a href="" class="header_logo-mobile">
-	        <img src="img/logo_mobile.svg" alt="Logo" />
-	      </a>
-	      <nav class="header_main-navigation">
-	        <ul>
-	          <li class="menu-item-has-children">
-	            <a href="#">About US</a>
-	            <ul class="sub-menu">
-	              <li>
-	                <a href="/our-teammates.html">Our Teammates</a>
-	              </li>
-	              <li>
-	                <a href="/modern-offices.html">Modern Offices</a>
-	              </li>
-	              <li>
-	                <a href="/clients.html">Clients</a>
-	              </li>
-	              <li>
-	                <a href="/blog.html">Blog</a>
-	              </li>
-	              <li>
-	                <a href="/become-a-reseller.html">Become a Reseller</a>
-	              </li>
-	            </ul>
-	          </li>
-	          <li class="menu-item-has-children">
-	            <a href="#">Industries</a>
-	            <ul class="sub-menu">
-	              <li>
-	                <a href="industries.html">Industries</a>
-	              </li>
-	              <li>
-	                <a href="/industries-sub-page.html">Technology</a>
-	              </li>
-	            </ul>
-	          </li>
-	          <li class="menu-item-has-children">
-	            <a href="#">Services</a>
-	            <ul class="sub-menu">
-	              <li>
-	                <a href="services.html">Services</a>
-	              </li>
-	              <li>
-	                <a href="/services-sub-page.html">Technology</a>
-	              </li>
-	              <li>
-	                <a href="/services-sub-page-sub-page.html">Process</a>
-	              </li>
-	            </ul>
-	          </li>
-	          <li>
-	            <a href="/why-philippines.html">Why Philippines</a>
-	          </li>
-	          <li>
-	            <a href="/careers.html">Careers</a>
-	          </li>
-	          <li>
-	            <a href="/our-process.html">Our Process</a>
-	          </li>
-	          <li>
-	            <a href="/glossary.html">Glossary</a>
-	          </li>
-	        </ul>
-	        <a href="/contact-us.html" class="header_button btn btn__blue">Contact Us</a>
-	      </nav>
-	      <button class="header_navigation-toggle">
-	        <span></span>
-	        <span></span>
-	        <span></span>
-	      </button>
-	    </div>
-	  </div>
-	</header>
-	
-	<div class="offcanvas__navigation" id="offcanvas__navigation">
-	  <div class="offcanvas__navigation-title">
-	    <h2>About Us</h2>
-	  </div>
-	  <nav class="offcanvas__navigation-nav">
-	    <ul>
-	      <li>
-	        <a href="">Our Story</a>
-	      </li>
-	      <li>
-	        <a href="">Our Teammates</a>
-	      </li>
-	      <li>
-	        <a href="">Modern Offices</a>
-	      </li>
-	      <li>
-	        <a href="">Clients</a>
-	      </li>
-	    </ul>
-	    <ul>
-	      <li>
-	        <a href="">ISO Certification</a>
-	      </li>
-	      <li>
-	        <a href="">News & Press</a>
-	      </li>
-	      <li>
-	        <a href="">Glossary</a>
-	      </li>
-	      <li>
-	        <a href="">Events</a>
-	      </li>
-	      <li>
-	        <a href="">Blog</a>
-	      </li>
-	      <li>
-	        <a href="">Become a Reseller</a>
-	      </li>
-	    </ul>
-	  </nav>
-	</div>
-	
-	<div class="mobile_navigation" id="mobile_navigation">
-	  <nav class="mobile_navigation-main">
-	    <ul>
-	      <li class="menu-item-has-children">
-	        <a href="#">About US</a>
-	        <ul class="sub-menu">
-	          <li>
-	            <a href="/our-teammates.html">Our Teammates</a>
-	          </li>
-	          <li>
-	            <a href="/modern-offices.html">Modern Offices</a>
-	          </li>
-	          <li>
-	            <a href="/clients.html">Clients</a>
-	          </li>
-	          <li>
-	            <a href="/blog.html">Blog</a>
-	          </li>
-	          <li>
-	            <a href="/become-a-reseller.html">Become a Reseller</a>
-	          </li>
-	        </ul>
-	      </li>
-	      <li class="menu-item-has-children">
-	        <a href="#">Services</a>
-	        <ul class="sub-menu">
-	          <li>
-	            <a href="services.html">Services</a>
-	          </li>
-	          <li>
-	            <a href="/services-sub-page.html">Technology</a>
-	          </li>
-	          <li>
-	            <a href="/services-sub-page-sub-page.html">Process</a>
-	          </li>
-	        </ul>
-	      </li>
-	      <li>
-	        <a href="/why-philippines.html">Why Philippines</a>
-	      </li>
-	      <li>
-	        <a href="/careers.html">Careers</a>
-	      </li>
-	      <li>
-	        <a href="/our-process.html">Our Process</a>
-	      </li>
-	      <li>
-	        <a href="/glossary.html">Glossary</a>
-	      </li>
-	    </ul>
-	    <a href="#" class="header_button btn btn__blue">Contact Us</a>
-	  </nav>
-	</div>
-	<main>
-		<section class="hero-minus">
-			<div class="hero-minus__overlay"><img src="./img/hero-minus.png" alt="">
-				<div class="hero-minus__overlay-bottom"><img src="./img/hero-minus-bottom.png" alt=""></div>
-		
-			</div>
-			<div class="container container_inner">
-				<div class="hero-minus__title">
-					<div class="section_subtitle">Outsourcing 101</div>
-					<h2 class="section_title">We have gathered the industry terminology for you to explore and study</h2>
-				</div>
-			</div>
-		</section>
-		<!--  -->
-		<section class="glossary">
-			<div class="container container_inner">
-				<div class="glossary__box">
-					<div class="glossary__header">
-						<div class="glossary__search">
-							<input id="myGlossaryInput" type="text" placeholder="Search outsourcing terms"
-								class="glossary__search-form">
-						</div>
-						<ul class="glossary__nav" id="glossaryNav">
-						</ul>
-					</div>
-					<div class="glossary__list" id="myGlossaryTable">
-						<div class="glossary__row">
-							<h3 class="glossary__row-title">A</h3>
-							<div class="glossary__items">
-								<div class="glossary__item">
-									<h4 class="glossary__item-title">Automation</h4>
-									<div class="glossary__item-text">Automation is the process of using technology to automate repetitive
-										or
-										manual tasks that are typically performed by
-										humans. In the BPO industry, automation is used to improve operational efficiency, reduce costs, and
-										enhance the quality
-										of service provided to clients. By automating tasks such as data entry, document processing, and
-										customer support, BPO
-										companies can increase productivity, reduce errors, and provide faster response times to clients.
-									</div>
-								</div>
-								<div class="glossary__item">
-									<h4 class="glossary__item-title">Agent</h4>
-									<div class="glossary__item-text">An agent is a representative of a BPO company who interacts with
-										customers on behalf of a client company. Agents are
-										typically responsible for providing customer service, sales, and technical support. They may
-										communicate with customers
-										via phone, email, or chat, and are trained to handle a variety of inquiries and issues. Good agents
-										are essential to the
-										success of a BPO company, as they represent the face of the client company and are responsible for
-										maintaining positive
-										customer relationships.
-									</div>
-								</div>
-								<div class="glossary__item">
-									<h4 class="glossary__item-title">Attrition</h4>
-									<div class="glossary__item-text">Attrition refers to the rate at which employees leave a BPO company,
-										typically due to dissatisfaction with working
-										conditions, pay, or other factors. High attrition rates can be a major challenge for BPO companies,
-										as
-										they can lead to
-										decreased productivity, increased training costs, and a loss of institutional knowledge. BPO
-										companies
-										often invest in
-										programs to improve employee satisfaction and retention, such as employee engagement initiatives,
-										training and
-										development programs, and competitive compensation and benefits packages.
-									</div>
-								</div>
-								<div class="glossary__item">
-									<h4 class="glossary__item-title">Analytics</h4>
-									<div class="glossary__item-text">Analytics is the process of using data analysis to identify patterns
-										and
-										insights that can be used to improve business
-										processes and decision-making. In the BPO industry, analytics is used to optimize operations,
-										improve
-										customer service,
-										and provide clients with insights into their business operations. BPO companies use analytics tools
-										to
-										analyze data such
-										as call volumes, customer feedback, and performance metrics, and use this information to make
-										data-driven decisions
-										about staffing, training, and process improvements.
-									</div>
-								</div>
-								<div class="glossary__item">
-									<h4 class="glossary__item-title">Audit</h4>
-									<div class="glossary__item-text">An audit is an independent review of a BPO company's operations,
-										financial records, and internal controls, often
-										conducted by a third-party auditor. Audits are typically conducted to ensure compliance with
-										regulatory requirements,
-										identify areas for improvement, and provide assurance to clients that the BPO company is operating
-										effectively and
-										efficiently. BPO companies may be audited for compliance with industry-specific standards, such as
-										PCI
-										DSS (Payment Card
-										Industry Data Security Standard), or for adherence to client-specific requirements. The audit
-										process
-										typically involves
-										a review of policies and procedures, documentation, and interviews with key personnel.
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="glossary__row">
-							<h3 class="glossary__row-title">B</h3>
-							<div class="glossary__items">
-								<div class="glossary__item">
-									<h4 class="glossary__item-title">Business Continuity Planning (BCP)</h4>
-									<div class="glossary__item-text">BCP is the process of creating a plan to ensure that critical
-										business
-										functions can continue to operate in the event of
-										a disruption or disaster. In the BPO industry, BCP is important to ensure that client operations can
-										continue
-										uninterrupted in the event of an outage, natural disaster, or other unforeseen event. BCP typically
-										includes provisions
-										for data backup and recovery, alternative work locations, and communication plans.
-									</div>
-								</div>
-								<div class="glossary__item">
-									<h4 class="glossary__item-title">Business Process Mapping</h4>
-									<div class="glossary__item-text">Business process mapping is the process of creating a visual
-										representation of a business process in order to identify
-										opportunities for improvement. In the BPO industry, process mapping is used to optimize operations
-										and
-										improve
-										efficiency. By analyzing the flow of work, identifying bottlenecks, and streamlining processes, BPO
-										companies can reduce
-										costs, improve quality, and enhance the customer experience.
-									</div>
-								</div>
-								<div class="glossary__item">
-									<h4 class="glossary__item-title">Business Process Outsourcing (BPO)</h4>
-									<div class="glossary__item-text">BPO refers to the practice of outsourcing non-core business functions
-										to
-										third-party providers. These functions can
-										include back-office operations such as payroll, accounting, and customer service, as well as
-										front-office functions such
-										as sales, marketing, and IT support. BPO is a popular business model for companies looking to reduce
-										costs, increase
-										efficiency, and access specialized expertise.
-									</div>
-								</div>
-
-								<div class="glossary__item">
-									<h4 class="glossary__item-title">Back Office</h4>
-									<div class="glossary__item-text">The back office refers to the administrative functions of a business
-										that are not directly customer-facing, such as data
-										entry, billing, and accounting. In the BPO industry, back-office functions are often outsourced to
-										third-party providers
-										in order to reduce costs and improve efficiency. BPO companies may offer a variety of back-office
-										services, including
-										data entry, document processing, accounting, and HR administration.
-									</div>
-								</div>
-								<div class="glossary__item">
-									<h4 class="glossary__item-title">Bench Strength</h4>
-									<div class="glossary__item-text">Bench strength refers to the availability and readiness of skilled
-										staff
-										to handle additional workload or projects. In
-										the BPO industry, bench strength is important to ensure that a company has the capacity to handle
-										fluctuations in demand
-										and new business opportunities. BPO companies often maintain a pool of trained staff who are not
-										currently assigned to a
-										project, but who can be quickly mobilized as needed. By maintaining strong bench strength, BPO
-										companies can provide
-										fast, high-quality service to clients while maintaining profitability.
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="glossary__row">
-							<h3 class="glossary__row-title">R</h3>
-						</div>
-						<div class="glossary__row">
-							<h3 class="glossary__row-title">T</h3>
-						</div>
-						<div class="glossary__row">
-							<h3 class="glossary__row-title">C</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</main>
-
-	<footer class="footer">
-	    <div class="container">
-	        <div class="footer_top">
-	            <div class="footer_col">
-	                <a href="#" class="footer_logo">
-	                    <img src="img/logo_footer.svg" alt="staffvirtual">
-	                </a>
-	                <div class="footer_slogan">
-	                    <p>We partner with businesses to drive success by delivering unbeatable cost savings in the BPO
-	                        industry</p>
-	                </div>
-	                <div class="footer_nav">
-	                    <ul>
-	                        <li>
-	                            <a href="#">Why the Philippines</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Careers</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Contact Us</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Our Team</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Our Process</a>
-	                        </li>
-	                    </ul>
-	                </div>
-	            </div>
-	            <div class="footer_col">
-	                <h4 class="footer_col-title">
-	                    About Us
-	                </h4>
-	                <div class="footer_nav">
-	                    <ul>
-	                        <li>
-	                            <a href="#">Our Story</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Our Teammates</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Modern Offices</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Clients</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">ISO Certifications </a>
-	                        </li>
-	                        <li>
-	                            <a href="#">News & Press</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Glossary</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Blog</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Become a Reseller</a>
-	                        </li>
-	                    </ul>
-	                </div>
-	            </div>
-	            <div class="footer_col">
-	                <h4 class="footer_col-title">
-	                    Outsourcing Services
-	                </h4>
-	                <div class="footer_nav">
-	                    <ul>
-	                        <li>
-	                            <a href="">Back Office</a>
-	                        </li>
-	                        <li>
-	                            <a href="">IT</a>
-	                        </li>
-	                        <li>
-	                            <a href="">Legal</a>
-	                        </li>
-	                        <li>
-	                            <a href="">Marketing</a>
-	                        </li>
-	                        <li>
-	                            <a href="">HR</a>
-	                        </li>
-	                        <li>
-	                            <a href="">Business Development</a>
-	                        </li>
-	                        <li>
-	                            <a href="">Customer Experience</a>
-	                        </li>
-	                    </ul>
-	                </div>
-	            </div>
-	            <div class="footer_col">
-	                <h4 class="footer_col-title">
-	                    Industries
-	                </h4>
-	                <div class="footer_nav">
-	                    <ul>
-	                        <li>
-	                            <a href="#">Startups</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">eCommerce</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Legal</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Technology</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">MSPS</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Property Management</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Healthcare</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Travel</a>
-	                        </li>
-	                        <li>
-	                            <a href="#">Logistics</a>
-	                        </li>
-	                    </ul>
-	                </div>
-	            </div>
-	        </div>
-	        <div class="footer_bottom">
-	            <div class="footer_col footer_social-links">
-	                <h4 class="footer_col-title">
-	                    Follow US
-	                </h4>
-	                <div class="footer_social-links--items">
-	                    <a href="">
-	                        <img src="img/social/facebook.svg" alt="">
-	                    </a>
-	                    <a href="">
-	                        <img src="img/social/tiktok.svg" alt="">
-	                    </a>
-	                    <a href="">
-	                        <img src="img/social/linkedin.svg" alt="">
-	                    </a>
-	                    <a href="">
-	                        <img src="img/social/instagram.svg" alt="">
-	                    </a>
-	                    <a href="">
-	                        <img src="img/social/youtube.svg" alt="">
-	                    </a>
-	                </div>
-	            </div>
-	            <div class="footer_col">
-	                <div class="footer_col-title">
-	                    <h4>Contact</h4>
-	                </div>
-	                <div class="footer_nav">
-	                    <ul>
-	                        <li>
-	                            <a href="mailto:info@staffvirtual.com">info@staffvirtual.com</a>
-	                        </li>
-	                        <li>
-	                            <a href="tel:+63890210696">+63 890 210 696</a>
-	                        </li>
-	                        <li>
-	                            <a href="tel:+63890210697">+63 890 210 697</a>
-	                        </li>
-	                    </ul>
-	                </div>
-	            </div>
-	            <div class="footer_col">
-	                <div class="footer_col-title">
-	                    <h4>USA</h4>
-	                </div>
-	                <div class="footer_location">
-	                    <p>
-	                        78 SW 7th St. Suite 05-109C <br>
-	                        Miami, FL 33130,<br>
-	                        USA
-	                    </p>
-	                </div>
-	            </div>
-	            <div class="footer_col">
-	                <div class="footer_col-title">
-	                    <h4>The Philippines</h4>
-	                </div>
-	                <div class="footer_location">
-	                    <p>
-	                        32nd fl, Robinsons Equitable Tower, <br>
-	                        ADB Avenue, Ortigas Center, <br>
-	                        Pasig City, NCR Philippines
-	                    </p>
-	                </div>
-	            </div>
-	        </div>
-	        <div class="footer_copyright">
-	            <p>STAFFVIRTUAL Inc・©2023</p>
-	            <div class="footer_copyright-nav">
-	                <ul>
-	                    <li>
-	                        <a href="">Privacy Statement</a>
-	                    </li>
-	                    <li>
-	                        <a href="">Privacy notice for California Residents</a>
-	                    </li>
-	                    <li>
-	                        <a href="">Global Supplier Code of Conduct</a>
-	                    </li>
-	                    <li>
-	                        <a href="">Cookie Policy</a>
-	                    </li>
-	                </ul>
-	            </div>
-	        </div>
-	    </div>
-	</footer>
-</body>
-<script src="libs/jquery/jquery.min.js"></script>
-<script src="libs/fancybox/fancybox.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="js/common.js"></script>
-<script src="js/blocks/accordion.js"></script>
-<script src="js/blocks/video.js"></script>
-<script src="js/blocks/slider-settings.js"></script>
-<script src="js/blocks/star-rating.js"></script>
-<script src="js/glossary.js"></script>
-
+    <footer class="footer">
+        <div class="container">
+            <div class="footer_top">
+                <div class="footer_col">
+                    <a href="#" class="footer_logo">
+                        <img src="img/logo_footer.svg" alt="staffvirtual">
+                    </a>
+                    <div class="footer_slogan">
+                        <p>We partner with businesses to drive success by delivering unbeatable cost savings in the BPO
+                            industry</p>
+                    </div>
+                    <div class="footer_nav">
+                        <ul>
+                            <li>
+                                <a href="#">Why the Philippines</a>
+                            </li>
+                            <li>
+                                <a href="#">Careers</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#">Our Team</a>
+                            </li>
+                            <li>
+                                <a href="#">Our Process</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_col">
+                    <h4 class="footer_col-title">
+                        About Us
+                    </h4>
+                    <div class="footer_nav">
+                        <ul>
+                            <li>
+                                <a href="#">Our Story</a>
+                            </li>
+                            <li>
+                                <a href="#">Our Teammates</a>
+                            </li>
+                            <li>
+                                <a href="#">Modern Offices</a>
+                            </li>
+                            <li>
+                                <a href="#">Clients</a>
+                            </li>
+                            <li>
+                                <a href="#">ISO Certifications </a>
+                            </li>
+                            <li>
+                                <a href="#">News & Press</a>
+                            </li>
+                            <li>
+                                <a href="#">Glossary</a>
+                            </li>
+                            <li>
+                                <a href="#">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#">Become a Reseller</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_col">
+                    <h4 class="footer_col-title">
+                        Outsourcing Services
+                    </h4>
+                    <div class="footer_nav">
+                        <ul>
+                            <li>
+                                <a href="">Back Office</a>
+                            </li>
+                            <li>
+                                <a href="">IT</a>
+                            </li>
+                            <li>
+                                <a href="">Legal</a>
+                            </li>
+                            <li>
+                                <a href="">Marketing</a>
+                            </li>
+                            <li>
+                                <a href="">HR</a>
+                            </li>
+                            <li>
+                                <a href="">Business Development</a>
+                            </li>
+                            <li>
+                                <a href="">Customer Experience</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_col">
+                    <h4 class="footer_col-title">
+                        Industries
+                    </h4>
+                    <div class="footer_nav">
+                        <ul>
+                            <li>
+                                <a href="#">Startups</a>
+                            </li>
+                            <li>
+                                <a href="#">eCommerce</a>
+                            </li>
+                            <li>
+                                <a href="#">Legal</a>
+                            </li>
+                            <li>
+                                <a href="#">Technology</a>
+                            </li>
+                            <li>
+                                <a href="#">MSPS</a>
+                            </li>
+                            <li>
+                                <a href="#">Property Management</a>
+                            </li>
+                            <li>
+                                <a href="#">Healthcare</a>
+                            </li>
+                            <li>
+                                <a href="#">Travel</a>
+                            </li>
+                            <li>
+                                <a href="#">Logistics</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="footer_col footer_social-links">
+                    <h4 class="footer_col-title">
+                        Follow US
+                    </h4>
+                    <div class="footer_social-links--items">
+                        <a href="">
+                            <img src="img/social/facebook.svg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="img/social/tiktok.svg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="img/social/linkedin.svg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="img/social/instagram.svg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="img/social/youtube.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer_col">
+                    <div class="footer_col-title">
+                        <h4>Contact</h4>
+                    </div>
+                    <div class="footer_nav">
+                        <ul>
+                            <li>
+                                <a href="mailto:info@staffvirtual.com">info@staffvirtual.com</a>
+                            </li>
+                            <li>
+                                <a href="tel:+63890210696">+63 890 210 696</a>
+                            </li>
+                            <li>
+                                <a href="tel:+63890210697">+63 890 210 697</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_col">
+                    <div class="footer_col-title">
+                        <h4>USA</h4>
+                    </div>
+                    <div class="footer_location">
+                        <p>
+                            78 SW 7th St. Suite 05-109C <br>
+                            Miami, FL 33130,<br>
+                            USA
+                        </p>
+                    </div>
+                </div>
+                <div class="footer_col">
+                    <div class="footer_col-title">
+                        <h4>The Philippines</h4>
+                    </div>
+                    <div class="footer_location">
+                        <p>
+                            32nd fl, Robinsons Equitable Tower, <br>
+                            ADB Avenue, Ortigas Center, <br>
+                            Pasig City, NCR Philippines
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_copyright">
+                <p>STAFFVIRTUAL Inc・©2023</p>
+                <div class="footer_copyright-nav">
+                    <ul>
+                        <li>
+                            <a href="">Privacy Statement</a>
+                        </li>
+                        <li>
+                            <a href="">Privacy notice for California Residents</a>
+                        </li>
+                        <li>
+                            <a href="">Global Supplier Code of Conduct</a>
+                        </li>
+                        <li>
+                            <a href="">Cookie Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+  </body>
+  <script src="libs/jquery/jquery.min.js"></script>
+  <script src="libs/fancybox/fancybox.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/blocks/accordion.js"></script>
+  <script src="js/blocks/video.js"></script>
+  <script src="js/blocks/slider-settings.js"></script>
+  <script src="js/blocks/star-rating.js"></script>
+  <script src="js/glossary.js"></script>
+  <script src="libs/lottie/lottie-player.js"></script>
 </html>
